@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+        }
+        .question-container {
+            display: none;
+        }
+        .question {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #result-container {
+            display: none;
+        }
+        #timer {
+            font-size: 18px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Choose the correct answer:</h1>
+    <div id="timer"></div>
+    
+    <div class="question-container" id="question-1">
+        <p class="question">1. The general contractor …….............…….. the subcontractors.</p>
+        <button onclick="nextQuestion(1, 'c')">a. hire</button>
+        <button onclick="nextQuestion(1, 'b')">b. is hire</button>
+        <button onclick="nextQuestion(1, 'a')">c. hires</button>
+    </div>
+    <div class="question-container" id="question-2">
+        <p class="question">2. Ali never …….............…….. on Fridays.</p>
+        <button onclick="nextQuestion(2, 'b')">a. work</button>
+        <button onclick="nextQuestion(2, 'a')">b. works</button>
+        <button onclick="nextQuestion(2, 'c')">c. working</button>
+    </div>
+    <div class="question-container" id="question-3">
+        <p class="question">3. I …….............…….. to NCTC five days a week.</p>
+        <button onclick="nextQuestion(3, 'c')">a. is going</button>
+        <button onclick="nextQuestion(3, 'a')">b. goes</button>
+        <button onclick="nextQuestion(3, 'b')">c. go</button>
+    </div>
+    <div class="question-container" id="question-4">
+        <p class="question">4. Good communication helps us deal …….............…….. emergencies.</p>
+        <button onclick="nextQuestion(4, 'c')">a. in</button>
+        <button onclick="nextQuestion(4, 'b')">b. on</button>
+        <button onclick="nextQuestion(4, 'a')">c. with</button>
+    </div>
+    <div class="question-container" id="question-5">
+        <p class="question">5. Safety flags …….............…….. important. They are used for warning.</p>
+        <button onclick="nextQuestion(5, 'c')">a. am</button>
+        <button onclick="nextQuestion(5, 'b')">b. is</button>
+        <button onclick="nextQuestion(5, 'a')">c. are</button>
+    </div>
+    <div class="question-container" id="question-6">
+        <p class="question">6. Rashid is sitting …….............…….. to me in the classroom.</p>
+        <button onclick="nextQuestion(6, 'd')">a. under</button>
+        <button onclick="nextQuestion(6, 'c')">b. on</button>
+        <button onclick="nextQuestion(6, 'b')">c. next</button>
+    </div>
+    <div class="question-container" id="question-7">
+        <p class="question">7. Faisal …….............…….. in Dammam. He drives 2 hours every day.</p>
+        <button onclick="nextQuestion(7, 'd')">a. living</button>
+        <button onclick="nextQuestion(7, 'c')">b. live</button>
+        <button onclick="nextQuestion(7, 'b')">c. lives</button>
+    </div>
+    <div class="question-container" id="question-8">
+        <p class="question">8. Where …….............…….. you live?</p>
+        <button onclick="nextQuestion(8, 'c')">a. are</button>
+        <button onclick="nextQuestion(8, 'a')">b. is</button>
+        <button onclick="nextQuestion(8, 'b')">c. do</button>
+    </div>
+    <div class="question-container" id="question-9">
+        <p class="question">9. …….............…….. your car new?</p>
+        <button onclick="nextQuestion(9, 'b')">a. Are</button>
+        <button onclick="nextQuestion(9, 'a')">b. Is</button>
+        <button onclick="nextQuestion(9, 'c')">c. Do</button>
+    </div>
+    <div class="question-container" id="question-10">
+        <p class="question">10. …….............…….. you the site manager?</p>
+        <button onclick="nextQuestion(10, 'c')">a. Is</button>
+        <button onclick="nextQuestion(10, 'b')">b. Am</button>
+        <button onclick="nextQuestion(10, 'a')">c. Are</button>
+    </div>
+    <div class="question-container" id="question-11">
+        <p class="question">11. The Supermarket is …….............…….. the bank and the hospital.</p>
+        <button onclick="nextQuestion(11, 'c')">a. under</button>
+        <button onclick="nextQuestion(11, 'b')">b. on</button>
+        <button onclick="nextQuestion(11, 'a')">c. between</button>
+    </div>
+    <div class="question-container" id="question-12">
+        <p class="question">12. Does he clean the floor every day? No, he …….............…….. not.</p>
+        <button onclick="nextQuestion(12, 'c')">a. is</button>
+        <button onclick="nextQuestion(12, 'b')">b. are</button>
+        <button onclick="nextQuestion(12, 'a')">c. does</button>
+    </div>
+    <div class="question-container" id="question-13">
+        <p class="question">13. Is Omar …….............…….. the forklift?</p>
+        <button onclick="nextQuestion(13, 'a')">a. driving</button>
+        <button onclick="nextQuestion(13, 'b')">b. drive</button>
+        <button onclick="nextQuestion(13, 'c')">c. drives</button>
+    </div>
+    <div class="question-container" id="question-14">
+        <p class="question">14. They …….............…….. going to the workshop now.</p>
+        <button onclick="nextQuestion(14, 'c')">a. am</button>
+        <button onclick="nextQuestion(14, 'b')">b. is</button>
+        <button onclick="nextQuestion(14, 'a')">c. are</button>
+    </div>
+    <div class="question-container" id="question-15">
+        <p class="question">15. …….............…….. you need help? - Yes, I do.</p>
+        <button onclick="nextQuestion(15, 'b')">a. Does</button>
+        <button onclick="nextQuestion(15, 'c')">b. Do</button>
+        <button onclick="nextQuestion(15, 'a')">c. Are</button>
+    </div>
+
+    <div id="result-container">
+        <h2>Your score: <span id="score"></span>/15</h2>
+        <p>Wrong Answers:</p>
+        <ul id="wrong-answers"></ul>
+    </div>
+
+    <script>
+        const correctAnswers = ['c', 'b', 'c', 'c', 'c', 'b', 'd', 'c', 'b', 'c', 'c', 'c', 'a', 'c', 'b'];
+        let currentQuestion = 1;
+        let score = 0;
+        let wrongAnswers = [];
+        let timer;
+        let remainingTime = 60; // 1 minute in seconds
+
+        // Show first question
+        document.getElementById(question-${currentQuestion}).style.display = 'block';
+
+        function nextQuestion(questionNumber, answer) {
+            const correctAnswer = correctAnswers[questionNumber - 1];
+            if (answer === correctAnswer) {
+                score++;
+            } else {
+                wrongAnswers.push(Question ${questionNumber}: ${correctAnswer});
+            }
+
+            // Hide the current question and show the next one
+            document.getElementById(`question
