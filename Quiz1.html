@@ -33,12 +33,33 @@
     </style>
 </head>
 <body>
+
     <h1>Choose the correct answer:</h1>
     <div id="timer"></div>
     
-    <!-- Questions go here -->
-    <!-- (Your existing questions HTML) -->
+    <!-- Question Containers -->
+    <div class="question-container" id="question-1">
+        <p class="question">1. The general contractor …….............…….. the subcontractors.</p>
+        <button onclick="nextQuestion(1, 'c')">a. hire</button>
+        <button onclick="nextQuestion(1, 'b')">b. is hire</button>
+        <button onclick="nextQuestion(1, 'a')">c. hires</button>
+    </div>
+    <div class="question-container" id="question-2">
+        <p class="question">2. Ali never …….............…….. on Fridays.</p>
+        <button onclick="nextQuestion(2, 'b')">a. work</button>
+        <button onclick="nextQuestion(2, 'a')">b. works</button>
+        <button onclick="nextQuestion(2, 'c')">c. working</button>
+    </div>
+    <div class="question-container" id="question-3">
+        <p class="question">3. I …….............…….. to NCTC five days a week.</p>
+        <button onclick="nextQuestion(3, 'c')">a. is going</button>
+        <button onclick="nextQuestion(3, 'a')">b. goes</button>
+        <button onclick="nextQuestion(3, 'b')">c. go</button>
+    </div>
 
+    <!-- More questions go here (as in your original code) -->
+
+    <!-- Result Section -->
     <div id="result-container">
         <h2>Your score: <span id="score"></span>/15</h2>
         <p>Wrong Answers:</p>
@@ -46,7 +67,7 @@
     </div>
 
     <script>
-        const correctAnswers = ['c', 'b', 'c', 'c', 'c', 'c', 'b', 'c', 'b', 'c', 'c', 'c', 'a', 'c', 'b'];
+        const correctAnswers = ['c', 'b', 'c'];  // Add more correct answers here
         let currentQuestion = 1;
         let score = 0;
         let wrongAnswers = [];
@@ -56,21 +77,6 @@
         // Show the first question
         document.getElementById(`question-${currentQuestion}`).style.display = 'block';
 
-        // Start the timer
-        function startTimer() {
-            const timerElement = document.getElementById('timer');
-            timer = setInterval(() => {
-                remainingTime--;
-                timerElement.textContent = `Time left: ${remainingTime}s`;
-                if (remainingTime <= 0) {
-                    clearInterval(timer);
-                    endQuiz();
-                }
-            }, 1000);
-        }
-        startTimer();
-
-        // Navigate to the next question
         function nextQuestion(questionNumber, answer) {
             const correctAnswer = correctAnswers[questionNumber - 1];
             if (answer === correctAnswer) {
@@ -79,38 +85,46 @@
                 wrongAnswers.push(`Question ${questionNumber}: ${correctAnswer}`);
             }
 
-            // Hide the current question
+            // Hide the current question and show the next one
             document.getElementById(`question-${questionNumber}`).style.display = 'none';
-
-            // Show the next question or end the quiz
-            if (questionNumber < correctAnswers.length) {
-                currentQuestion++;
+            currentQuestion++;
+            if (currentQuestion <= correctAnswers.length) {
                 document.getElementById(`question-${currentQuestion}`).style.display = 'block';
             } else {
-                endQuiz();
+                showResults();
             }
         }
 
-        // End the quiz
-        function endQuiz() {
-            // Stop the timer
+        function showResults() {
             clearInterval(timer);
-
-            // Hide any remaining questions
-            document.querySelectorAll('.question-container').forEach(container => {
-                container.style.display = 'none';
-            });
-
-            // Show the results
             document.getElementById('result-container').style.display = 'block';
             document.getElementById('score').textContent = score;
-            const wrongAnswersList = document.getElementById('wrong-answers');
-            wrongAnswers.forEach(answer => {
-                const listItem = document.createElement('li');
+
+            let wrongAnswersList = document.getElementById('wrong-answers');
+            wrongAnswers.forEach(function(answer) {
+                let listItem = document.createElement('li');
                 listItem.textContent = answer;
                 wrongAnswersList.appendChild(listItem);
             });
         }
+
+        // Timer function
+        function startTimer() {
+            timer = setInterval(function() {
+                remainingTime--;
+                document.getElementById('timer').textContent = `Time left: ${remainingTime}s`;
+
+                if (remainingTime <= 0) {
+                    clearInterval(timer);
+                    showResults();
+                }
+            }, 1000);
+        }
+
+        // Start timer when quiz starts
+        startTimer();
     </script>
+
 </body>
 </html>
+
