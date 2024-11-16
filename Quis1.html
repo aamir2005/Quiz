@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be Verb Quiz</title>
+    <script>
+        function calculateScore() {
+            var score = 0;
+            var totalQuestions = 5;
+            
+            // Check answers
+            if (document.getElementById('q1a').checked) score++;
+            if (document.getElementById('q2b').checked) score++;
+            if (document.getElementById('q3b').checked) score++;
+            if (document.getElementById('q4a').checked) score++;
+            if (document.getElementById('q5b').checked) score++;
+            
+            // Display the score
+            alert("Your score is: " + score + " out of " + totalQuestions);
+        }
+    </script>
+</head>
+<body>
+    <h1>Quiz on the Use of "Be"</h1>
+    <form id="quizForm">
+        <ol>
+            <li>
+                <p>She ____ a doctor.</p>
+                <label><input type="radio" name="q1" id="q1a"> a) is</label><br>
+                <label><input type="radio" name="q1"> b) are</label><br>
+                <label><input type="radio" name="q1"> c) am</label>
+            </li>
+            <li>
+                <p>They ____ going to the park.</p>
+                <label><input type="radio" name="q2"> a) is</label><br>
+                <label><input type="radio" name="q2" id="q2b"> b) are</label><br>
+                <label><input type="radio" name="q2"> c) am</label>
+            </li>
+            <li>
+                <p>I ____ tired today.</p>
+                <label><input type="radio" name="q3"> a) is</label><br>
+                <label><input type="radio" name="q3" id="q3b"> b) am</label><br>
+                <label><input type="radio" name="q3"> c) are</label>
+            </li>
+            <li>
+                <p>He ____ playing soccer right now.</p>
+                <label><input type="radio" name="q4" id="q4a"> a) is</label><br>
+                <label><input type="radio" name="q4"> b) am</label><br>
+                <label><input type="radio" name="q4"> c) are</label>
+            </li>
+            <li>
+                <p>We ____ at the cinema yesterday.</p>
+                <label><input type="radio" name="q5"> a) was</label><br>
+                <label><input type="radio" name="q5" id="q5b"> b) were</label><br>
+                <label><input type="radio" name="q5"> c) is</label>
+            </li>
+        </ol>
+        <button type="button" onclick="calculateScore()">Submit</button>
+    </form>
+</body>
+</html>
