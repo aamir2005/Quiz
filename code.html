@@ -162,3 +162,33 @@
             const correctAnswer = correctAnswers[questionNumber - 1];
             if (answer === correctAnswer) {
                 score++;
+            } else {
+                wrongAnswers.push(`Question ${questionNumber}`);
+            }
+
+            // Hide current question and show next one
+            document.getElementById(`question-${questionNumber}`).style.display = 'none';
+            if (currentQuestion < 15) {
+                currentQuestion++;
+                document.getElementById(`question-${currentQuestion}`).style.display = 'block';
+            } else {
+                clearInterval(timer); // Stop the timer once all questions are answered
+                showResult();
+            }
+        }
+
+        function showResult() {
+            document.getElementById('result-container').style.display = 'block';
+            document.getElementById('score').innerText = score;
+            const wrongAnswersList = document.getElementById('wrong-answers');
+            wrongAnswersList.innerHTML = '';
+            wrongAnswers.forEach(answer => {
+                const li = document.createElement('li');
+                li.textContent = answer;
+                wrongAnswersList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
+
