@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -143,15 +143,22 @@
         let remainingTime = 60; // 1 minute in seconds
 
         // Show first question
-        document.getElementById(question-${currentQuestion}).style.display = 'block';
+        document.getElementById(`question-${currentQuestion}`).style.display = 'block';
+
+        // Timer update function
+        function updateTimer() {
+            remainingTime--;
+            document.getElementById('timer').innerText = `Time remaining: ${remainingTime}s`;
+            if (remainingTime <= 0) {
+                clearInterval(timer);
+                showResult();
+            }
+        }
+
+        // Start the timer
+        timer = setInterval(updateTimer, 1000);
 
         function nextQuestion(questionNumber, answer) {
             const correctAnswer = correctAnswers[questionNumber - 1];
             if (answer === correctAnswer) {
                 score++;
-            } else {
-                wrongAnswers.push(Question ${questionNumber}: ${correctAnswer});
-            }
-
-            // Hide the current question and show the next one
-            document.getElementById(`question
