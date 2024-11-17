@@ -1,0 +1,105 @@
+def run_quiz():
+    score = 0
+    
+    # Question 1: Match the words with their explanations
+    print("### 1. Match the words with their explanations ###")
+    print("1- broken")
+    print("2- corroded")
+    print("3- cracked")
+    print("4- dented")
+    print("5- burned")
+    
+    print("\nMatch with the following explanations:")
+    print("a) on fire")
+    print("b) A slight hollow on a hard surface")
+    print("c) No longer in one piece or functioning")
+    print("d) Break without a separation of the parts")
+    print("e) Destroy or damage slowly by chemical action")
+    
+    answers = {
+        1: 'c',
+        2: 'e',
+        3: 'd',
+        4: 'b',
+        5: 'a'
+    }
+    
+    for i in range(1, 6):
+        user_answer = input(f"Match {i}: ").lower()
+        if user_answer == answers[i]:
+            score += 2  # Correct match gives 2 points
+        else:
+            print(f"Incorrect! Correct answer for {i}: {answers[i]}")
+    
+    # Question 2: Choose the correct polite request
+    print("\n### 2. Choose the correct polite request ###")
+    
+    questions_2 = [
+        ("______ you show me your ID, please? (informal)", ["A) Could", "B) Would", "C) Can"], "C"),
+        ("______ you lend me your hammer, please?", ["A) Could", "B) Will", "C) Would"], "A"),
+        ("______ you possibly show me the way to the workshop, please?", ["A) Can", "B) Would", "C) Could"], "C"),
+        ("______ you help me with this exercise, please?", ["A) Will", "B) Could", "C) Would"], "B"),
+        ("______ you mind lending me your pen, please?", ["A) Could", "B) Would", "C) Will"], "B")
+    ]
+    
+    for i, (question, options, correct_answer) in enumerate(questions_2, 1):
+        print(f"\n{i}. {question}")
+        for option in options:
+            print(option)
+        user_answer = input("Your answer: ").upper()
+        if user_answer == correct_answer:
+            score += 2  # Correct answer gives 2 points
+        else:
+            print(f"Incorrect! Correct answer: {correct_answer}")
+    
+    # Question 3: Fill in the blank - How much/How many
+    print("\n### 3. Fill in the blank ###")
+    
+    questions_3 = [
+        ("______ paint do you need?", "How much"),
+        ("______ spanners are there?", "How many"),
+        ("______ information do you have about welding?", "How much"),
+        ("______ e-mails do you receive every day?", "How many"),
+        ("______ trainees do we have here?", "How many")
+    ]
+    
+    for i, (question, correct_answer) in enumerate(questions_3, 1):
+        user_answer = input(f"{i}. {question} ").strip()
+        if user_answer.lower() == correct_answer.lower():
+            score += 2  # Correct answer gives 2 points
+        else:
+            print(f"Incorrect! Correct answer: {correct_answer}")
+    
+    # Question 4: Match the items with their containers
+    print("\n### 4. Match the items with their corresponding containers ###")
+    
+    answers_4 = {
+        1: 'c',  # a can of paint
+        2: 'a',  # a bag of sand
+        3: 'f',  # a glass of water
+        4: 'b',  # a cup of tea
+        5: 'd',  # a piece of pie
+        6: 'e'   # a bowl of soup
+    }
+    
+    for i in range(1, 7):
+        user_answer = input(f"Match {i}: ").lower()
+        if user_answer == answers_4[i]:
+            score += 2  # Correct match gives 2 points
+        else:
+            print(f"Incorrect! Correct answer for {i}: {answers_4[i]}")
+    
+    # Final score and feedback
+    print(f"\nYour total score is: {score}/40")
+    
+    if score == 40:
+        print("Perfect! You've got everything correct.")
+    else:
+        print("You made some mistakes. Please try again to improve your score.")
+        retry = input("Do you want to try the quiz again? (yes/no): ").lower()
+        if retry == 'yes':
+            run_quiz()  # Restart the quiz if the user wants to try again
+
+
+# Run the quiz
+run_quiz()
