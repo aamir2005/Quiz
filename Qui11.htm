@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary and Job Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        .answer-input {
+            padding: 5px;
+        }
+
+        .match {
+            margin-left: 20px;
+        }
+
+        .submit-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            display: none;
+        }
+
+        #incorrectAnswers {
+            color: red;
+        }
+
+        #correctAnswers {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Vocabulary and Job Quiz</h1>
+    
+    <form id="quizForm">
+        <!-- Vocabulary Matching -->
+        <h2>Match terms with their definitions:</h2>
+        <div class="question">
+            <label for="q1">1. Material</label><br>
+            <select id="q1">
+                <option value="a">a piece of rock of any shape</option>
+                <option value="b">a liquid that you put on a surface...</option>
+                <option value="c">a material used for building...</option>
+                <option value="d">a substance, e.g., wood, glass...</option>
+                <option value="e">the material that trees are made of...</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label for="q2">2. Glass</label><br>
+            <select id="q2">
+                <option value="a">a piece of rock of any shape</option>
+                <option value="b">a liquid that you put on a surface...</option>
+                <option value="c">a material used for building...</option>
+                <option value="f">a transparent solid material...</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label for="q3">3. Wood</label><br>
+            <select id="q3">
+                <option value="a">a piece of rock of any shape</option>
+                <option value="e">the material that trees are made of...</option>
+                <option value="g">a hard, shiny material...</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label for="q4">4. Brick</label><br>
+            <select id="q4">
+                <option value="h">a hard block of baked clay...</option>
+                <option value="e">the material that trees are made of...</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label for="q5">5. Paint</label><br>
+            <select id="q5">
+                <option value="b">a liquid that you put on a surface...</option>
+                <option value="f">a transparent solid material...</option>
+            </select>
+        </div>
+
+        <!-- Activity 4: Match phrases -->
+        <h2>Activity 4: Match phrases:</h2>
+        <div class="question">
+            <label>1. Mohamed is applying for the job of a …</label><br>
+            <select id="q6">
+                <option value="a">welder</option>
+                <option value="b">instrumentation specialist</option>
+                <option value="c">Safety Officer</option>
+                <option value="d">pipe fitter</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label>2. According to the CV, how many years of experience does Mohamed have as a safety officer?</label><br>
+            <select id="q7">
+                <option value="a">1 year</option>
+                <option value="b">2 years</option>
+                <option value="c">3 years</option>
+                <option value="d">4 years</option>
+            </select>
+        </div>
+
+        <!-- Other questions go here as per the original list... -->
+
+        <!-- Submit Button -->
+        <button type="button" class="submit-button" onclick="submitQuiz()">Submit</button>
+
+    </form>
+
+    <!-- Result Section -->
+    <div class="result" id="resultSection">
+        <h2>Your Score: <span id="score"></span></h2>
+        <h3>Incorrect Answers (with Corrections):</h3>
+        <ul id="incorrectAnswers"></ul>
+    </div>
+
+    <script>
+        const answerKey = {
+            A: {
+                1: 'd', 2: 'f', 3: 'e', 4: 'h', 5: 'b'
+            },
+            Activity4: {
+                6: 'c', 7: 'c'
+            },
+            // Add other sections...
+        };
+
+        function submitQuiz() {
+            let score = 0;
+            let incorrectAnswers = [];
+            let totalQuestions = 7; // Update total question count for sections
+
+            // Section A: Matching Terms
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`q${i}`).value;
+                if (answer === answerKey.A[i]) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(`Q${i}: Correct answer is "${answerKey.A[i]}"`);
+                }
+            }
+
+            // Section Activity 4: Matching Phrases
+            for (let i = 6; i <= 7; i++) {
+                const answer = document.getElementById(`q${i}`).value;
+                if (answer === answerKey.Activity4[i]) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(`Q${i}: Correct answer is "${answerKey.Activity4[i]}"`);
+                }
+            }
+
+            // Show result
+            document.getElementById('score').textContent = `${score} / ${totalQuestions}`;
+            const incorrectList = document.getElementById('incorrectAnswers');
+            incorrectList.innerHTML = '';
+            incorrectAnswers.forEach(answer => {
+                const listItem = document.createElement('li');
+                listItem.textContent = answer;
+                incorrectList.appendChild(listItem);
+            });
+
+            document.getElementById('resultSection').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary and Job Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        .answer-input {
+            padding: 5px;
+        }
+
+        .match {
+            margin-left: 20px;
+        }
+
+        .submit-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            display: none;
+        }
+
+        #incorrectAnswers {
+            color: red;
+        }
+
+        #correctAnswers {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Vocabulary and Job Quiz</h1>
+    
+    <form id="quizForm">
+        <!-- Vocabulary Matching -->
+        <h2>Match terms with their definitions:</h2>
+        <div class="question">
+            <label for="q1">1. Material</label><br>
+            <select id="q1">
+                <option value="a">a piece of rock of any shape</option>
+                <option value="b">a liquid that you put on a surface...</option>
+                <option value="c">a material used for building...</option>
+                <option value="d">a substance, e.g., wood, glass...</option>
+                <option value="e">the material that trees are made of...</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label for="q2">2. Glass</label><br>
+            <select id="q2">
+                <option value="a">a piece of rock of any shape</option>
+                <option value="b">a liquid that you put on a surface...</option>
+                <option value="c">a material used for building...</option>
+                <option value="f">a transparent solid material...</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label for="q3">3. Wood</label><br>
+            <select id="q3">
+                <option value="a">a piece of rock of any shape</option>
+                <option value="e">the material that trees are made of...</option>
+                <option value="g">a hard, shiny material...</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label for="q4">4. Brick</label><br>
+            <select id="q4">
+                <option value="h">a hard block of baked clay...</option>
+                <option value="e">the material that trees are made of...</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label for="q5">5. Paint</label><br>
+            <select id="q5">
+                <option value="b">a liquid that you put on a surface...</option>
+                <option value="f">a transparent solid material...</option>
+            </select>
+        </div>
+
+        <!-- Activity 4: Match phrases -->
+        <h2>Activity 4: Match phrases:</h2>
+        <div class="question">
+            <label>1. Mohamed is applying for the job of a …</label><br>
+            <select id="q6">
+                <option value="a">welder</option>
+                <option value="b">instrumentation specialist</option>
+                <option value="c">Safety Officer</option>
+                <option value="d">pipe fitter</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label>2. According to the CV, how many years of experience does Mohamed have as a safety officer?</label><br>
+            <select id="q7">
+                <option value="a">1 year</option>
+                <option value="b">2 years</option>
+                <option value="c">3 years</option>
+                <option value="d">4 years</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label>3. A) How many diplomas does Mohamed have?</label><br>
+            <select id="q8">
+                <option value="a">1</option>
+                <option value="b">2</option>
+                <option value="c">3</option>
+                <option value="d">4</option>
+            </select>
+            <br>
+            <label>B) What are these diplomas?</label><br>
+            <input type="text" id="q9" class="answer-input">
+        </div>
+
+        <div class="question">
+            <label>4. Which is the most recent project Mohamed is part of?</label><br>
+            <input type="text" id="q10" class="answer-input">
+        </div>
+
+        <div class="question">
+            <label>5. How can Mohamed’s computer skills help him as a Safety Officer at work? Give a few examples.</label><br>
+            <textarea id="q11" class="answer-input"></textarea>
+        </div>
+
+        <!-- Verb Forms: Present Continuous -->
+        <h2>Complete the daily routine of Abdullah Al Shammari:</h2>
+        <div class="question">
+            <label>Abdullah Al-Shammari ______________ (be) a trainee at a Vocational college.</label><br>
+            <input type="text" id="q12" class="answer-input">
+        </div>
+        <div class="question">
+            <label>He ______________ (get up) at 5 am every day.</label><br>
+            <input type="text" id="q13" class="answer-input">
+        </div>
+
+        <!-- Future Plans -->
+        <h2>Use present continuous structure to talk about future plans:</h2>
+        <div class="question">
+            <label>The glazier ______________ (install) windows tomorrow.</label><br>
+            <input type="text" id="q14" class="answer-input">
+        </div>
+        <div class="question">
+            <label>I ______________ (fix) the forklift in the evening.</label><br>
+            <input type="text" id="q15" class="answer-input">
+        </div>
+
+        <!-- Match questions with answers -->
+        <h2>Match questions with answers:</h2>
+        <div class="question">
+            <label>1. When are you going to cut your hair?</label><br>
+            <select id="q16">
+                <option value="a">The building inspector is going to visit anytime.</option>
+                <option value="b">The electrician is going to fix the doorbell tomorrow.</option>
+                <option value="d">I’m going to cut my hair this weekend.</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label>2. When are you going to guard this equipment?</label><br>
+            <select id="q17">
+                <option value="e">I’m going to guard it before I...</option>
+                <option value="b">The electrician is going to fix the doorbell tomorrow.</option>
+            </select>
+        </div>
+
+        <button type="button" class="submit-button" onclick="submitQuiz()">Submit</button>
+
+    </form>
+
+    <!-- Result Section -->
+    <div class="result" id="resultSection">
+        <h2>Your Score: <span id="score"></span></h2>
+        <h3>Incorrect Answers (with Corrections):</h3>
+        <ul id="incorrectAnswers"></ul>
+    </div>
+
+    <script>
+        const answerKey = {
+            Vocabulary: {
+                1: 'd', 2: 'f', 3: 'e', 4: 'h', 5: 'b'
+            },
+            Activity4: {
+                6: 'c', 7: 'c', 8: 'b', 9: 'Computer Programming, MS Office, Excel',
+                10: 'Safety inspection for new projects',
+                11: 'Organizing safety training, ensuring safety standards'
+            },
+            VerbForms: {
+                12: 'is', 13: 'gets up'
+            },
+            FuturePlans: {
+                14: 'is installing', 15: 'am fixing'
+            },
+            MatchQuestions: {
+                16: 'd', 17: 'e'
+            }
+        };
+
+        function submitQuiz() {
+            let score = 0;
+            let incorrectAnswers = [];
+            let totalQuestions = 17;
+
+            // Vocabulary Matching
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`q${i}`).value;
+                if (answer === answerKey.Vocabulary[i]) {
+                    score++;
+                } else {} else {
+                    incorrectAnswers.push(`Q${i}: Your answer: ${answer}, Correct answer: ${answerKey.Vocabulary[i]}`);
+                }
+            }
+
+            // Activity 4 Matching
+            for (let i = 6; i <= 11; i++) {
+                const answer = document.getElementById(`q${i}`).value;
+                if (i === 9 || i === 10 || i === 11) {
+                    if (answer.toLowerCase().includes(answerKey.Activity4[i].toLowerCase())) {
+                        score++;
+                    } else {
+                        incorrectAnswers.push(`Q${i}: Your answer: ${answer}, Correct answer: ${answerKey.Activity4[i]}`);
+                    }
+                } else {
+                    if (answer === answerKey.Activity4[i]) {
+                        score++;
+                    } else {
+                        incorrectAnswers.push(`Q${i}: Your answer: ${answer}, Correct answer: ${answerKey.Activity4[i]}`);
+                    }
+                }
+            }
+
+            // Verb Forms
+            for (let i = 12; i <= 13; i++) {
+                const answer = document.getElementById(`q${i}`).value;
+                if (answer.toLowerCase() === answerKey.VerbForms[i].toLowerCase()) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(`Q${i}: Your answer: ${answer}, Correct answer: ${answerKey.VerbForms[i]}`);
+                }
+            }
+
+            // Future Plans
+            for (let i = 14; i <= 15; i++) {
+                const answer = document.getElementById(`q${i}`).value;
+                if (answer.toLowerCase() === answerKey.FuturePlans[i].toLowerCase()) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(`Q${i}: Your answer: ${answer}, Correct answer: ${answerKey.FuturePlans[i]}`);
+                }
+            }
+
+            // Match Questions
+            for (let i = 16; i <= 17; i++) {
+                const answer = document.getElementById(`q${i}`).value;
+                if (answer === answerKey.MatchQuestions[i]) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(`Q${i}: Your answer: ${answer}, Correct answer: ${answerKey.MatchQuestions[i]}`);
+                }
+            }
+
+            // Show score and incorrect answers
+            document.getElementById('score').innerText = `${score} / ${totalQuestions}`;
+            if (incorrectAnswers.length > 0) {
+                document.getElementById('incorrectAnswers').innerHTML = incorrectAnswers.map(item => `<li>${item}</li>`).join('');
+            } else {
+                document.getElementById('incorrectAnswers').innerHTML = '<li>No incorrect answers!</li>';
+            }
+
+            // Show result section
+            document.getElementById('resultSection').style.display = 'block';
+        }
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary and Polite Requests Quiz</title>
+    <style>
+        .question {
+            margin-bottom: 15px;
+        }
+        .result {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vocabulary and Polite Requests Quiz</h1>
+
+    <form id="quizForm">
+
+        <!-- Vocabulary Section -->
+        <h3>A. Match terms with their definitions:</h3>
+        <div class="question">
+            <label for="q1">1. Material</label><br>
+            <input type="text" id="q1">
+        </div>
+        <div class="question">
+            <label for="q2">2. Glass</label><br>
+            <input type="text" id="q2">
+        </div>
+        <div class="question">
+            <label for="q3">3. Wood</label><br>
+            <input type="text" id="q3">
+        </div>
+        <div class="question">
+            <label for="q4">4. Brick</label><br>
+            <input type="text" id="q4">
+        </div>
+        <div class="question">
+            <label for="q5">5. Paint</label><br>
+            <input type="text" id="q5">
+        </div>
+        
+        <!-- Activity 4 Section -->
+        <h3>B. Answer the following questions:</h3>
+        <div class="question">
+            <label for="q6">1. Mohamed is applying for the job of a …</label><br>
+            <input type="text" id="q6">
+        </div>
+        <div class="question">
+            <label for="q7">2. According to the CV, how many years of experience does Mohamed have as a safety officer?</label><br>
+            <input type="text" id="q7">
+        </div>
+
+        <!-- Verb Forms Section -->
+        <h3>C. Complete the daily routine of Abdullah:</h3>
+        <div class="question">
+            <label for="q12">1. Abdullah Al-Shammari ______________ (be) a trainee at a Vocational college.</label><br>
+            <input type="text" id="q12">
+        </div>
+
+        <!-- Future Plans Section -->
+        <h3>D. Use present continuous structure to talk about future plans:</h3>
+        <div class="question">
+            <label for="q14">1. The glazier is installing windows tomorrow.</label><br>
+            <input type="text" id="q14">
+        </div>
+
+        <!-- Match Questions Section -->
+        <h3>E. Match questions with answers:</h3>
+        <div class="question">
+            <label for="q16">1. When are you going to cut your hair?</label><br>
+            <input type="text" id="q16">
+        </div>
+
+        <!-- Submit Button -->
+        <br>
+        <button type="button" onclick="calculateScore()">Submit Quiz</button>
+    </form>
+
+    <!-- Result Section -->
+    <div id="resultSection" class="result">
+        <h2>Results</h2>
+        <p id="score"></p>
+        <h3>Incorrect Answers</h3>
+        <ul id="incorrectAnswers"></ul>
+    </div>
+
+    <script>
+        const answerKey = {
+            // Vocabulary matching answers
+            Vocabulary: {
+                1: "d",  // material -> a substance, e.g. wood, glass, concrete, metal
+                2: "f",  // glass -> a transparent solid material used for making windows
+                3: "e",  // wood -> the material that trees are made of; used to make things, e.g. stairs, doors
+                4: "h",  // brick -> a hard block of baked clay used for building walls and buildings
+                5: "b"   // paint -> a liquid that you put on a surface to make it a particular color
+            },
+            // Activity 4 answers
+            Activity4: {
+                6: "Safety Officer",  // Mohamed's job
+                7: "3 years",  // Mohamed's experience
+            },
+            // Verb forms
+            VerbForms: {
+                12: "is",  // Daily routine of Abdullah
+            },
+            // Future Plans
+            FuturePlans: {
+                14: "I am fixing the forklift in the evening",
+            },
+            // Match Questions
+            MatchQuestions: {
+                16: "I’m going to cut my hair this weekend.",
+            }
+        };
+
+        function calculateScore() {
+            let score = 0;
+            let totalQuestions = 6 + 2 + 1 + 1 + 1;  // Total questions count
+
+            let incorrectAnswers = [];
+
+            // Vocabulary Section (Matching)
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`q${i}`).value.trim().toLowerCase();
+                if (answer === answerKey.Vocabulary[i].toLowerCase()) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(`Q${i}: Your answer: ${answer}, Correct answer: ${answerKey.Vocabulary[i]}`);
+                }
+            }
+
+            // Activity 4 Section (Text answers)
+            for (let i = 6; i <= 7; i++) {
+                const answer = document.getElementById(`q${i}`).value.trim().toLowerCase();
+                if (answer === answerKey.Activity4[i].toLowerCase()) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(`Q${i}: Your answer: ${answer}, Correct answer: ${answerKey.Activity4[i]}`);
+                }
+            }
+
+            // Verb Forms Section
+            for (let i = 12; i <= 12; i++) {
+                const answer = document.getElementById(`q${i}`).value.trim().toLowerCase();
+                if (answer === answerKey.VerbForms[i].toLowerCase()) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(`Q${i}: Your answer: ${answer}, Correct answer: ${answerKey.VerbForms[i]}`);
+                }
+            }
+
+            // Future Plans Section
+            for (let i = 14; i <= 14; i++) {
+                const answer = document.getElementById(`q${i}`).value.trim().toLowerCase();
+                if (answer === answerKey.FuturePlans[i].toLowerCase()) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(`Q${i}: Your answer: ${answer}, Correct answer: ${answerKey.FuturePlans[i]}`);
+                }
+            }
+
+            // Match Questions Section
+            for (let i = 16; i <= 16; i++) {
+                const answer = document.getElementById(`q${i}`).value.trim().toLowerCase();
+                if (answer === answerKey.MatchQuestions[i].toLowerCase()) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(`Q${i}: Your answer: ${answer}, Correct answer: ${answerKey.MatchQuestions[i]}`);
+                }
+            }
+
+            // Show score
+            document.getElementById('score').innerText = `${score} / ${totalQuestions}`;
+            
+            // Display incorrect answers
+            if (incorrectAnswers.length > 0) {
+                document.getElementById('incorrectAnswers').innerHTML = incorrectAnswers.map(item => `<li>${item}</li>`).join('');
+            } else {
+                document.getElementById('incorrectAnswers').innerHTML = '<li>No incorrect answers!</li>';
+            }
+
+            // Show result section
+            document.getElementById('resultSection').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
