@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocational Quiz</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+    h1 { text-align: center; }
+    .question { margin-bottom: 20px; }
+    .question label { display: block; margin: 10px 0; }
+    .question input[type="text"], .question select { width: 100%; padding: 8px; margin: 5px 0; }
+    .question input[type="radio"], .question input[type="checkbox"] { margin-right: 10px; }
+    .btn { padding: 10px 20px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+    .btn:hover { background-color: #218838; }
+    #result { text-align: center; font-weight: bold; font-size: 20px; margin-top: 20px; }
+    .quiz-container { width: 60%; margin: 0 auto; }
+  </style>
+</head>
+<body>
+
+  <h1>Vocational Quiz</h1>
+  <div class="quiz-container">
+
+    <form id="quiz-form">
+      
+      <!-- Vocabulary Matching -->
+      <div class="question">
+        <h3>1. Match terms with their definitions:</h3>
+        <label for="material">Material:</label>
+        <select id="material" name="material">
+          <option value="">Select...</option>
+          <option value="d">A substance, e.g., wood, glass, concrete, metal</option>
+          <option value="f">A transparent solid material used for making windows</option>
+          <option value="e">The material that trees are made of; used to make things, e.g., stairs, doors</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="stone">Stone:</label>
+        <select id="stone" name="stone">
+          <option value="">Select...</option>
+          <option value="a">A piece of rock of any shape</option>
+          <option value="c">A material used for building that is made by mixing sand, small stones, cement, and water</option>
+          <option value="g">A hard, usually shiny material, e.g., iron, steel</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="paint">Paint:</label>
+        <select id="paint" name="paint">
+          <option value="">Select...</option>
+          <option value="b">A liquid that you put on a surface, using a brush to make the surface a particular color</option>
+          <option value="h">A hard block of baked clay used for building walls and buildings</option>
+        </select>
+      </div>
+
+      <!-- Multiple Choice Questions -->
+      <div class="question">
+        <h3>2. Mohamed is applying for the job of a …</h3>
+        <input type="radio" id="welder" name="job" value="a"> <label for="welder">Welder</label><br>
+        <input type="radio" id="specialist" name="job" value="b"> <label for="specialist">Instrumentation specialist</label><br>
+        <input type="radio" id="officer" name="job" value="c"> <label for="officer">Safety Officer</label><br>
+        <input type="radio" id="pipeFitter" name="job" value="d"> <label for="pipeFitter">Pipe fitter</label>
+      </div>
+
+      <div class="question">
+        <h3>3. According to the CV, how many years of experience does Mohamed have as a safety officer?</h3>
+        <input type="radio" id="1Year" name="experience" value="a"> <label for="1Year">1 year</label><br>
+        <input type="radio" id="2Years" name="experience" value="b"> <label for="2Years">2 years</label><br>
+        <input type="radio" id="3Years" name="experience" value="c"> <label for="3Years">3 years</label><br>
+        <input type="radio" id="4Years" name="experience" value="d"> <label for="4Years">4 years</label>
+      </div>
+
+      <!-- Fill in the blanks -->
+      <div class="question">
+        <h3>4. Complete Abdullah's daily routine:</h3>
+        Abdullah Al-Shammari ______ (be) a trainee at a Vocational college.
+        <input type="text" id="verb1" name="verb1">
+      </div>
+
+      <div class="question">
+        <h3>5. Workers ______ (not work) on the weekend.</h3>
+        <input type="text" id="verb2" name="verb2">
+      </div>
+
+      <!-- Job Role Matching -->
+      <div class="question">
+        <h3>6. Match the job roles:</h3>
+        <label for="plumber">The plumber:</label>
+        <select id="plumber" name="plumber">
+          <option value="">Select...</option>
+          <option value="D">Installs water pipes</option>
+          <option value="A">Designs the buildings</option>
+          <option value="E">Builds all the roofs on the buildings</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="manager">The site manager:</label>
+        <select id="manager" name="manager">
+          <option value="">Select...</option>
+          <option value="F">Manages worker’s duties on the site</option>
+          <option value="C">Installs the new electric cables</option>
+        </select>
+      </div>
+
+      <!-- Present Continuous -->
+      <div class="question">
+        <h3>7. Present Continuous - Future Plans</h3>
+        <label for="forklift">I ______ (fix) the forklift in the evening.</label>
+        <input type="text" id="forklift" name="forklift">
+      </div>
+
+      <div class="question">
+        <label for="workers">Workers ______ (not work) on the weekend.</label>
+        <input type="text" id="workers" name="workers">
+      </div>
+
+      <div class="question">
+        <label for="mechanic">The mechanic ______ (check) the crane tomorrow evening.</label>
+        <input type="text" id="mechanic" name="mechanic">
+      </div>
+
+      <div class="question">
+        <label for="bridge">They ______ (complete) this bridge before the end of next year.</label>
+        <input type="text" id="bridge" name="bridge">
+      </div>
+
+      <!-- Submit Button -->
+      <div style="text-align: center;">
+        <button type="button" class="btn" onclick="checkAnswers()">Submit Quiz</button>
+      </div>
+    </form>
+
+    <!-- Result Display -->
+    <div id="result"></div>
+    
+  </div>
+
+  <script>
+    function checkAnswers() {
+      var score = 0;
+      var totalQuestions = 15;
+
+      // Vocabulary Matching
+      if (document.getElementById('material').value === 'd') score++;
+      if (document.getElementById('stone').value === 'a') score++;
+      if (document.getElementById('paint').value === 'b') score++;
+
+      // Multiple Choice Questions
+      if (document.querySelector('input[name="job"]:checked') && document.querySelector('input[name="job"]:checked').value === 'c') score++;
+      if (document.querySelector('input[name="experience"]:checked') && document.querySelector('input[name="experience"]:checked').value === 'd') score++;
+
+      // Fill in the blanks
+      if (document.getElementById('verb1').value.toLowerCase() === 'is') score++;
+      if (document.getElementById('verb2').value.toLowerCase() === 'do not work') score++;
+
+      // Job Role Matching
+      if (document.getElementById('plumber').value === 'D') score++;
+      if (document.getElementById('manager').value === 'F') score++;
+
+      // Present Continuous
+      if (document.getElementById('forklift').value.toLowerCase() === 'am fixing') score++;
+      if (document.getElementById('workers').value.toLowerCase() === 'are not working') score++;
+      if (document.getElementById('mechanic').value.toLowerCase() === 'is checking') score++;
+      if (document.getElementById('bridge').value.toLowerCase() === 'will complete') score++;
+
+      // Display result
+      var percentage = (score / totalQuestions) * 100;
+      document.getElementById('result').innerHTML = "You scored " + score + " out of " + totalQuestions + " (" + percentage.toFixed(2) + "%)";
+    }
+  </script>
+
+</body>
+</html>
