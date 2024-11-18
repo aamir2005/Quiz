@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocational Quiz</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+    h1 { text-align: center; }
+    .question { margin-bottom: 20px; }
+    .question label { display: block; margin: 10px 0; }
+    .question input[type="text"] { width: 100%; padding: 8px; margin: 5px 0; }
+    .question input[type="radio"], .question input[type="checkbox"] { margin-right: 10px; }
+    .question select { padding: 8px; width: 100%; margin-top: 5px; }
+    .quiz-container { width: 60%; margin: 0 auto; }
+    #result { text-align: center; font-weight: bold; font-size: 20px; }
+    .btn { padding: 10px 20px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+    .btn:hover { background-color: #218838; }
+  </style>
+</head>
+<body>
+
+  <h1>Vocational Quiz</h1>
+  <div class="quiz-container">
+
+    <form id="quiz-form">
+      
+      <!-- Vocabulary Matching -->
+      <div class="question">
+        <h3>1. Match terms with their definitions:</h3>
+        <label for="material">Material:</label>
+        <select id="material" name="material">
+          <option value="">Select...</option>
+          <option value="d">A substance, e.g., wood, glass, concrete, metal</option>
+          <option value="f">A transparent solid material used for making windows</option>
+          <option value="e">The material that trees are made of; used to make things, e.g., stairs, doors</option>
+        </select>
+      </div>
+
+      <!-- Multiple Choice Questions -->
+      <div class="question">
+        <h3>2. Mohamed is applying for the job of a …</h3>
+        <input type="radio" id="welder" name="job" value="a"> <label for="welder">Welder</label><br>
+        <input type="radio" id="specialist" name="job" value="b"> <label for="specialist">Instrumentation specialist</label><br>
+        <input type="radio" id="officer" name="job" value="c"> <label for="officer">Safety Officer</label><br>
+        <input type="radio" id="pipeFitter" name="job" value="d"> <label for="pipeFitter">Pipe fitter</label>
+      </div>
+
+      <!-- Fill in the blanks -->
+      <div class="question">
+        <h3>3. Complete Abdullah's daily routine:</h3>
+        Abdullah Al-Shammari ______ (be) a trainee at a Vocational college.
+        <input type="text" id="verb1" name="verb1">
+      </div>
+
+      <div class="question">
+        <h3>4. Workers ______ (not work) on the weekend.</h3>
+        <input type="text" id="verb2" name="verb2">
+      </div>
+
+      <!-- Job Role Matching -->
+      <div class="question">
+        <h3>5. Match the job roles:</h3>
+        <label for="plumber">The plumber:</label>
+        <select id="plumber" name="plumber">
+          <option value="">Select...</option>
+          <option value="D">Installs water pipes</option>
+          <option value="A">Designs the buildings</option>
+          <option value="E">Builds all the roofs on the buildings</option>
+        </select>
+      </div>
+
+      <!-- Submit Button -->
+      <div style="text-align: center;">
+        <button type="button" class="btn" onclick="checkAnswers()">Submit Quiz</button>
+      </div>
+    </form>
+
+    <!-- Result Display -->
+    <div id="result"></div>
+    
+  </div>
+
+  <script>
+    function checkAnswers() {
+      var score = 0;
+      var totalQuestions = 5;
+
+      // Check Vocabulary Matching
+      if (document.getElementById('material').value === 'd') {
+        score++;
+      }
+
+      // Check Multiple Choice Question
+      if (document.querySelector('input[name="job"]:checked') && document.querySelector('input[name="job"]:checked').value === 'c') {
+        score++;
+      }
+
+      // Check Fill in the blanks
+      if (document.getElementById('verb1').value.toLowerCase() === 'is') {
+        score++;
+      }
+      if (document.getElementById('verb2').value.toLowerCase() === 'do not work') {
+        score++;
+      }
+
+      // Check Job Role Matching
+      if (document.getElementById('plumber').value === 'D') {
+        score++;
+      }
+
+      // Display result
+      var percentage = (score / totalQuestions) * 100;
+      document.getElementById('result').innerHTML = "You scored " + score + " out of " + totalQuestions + " (" + percentage.toFixed(2) + "%)";
+    }
+  </script>
+
+</body>
+</html>
