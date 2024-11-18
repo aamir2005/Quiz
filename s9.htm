@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workplace Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 10px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .match {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .input-box {
+            width: 150px;
+        }
+        .submit-btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Workplace Safety and Skills Quiz</h1>
+
+<!-- Teamwork vs No Teamwork -->
+<div class="section">
+    <h2>Teamwork vs. No Teamwork</h2>
+    <form id="quiz-form">
+        <div class="question">
+            <label>A worker trying to lift a heavy load alone</label><br>
+            <input type="radio" name="teamwork1" value="teamwork"> Teamwork
+            <input type="radio" name="teamwork1" value="no_teamwork"> No Teamwork
+        </div>
+        <div class="question">
+            <label>A signalman giving hand signals to a crane operator</label><br>
+            <input type="radio" name="teamwork2" value="teamwork"> Teamwork
+            <input type="radio" name="teamwork2" value="no_teamwork"> No Teamwork
+        </div>
+        <div class="question">
+            <label>Five workers responding to instructions from their supervisor</label><br>
+            <input type="radio" name="teamwork3" value="teamwork"> Teamwork
+            <input type="radio" name="teamwork3" value="no_teamwork"> No Teamwork
+        </div>
+        <div class="question">
+            <label>A trainee playing games on a mobile phone while the trainer is teaching</label><br>
+            <input type="radio" name="teamwork4" value="teamwork"> Teamwork
+            <input type="radio" name="teamwork4" value="no_teamwork"> No Teamwork
+        </div>
+        <div class="question">
+            <label>A plumber, a glazier, a roofer, and a painter working on a building</label><br>
+            <input type="radio" name="teamwork5" value="teamwork"> Teamwork
+            <input type="radio" name="teamwork5" value="no_teamwork"> No Teamwork
+        </div>
+    </form>
+</div>
+
+<!-- True or False Questions -->
+<div class="section">
+    <h2>True or False</h2>
+    <form>
+        <div class="question">
+            <label>A foreman works under a construction worker.</label>
+            <input type="radio" name="truefalse1" value="true"> T
+            <input type="radio" name="truefalse1" value="false"> F
+        </div>
+        <div class="question">
+            <label>The manager gives instructions to the worker.</label>
+            <input type="radio" name="truefalse2" value="true"> T
+            <input type="radio" name="truefalse2" value="false"> F
+        </div>
+        <div class="question">
+            <label>A worker should not care for the team.</label>
+            <input type="radio" name="truefalse3" value="true"> T
+            <input type="radio" name="truefalse3" value="false"> F
+        </div>
+        <div class="question">
+            <label>The worker tells the foreman to clean the site.</label>
+            <input type="radio" name="truefalse4" value="true"> T
+            <input type="radio" name="truefalse4" value="false"> F
+        </div>
+    </form>
+</div>
+
+<!-- Choose the Correct Answer -->
+<div class="section">
+    <h2>Choose the Correct Answer</h2>
+    <form>
+        <div class="question">
+            <label>A welder works with .........., copper, and other metals.</label><br>
+            <input type="radio" name="welder1" value="wood"> a) wood
+            <input type="radio" name="welder1" value="plastic"> b) plastic
+            <input type="radio" name="welder1" value="steel"> c) steel
+        </div>
+        <div class="question">
+            <label>A welder should study..........before working.</label><br>
+            <input type="radio" name="welder2" value="books"> a) books
+            <input type="radio" name="welder2" value="blueprints"> b) blueprints
+            <input type="radio" name="welder2" value="maps"> c) maps
+        </div>
+        <div class="question">
+            <label>High temperature is ........... for a welder.</label><br>
+            <input type="radio" name="welder3" value="dangerous"> a) dangerous
+            <input type="radio" name="welder3" value="safe"> b) safe
+            <input type="radio" name="welder3" value="nice"> c) nice
+        </div>
+        <div class="question">
+            <label>Buildings and bridges need ........ .</label><br>
+            <input type="radio" name="welder4" value="pipelines"> a) pipelines
+            <input type="radio" name="welder4" value="beams"> b) beams
+            <input type="radio" name="welder4" value="power_plants"> c) power plants
+        </div>
+    </form>
+</div>
+
+<!-- Match Jobs with Tasks -->
+<div class="section">
+    <h2>Match Jobs with Tasks</h2>
+    <form>
+        <div class="match">
+            <label>1. A trainer</label>
+            <select name="trainer">
+                <option value="a">a) paints</option>
+                <option value="d">d) trains people and teaches job skills</option>
+            </select>
+        </div>
+        <div class="match">
+            <label>2. A signalman</label>
+            <select name="signalman">
+                <option value="e">e) gives hand signals to crane operator</option>
+                <option value="c">c) operates a crane</option>
+            </select>
+        </div>
+        <div class="match">
+            <label>3. A painter</label>
+            <select name="painter">
+                <option value="a">a) paints</option>
+                <option value="b">b) drives a vehicle</option>
+            </select>
+        </div>
+        <div class="match">
+            <label>4. A trainee</label>
+            <select name="trainee">
+                <option value="f">f) gets training for a job</option>
+                <option value="d">d) trains people and teaches job skills</option>
+            </select>
+        </div>
+        <div class="match">
+            <label>5. A crane operator</label>
+            <select name="crane_operator">
+                <option value="c">c) operates a crane</option>
+                <option value="e">e) gives hand signals to crane operator</option>
+            </select>
+        </div>
+        <div class="match">
+            <label>6. A driver</label>
+            <select name="driver">
+                <option value="b">b) drives a vehicle</option>
+                <option value="f">f) gets training for a job</option>
+            </select>
+        </div>
+    </form>
+</div>
+
+<!-- Separate the Verbs -->
+<div class="section">
+    <h2>Separate the Verbs</h2>
+    <form>
+        <div class="question">
+            <label>Turn off the engine.</label><br>
+            Verb: <input type="text" class="input-box" name="verb1">
+        </div>
+        <div class="question">
+            <label>Plug in the cables.</label><br>
+            Verb: <input type="text" class="input-box" name="verb2">
+        </div>
+        <div class="question">
+            <label>Lift up the load.</label><br>
+            Verb: <input type="text" class="input-box" name="verb3">
+        </div>
+        <div class="question">
+            <label>Shut down your computer.</label><br>
+            Verb: <input type="text" class="input-box" name="verb4">
+        </div>
+        <div class="question">
+            <label>Pick up the screwdriver.</label><br>
+            Verb: <input type="text" class="input-box" name="verb5">
+        </div>
+        <div class="question">
+            <label>Don’t take off your safety glasses.</label><br>
+            Verb: <input type="text" class="input-box" name="verb6">
+        </div>
+    </form>
+</div>
+
+<button class="submit-btn" onclick="scoreQuiz()">Submit Quiz</button>
+
+<p id="score"></p>
+
+<script>
+    function scoreQuiz() {
+        let score = 0;
+        let totalQuestions = 0;
+
+        // Teamwork vs No Teamwork
+        const teamworkAnswers = {
+            teamwork1: "no_teamwork",
+            teamwork2: "teamwork",
+            teamwork3: "teamwork",
+            teamwork4: "no_teamwork",
+            teamwork5: "teamwork"
+        };
+
+        for (let question in teamworkAnswers) {
+            const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
+            if (selectedAnswer && selectedAnswer.value === teamworkAnswers[question]) {
+                score++;
+            }
+            totalQuestions++;
+        }
+
+        // True or False
+        const trueFalseAnswers = {
+            truefalse1: "false",
+            truefalse2: "true",
+            truefalse3: "false",
+            truefalse4: "false"
+        };
+
+        for (let question in trueFalseAnswers) {
+            const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
+            if (selectedAnswer && selectedAnswer.value === trueFalseAnswers[question]) {
+                score++;
+            }
+            totalQuestions++;
+        }
+
+        // Choose the Correct Answer
+        const correctAnswers = {
+            welder1: "steel",
+            welder2: "blueprints",
+            welder3: "dangerous",
+            welder4: "beams"
+        };
+
+        for (let question in correctAnswers) {
+            const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
+            if (selectedAnswer && selectedAnswer.value === correctAnswers[question]) {
+                score++;
+            }
+            totalQuestions++;
+        }
+
+        // Match Jobs with Tasks
+        const matchAnswers = {
+            trainer: "d",
+            signalman: "e",
+            painter: "a",
+            trainee: "f",
+            crane_operator: "c",
+            driver: "b"
+        };
+
+        for (let question in matchAnswers) {
+            const selectedAnswer = document.querySelector(`select[name="${question}"]`).value;
+            if (selectedAnswer === matchAnswers[question]) {
+                score++;
+            }
+            totalQuestions++;
+        }
+
+        // Separate the Verbs
+        const verbAnswers = {
+            verb1: "Turn off",
+            verb2: "Plug in",
+            verb3: "Lift up",
+            verb4: "Shut down",
+            verb5: "Pick up",
+            verb6: "Take off"
+        };
+
+        for (let question in verbAnswers) {
+            const userAnswer = document.querySelector(`input[name="${question}"]`).value.trim();
+            if (userAnswer.toLowerCase() === verbAnswers[question].toLowerCase()) {
+                score++;
+            }
+            totalQuestions++;
+        }
+
+        // Display score
+        document.getElementById("score").innerHTML = `Your score is ${score} out of ${totalQuestions}.`;
+    }
+</script>
+
+</body>
+</html>
