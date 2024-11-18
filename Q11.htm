@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary and Job Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        .answer-input {
+            padding: 5px;
+        }
+
+        .match {
+            margin-left: 20px;
+        }
+
+        .submit-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            display: none;
+        }
+
+        #incorrectAnswers {
+            color: red;
+        }
+
+        #correctAnswers {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Vocabulary and Job Quiz</h1>
+    
+    <form id="quizForm">
+        <!-- Vocabulary Matching -->
+        <h2>Match terms with their definitions:</h2>
+        <div class="question">
+            <label for="q1">1. Material</label><br>
+            <select id="q1">
+                <option value="a">a piece of rock of any shape</option>
+                <option value="b">a liquid that you put on a surface...</option>
+                <option value="c">a material used for building...</option>
+                <option value="d">a substance, e.g., wood, glass...</option>
+                <option value="e">the material that trees are made of...</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label for="q2">2. Glass</label><br>
+            <select id="q2">
+                <option value="a">a piece of rock of any shape</option>
+                <option value="b">a liquid that you put on a surface...</option>
+                <option value="c">a material used for building...</option>
+                <option value="f">a transparent solid material...</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label for="q3">3. Wood</label><br>
+            <select id="q3">
+                <option value="a">a piece of rock of any shape</option>
+                <option value="e">the material that trees are made of...</option>
+                <option value="g">a hard, shiny material...</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label for="q4">4. Brick</label><br>
+            <select id="q4">
+                <option value="h">a hard block of baked clay...</option>
+                <option value="e">the material that trees are made of...</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label for="q5">5. Paint</label><br>
+            <select id="q5">
+                <option value="b">a liquid that you put on a surface...</option>
+                <option value="f">a transparent solid material...</option>
+            </select>
+        </div>
+
+        <!-- Activity 4: Match phrases -->
+        <h2>Activity 4: Match phrases:</h2>
+        <div class="question">
+            <label>1. Mohamed is applying for the job of a …</label><br>
+            <select id="q6">
+                <option value="a">welder</option>
+                <option value="b">instrumentation specialist</option>
+                <option value="c">Safety Officer</option>
+                <option value="d">pipe fitter</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label>2. According to the CV, how many years of experience does Mohamed have as a safety officer?</label><br>
+            <select id="q7">
+                <option value="a">1 year</option>
+                <option value="b">2 years</option>
+                <option value="c">3 years</option>
+                <option value="d">4 years</option>
+            </select>
+        </div>
+
+        <!-- Other questions go here as per the original list... -->
+
+        <!-- Submit Button -->
+        <button type="button" class="submit-button" onclick="submitQuiz()">Submit</button>
+
+    </form>
+
+    <!-- Result Section -->
+    <div class="result" id="resultSection">
+        <h2>Your Score: <span id="score"></span></h2>
+        <h3>Incorrect Answers (with Corrections):</h3>
+        <ul id="incorrectAnswers"></ul>
+    </div>
+
+    <script>
+        const answerKey = {
+            A: {
+                1: 'd', 2: 'f', 3: 'e', 4: 'h', 5: 'b'
+            },
+            Activity4: {
+                6: 'c', 7: 'c'
+            },
+            // Add other sections...
+        };
+
+        function submitQuiz() {
+            let score = 0;
+            let incorrectAnswers = [];
+            let totalQuestions = 7; // Update total question count for sections
+
+            // Section A: Matching Terms
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`q${i}`).value;
+                if (answer === answerKey.A[i]) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(`Q${i}: Correct answer is "${answerKey.A[i]}"`);
+                }
+            }
+
+            // Section Activity 4: Matching Phrases
+            for (let i = 6; i <= 7; i++) {
+                const answer = document.getElementById(`q${i}`).value;
+                if (answer === answerKey.Activity4[i]) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(`Q${i}: Correct answer is "${answerKey.Activity4[i]}"`);
+                }
+            }
+
+            // Show result
+            document.getElementById('score').textContent = `${score} / ${totalQuestions}`;
+            const incorrectList = document.getElementById('incorrectAnswers');
+            incorrectList.innerHTML = '';
+            incorrectAnswers.forEach(answer => {
+                const listItem = document.createElement('li');
+                listItem.textContent = answer;
+                incorrectList.appendChild(listItem);
+            });
+
+            document.getElementById('resultSection').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
