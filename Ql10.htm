@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary and Polite Requests Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #2C3E50;
+        }
+        .question {
+            margin: 10px 0;
+        }
+        .answer-input {
+            width: 50%;
+        }
+        .match input {
+            margin: 5px;
+        }
+        .submit-button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 20px;
+            display: none;
+        }
+        .result ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Vocabulary and Polite Requests Quiz</h1>
+
+    <form id="quizForm">
+
+        <!-- Section A: Match Words -->
+        <h2>A. Match words from 1 to 5 with the meaning from a to e.</h2>
+        <div class="question">
+            <p>1. Broken</p>
+            <div class="match">
+                <label><input type="radio" name="q1" value="c"> c) no longer in one piece or functioning</label><br>
+                <label><input type="radio" name="q1" value="d"> d) break without a separation of the parts</label><br>
+                <label><input type="radio" name="q1" value="b"> b) A slight hollow on a hard surface</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. Corroded</p>
+            <div class="match">
+                <label><input type="radio" name="q2" value="e"> e) destroy or damage slowly by chemical action</label><br>
+                <label><input type="radio" name="q2" value="a"> a) on fire</label><br>
+                <label><input type="radio" name="q2" value="d"> d) break without a separation of the parts</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. Cracked</p>
+            <div class="match">
+                <label><input type="radio" name="q3" value="c"> c) no longer in one piece or functioning</label><br>
+                <label><input type="radio" name="q3" value="d"> d) break without a separation of the parts</label><br>
+                <label><input type="radio" name="q3" value="b"> b) A slight hollow on a hard surface</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. Dented</p>
+            <div class="match">
+                <label><input type="radio" name="q4" value="b"> b) A slight hollow on a hard surface</label><br>
+                <label><input type="radio" name="q4" value="c"> c) no longer in one piece or functioning</label><br>
+                <label><input type="radio" name="q4" value="a"> a) on fire</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. Burned</p>
+            <div class="match">
+                <label><input type="radio" name="q5" value="a"> a) on fire</label><br>
+                <label><input type="radio" name="q5" value="e"> e) destroy or damage slowly by chemical action</label><br>
+                <label><input type="radio" name="q5" value="b"> b) A slight hollow on a hard surface</label><br>
+            </div>
+        </div>
+
+        <!-- Section B: Polite Requests -->
+        <h2>B. How would you say in polite request? Use "can," "could," "possibly," "will," "would," "would you mind."</h2>
+        <div class="question">
+            <p>6. You want to make a private phone call.</p>
+            <input type="text" id="q6" class="answer-input"><br>
+        </div>
+
+        <div class="question">
+            <p>7. You’re feeling very hot.</p>
+            <input type="text" id="q7" class="answer-input"><br>
+        </div>
+
+        <div class="question">
+            <p>8. You are feeling unwell. Maybe you should go home.</p>
+            <input type="text" id="q8" class="answer-input"><br>
+        </div>
+
+        <div class="question">
+            <p>9. You want to use your colleague’s computer. Ask for permission.</p>
+            <input type="text" id="q9" class="answer-input"><br>
+        </div>
+
+        <div class="question">
+            <p>10. You’re in need of a hammer. Your partner has one.</p>
+            <input type="text" id="q10" class="answer-input"><br>
+        </div>
+
+        <div class="question">
+            <p>11. You’ve lost your overall. You need one for work.</p>
+            <input type="text" id="q11" class="answer-input"><br>
+        </div>
+
+        <!-- Section C: Multiple Choice Quiz -->
+        <h2>C. Multiple-Choice Quiz:</h2>
+        <div class="question">
+            <p>12. What should you do when a customer has a problem?</p>
+            <label><input type="radio" name="q12" value="b"> b) Listen and offer attention</label><br>
+            <label><input type="radio" name="q12" value="a"> a) Argue with them</label><br>
+            <label><input type="radio" name="q12" value="c"> c) Ignore their concerns</label><br>
+        </div>
+
+        <div class="question">
+            <p>13. What is the best way to handle a complaint?</p>
+            <label><input type="radio" name="q13" value="b"> b) Handle the complaint yourself with authority</label><br>
+            <label><input type="radio" name="q13" value="a"> a) Pass the customer to another staff member</label><br>
+            <label><input type="radio" name="q13" value="c"> c) Get the manager to deal with the problem</label><br>
+        </div>
+
+        <div class="question">
+            <p>14. What should you do when you feel angry or frustrated with a customer?</p>
+            <label><input type="radio" name="q14" value="a"> a) Stay calm</label><br>
+            <label><input type="radio" name="q14" value="b"> b) Argue back</label><br>
+            <label><input type="radio" name="q14" value="c"> c) Ignore the customer</label><br>
+        </div>
+
+        <div class="question">
+            <p>15. What can sometimes help calm an angry customer?</p>
+            <label><input type="radio" name="q15" value="b"> b) An apology</label><br>
+            <label><input type="radio" name="q15" value="a"> a) A refund</label><br>
+            <label><input type="radio" name="q15" value="c"> c) A voucher</label><br>
+        </div>
+
+        <div class="question">
+            <p>16. Why is it important to ask the customer for their desired outcome?</p>
+            <label><input type="radio" name="q16" value="a"> a) To make them feel involved and valued</label><br>
+            <label><input type="radio" name="q16" value="b"> b) To delay the resolution</label><br>
+            <label><input type="radio" name="q16" value="c"> c) To avoid compensating them</label><br>
+        </div>
+
+        <!-- Section D: How much / How many -->
+        <h2>D. Choose "How much" or "How many":</h2>
+        <div class="question">
+            <p>17. ______ paint do you need?</p>
+            <input type="text" id="q17" class="answer-input"><br>
+        </div>
+
+        <div class="question">
+            <p>18. ______ spanners are there?</p>
+            <input type="text" id="q18" class="answer-input"><br>
+        </div>
+
+        <div class="question">
+            <p>19. ______ information do you have about Welding?</p>
+            <input type="<div class="question">
+            <p>19. ______ information do you have about Welding?</p>
+            <input type="text" id="q19" class="answer-input"><br>
+        </div>
+
+        <div class="question">
+            <p>20. ______ e-mails do you receive every day?</p>
+            <input type="text" id="q20" class="answer-input"><br>
+        </div>
+
+        <div class="question">
+            <p>21. ______ trainees do we have here?</p>
+            <input type="text" id="q21" class="answer-input"><br>
+        </div>
+
+        <!-- Section E: Match the items with their containers -->
+        <h2>E. Match the items with their containers:</h2>
+        <div class="question">
+            <p>22. A can of</p>
+            <div class="match">
+                <label><input type="radio" name="q22" value="c"> c) paint</label><br>
+                <label><input type="radio" name="q22" value="f"> f) water</label><br>
+                <label><input type="radio" name="q22" value="a"> a) sand</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>23. A bag of</p>
+            <div class="match">
+                <label><input type="radio" name="q23" value="b"> b) tea</label><br>
+                <label><input type="radio" name="q23" value="d"> d) pie</label><br>
+                <label><input type="radio" name="q23" value="f"> f) water</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>24. A glass of</p>
+            <div class="match">
+                <label><input type="radio" name="q24" value="f"> f) water</label><br>
+                <label><input type="radio" name="q24" value="c"> c) paint</label><br>
+                <label><input type="radio" name="q24" value="e"> e) soup</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>25. A cup of</p>
+            <div class="match">
+                <label><input type="radio" name="q25" value="b"> b) tea</label><br>
+                <label><input type="radio" name="q25" value="d"> d) pie</label><br>
+                <label><input type="radio" name="q25" value="e"> e) soup</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>26. A piece of</p>
+            <div class="match">
+                <label><input type="radio" name="q26" value="d"> d) pie</label><br>
+                <label><input type="radio" name="q26" value="e"> e) soup</label><br>
+                <label><input type="radio" name="q26" value="b"> b) tea</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>27. A bowl of</p>
+            <div class="match">
+                <label><input type="radio" name="q27" value="e"> e) soup</label><br>
+                <label><input type="radio" name="q27" value="f"> f) water</label><br>
+                <label><input type="radio" name="q27" value="b"> b) tea</label><br>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="button" class="submit-button" onclick="submitQuiz()">Submit</button>
+
+    </form>
+
+    <!-- Result Section -->
+    <div class="result" id="resultSection">
+        <h2>Your Score: <span id="score"></span></h2>
+        <h3>Incorrect Answers (with Corrections):</h3>
+        <ul id="incorrectAnswers"></ul>
+    </div>
+
+    <script>
+        const answerKey = {
+            A: {
+                1: 'c', 2: 'e', 3: 'd', 4: 'b', 5: 'a'
+            },
+            B: {
+                6: 'Could I make a private phone call, please?',
+                7: 'Would you mind if I turn on the air conditioning?',
+                8: 'You seem unwell. Would you like to go home?',
+                9: 'Would you mind if I use your computer for a moment?',
+                10: 'Could I borrow your hammer, please?',
+                11: 'I’ve lost my overall. Could I borrow one for work?'
+            },
+            C: {
+                12: 'b', 13: 'b', 14: 'a', 15: 'b', 16: 'a'
+            },
+            D: {
+                17: 'How much', 18: 'How many', 19: 'How much', 20: 'How many', 21: 'How many'
+            },
+            E: {
+                22: 'c', 23: 'b', 24: 'f', 25: 'b', 26: 'd', 27: 'e'
+            }
+        };
+
+        function submitQuiz() {
+            let score = 0;
+            let incorrectAnswers = [];
+            let totalQuestions = 27;
+            
+            // Section A
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (answer && answer.value === answerKey.A[i]) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(`Q${i}: Correct answer is "${answerKey.A[i]}"`);
+                }
+            }
+
+            // Section B
+            for (let i = 6; i <= 11; i++) {
+                const answer = document.getElementById(`q${i}`).value.trim();
+                if (answer.toLowerCase() === answerKey.B[i].toLowerCase()) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(`Q${i}: Correct answer is "${answerKey.B[i]}"`);
+                }
+            }
+
+            // Section C
+            for (let i = 12; i <= 16; i++) {
+                const answer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (answer && answer.value === answerKey.C[i]) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(`Q${i}: Correct answer is "${answerKey.C[i]}"`);
+                }
+            }
+
+            // Section D
+            for (let i = 17; i <= 21; i++) {
+                const answer = document.getElementById(`q${i}`).value.trim();
+                if (answer.toLowerCase() === answerKey.D[i].toLowerCase()) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(`Q${i}: Correct answer is "${answerKey.D[i]}"`);
+                }
+            }
+
+            // Section E
+            for (let i = 22; i <= 27; i++) {
+                const answer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (answer && answer.value === answerKey.E[i]) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(`Q${i}: Correct answer is "${answerKey.E[i]}"`);
+                }
+            }
+
+            // Show result
+            document.getElementById('score').textContent = `${score} / ${totalQuestions}`;
+            const incorrectList = document.getElementById('incorrectAnswers');
+            incorrectList.innerHTML = '';
+            incorrectAnswers.forEach(answer => {
+                const listItem = document.createElement('li');
+                listItem.textContent = answer;
+                incorrectList.appendChild(listItem);
+            });
+
+            document.getElementById('resultSection').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
