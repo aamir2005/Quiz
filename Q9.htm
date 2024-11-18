@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Safety Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .quiz-container {
+            width: 60%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+            margin: 8px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        #score {
+            font-size: 1.2em;
+            margin-top: 20px;
+            text-align: center;
+        }
+        #question-container {
+            display: block;
+        }
+        .repeat-btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container" id="quizContainer">
+    <h1>Construction Safety Quiz</h1>
+    <div id="question-container">
+        <div id="question"></div>
+        <div class="options" id="options"></div>
+        <button class="btn" onclick="nextQuestion()">Next</button>
+    </div>
+    <div id="score"></div>
+    <div class="repeat-btn" id="repeatBtn" style="display:none;">
+        <button class="btn" onclick="restartQuiz()">Repeat Quiz</button>
+    </div>
+</div>
+
+<script>
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let wrongAnswers = [];
+    const questions = [
+        {
+            question: "Tick the appropriate box at the end of each sentence. Write Teamwork or No Teamwork:",
+            type: "checkbox",
+            options: [
+                { text: "A worker trying to lift heavy load Alone", correct: "No Teamwork" },
+                { text: "A signalman giving hand signals to a crane operator", correct: "Teamwork" },
+                { text: "Five workers responding to instructions from their supervisor", correct: "Teamwork" },
+                { text: "A trainee playing games on mobile phone while the trainer is teaching", correct: "No Teamwork" },
+                { text: "A plumber, a glazier, a roofer and a painter working on a building", correct: "Teamwork" }
+            ],
+            correctAnswer: ["No Teamwork", "Teamwork", "Teamwork", "No Teamwork", "Teamwork"]
+        },
+        {
+            question: "Tick True or False:",
+            type: "truefalse",
+            options: [
+                { text: "A foreman works under a construction worker", correct: "False" },
+                { text: "The manager gives instructions to the worker", correct: "True" },
+                { text: "A worker should not care for the team.", correct: "False" },
+                { text: "The worker tells the Foreman to clean the site", correct: "False" }
+            ],
+            correctAnswer: ["False", "True", "False", "False"]
+        },
+        {
+            question: "Choose the correct answer:",
+            type: "mcq",
+            options: [
+                { text: "A welder works with .........., copper and other metals.", choices: ["wood", "plastic", "steel"], correct: "steel" },
+                { text: "A welder should study..........before working.", choices: ["books", "blueprints", "maps"], correct: "blueprints" },
+                { text: "High temperature is ........... for a welder.", choices: ["dangerous", "safe", "nice"], correct: "dangerous" },
+                { text: "Buildings and bridges need ........ .", choices: ["pipelines", "beams", "power plants"], correct: "beams" }
+            ],
+            correctAnswer: ["steel", "blueprints", "dangerous", "beams"]
+        },
+        {
+            question: "Match jobs with tasks:",
+            type: "mcq",
+            options: [
+                { text: "A trainer", choices: ["paints", "drives a vehicle", "trains people and teaches job skills"], correct: "trains people and teaches job skills" },
+                { text: "A signalman", choices: ["paints", "gives hand signals to crane operator", "drives a vehicle"], correct: "gives hand signals to crane operator" },
+                { text: "A painter", choices: ["paints", "operates a crane", "drives a vehicle"], correct: "paints" },
+                { text: "A trainee", choices: ["gets training for a job", "drives a vehicle", "paints"], correct: "gets training for a job" },
+                { text: "A crane operator", choices: ["paints", "operates a crane", "drives a vehicle"], correct: "operates a crane" },
+                { text: "A driver", choices: ["paints", "operates a crane", "drives a vehicle"], correct: "drives a vehicle" }
+            ],
+            correctAnswer: ["trains people and teaches job skills", "gives hand signals to crane operator", "paints", "gets training for a job", "operates a crane", "drives a vehicle"]
+        },
+        {
+            question: "Fill in the blanks with the correct word: Risk, Samy, inspect, safe, safety inspector, cause, reports.",
+            type: "fillblanks",
+            options: [
+                { text: "My name is _________. I am a _________. My job is to develop OHS policies.", blanks: ["Samy", "safety inspector"], correct: ["Samy", "safety inspector"] },
+                { text: "I do ________ assessment before a task. I ________ buildings and equipment to make sure they are ________.", blanks: ["risk", "inspect", "safe"], correct: ["risk", "inspect", "safe"] },
+                { text: "I prepare ________ on accidents, and investigate them to know the ________.", blanks: ["reports", "cause"], correct: ["reports", "cause"] }
+            ],
+            correctAnswer: [["Samy", "safety inspector"], ["risk", "inspect", "safe"], ["reports", "cause"]]
+        },
+        {
+            question: "Separate the verbs:",
+            type: "fillblanks",
+            options: [
+                { text: "Turn off the engine", correct: "Turn off" },
+                { text: "Plug in the cables", correct: "Plug in" },
+                { text: "Lift up the load", correct: "Lift up" },
+                { text: "Shut down your computer", correct: "Shut down" },
+                { text: "Pick up the screwdriver", correct: "Pick up" },
+                { text: "Don’t take off your safety glasses", correct: "Take off" }
+            ],
+            correctAnswer: ["Turn off", "Plug in", "Lift up", "Shut down", "Pick up", "Take off"]
+        }
+    ];
+
+    function loadQuestion() {
+        if (currentQuestionIndex < questions.length) {
+            const question = questions[currentQuestionIndex];
+            document.getElementById("question").textContent = question.question;
+            let optionsHtml = '';
+
+            question.options.forEach((opt, idx) => {
+                if (opt.choices) {
+                    optionsHtml += `<label>${opt.text}</label><br>`;
+                    opt.choices.forEach(choice => {
+                        optionsHtml += `<input type="radio" name="q${currentQuestionIndex}" value="${choice}"> ${choice}<br>`;
+                    });
+                } else {
+                    optionsHtml += `<label>${opt.text}</label><br><input type="text" name="q${currentQuestionIndex}" value=""><br>`;
+                }
+            });
+
+            document.getElementById("options").innerHTML = optionsHtml;
+        } else {
+            showScore();
+        }
+    }
+
+    function nextQuestion() {
+        const answers = getSelectedAnswers();
+        const question = questions[currentQuestionIndex];
+
+        if (JSON.stringify(answers) === JSON.stringify(question.correctAnswer)) {
+            score++;
+        } else {
+            wrongAnswers.push({ question: question.question, answers: answers });
+        }
+
+        currentQuestionIndex++;
+        loadQuestion();
+    }
+
+    function getSelectedAnswers() {
+        const question = questions[currentQuestionIndex];
+        let answers = [];
+        const options = document.getElementsByName(`q${currentQuestionIndex}`);
+        if (question.type === "checkbox") {
+            options.forEach(opt => {
+                if (opt.checked) {
+                    answers.push(opt.value);
+                }
+            });
+        } else if (question.type === "mcq") {
+            options.forEach(opt => {
+                if (opt.checked) {
+                    answers.push(opt.value);
+                }
+            });
+        } else {
+            options.forEach(opt => {
+                answers.push(opt.value);
+            });
+        }
+        return answers;
+    }
+
+    function showScore() {
+        let resultHtml = `Your score is ${score} out of ${questions.length}.<br><br>`;
+
+        if (wrongAnswers.length > 0) {
+            resultHtml += '<strong>Incorrect Answers:</strong><br>';
+            wrongAnswers.forEach(wrong => {
+                resultHtml += `${wrong.question} - Your Answer: ${wrong.answers.join(', ')}<br>`;
+            });
+        }
+
+        document.getElementById("score").innerHTML = resultHtml;
+        document.getElementById("repeatBtn").style.display = "block";
+    }
+
+    function restartQuiz() {
+        currentQuestionIndex = 0;
+        score = 0;
+        wrongAnswers = [];
+        document.getElementById("repeatBtn").style.display = "none";
+        document.getElementById("score").textContent = '';
+        loadQuestion();
+    }
+
+    loadQuestion();
+</script>
+
+</body>
+</html>
