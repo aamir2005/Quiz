@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teamwork Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        label {
+            margin-right: 10px;
+        }
+        .result {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Teamwork Quiz</h1>
+    <form id="quizForm">
+        <div class="question">
+            <label for="q1">1. A worker trying to lift a heavy load alone</label>
+            <input type="checkbox" name="q1" value="Teamwork"> Teamwork
+            <input type="checkbox" name="q1" value="NoTeamwork"> No Teamwork
+        </div>
+
+        <div class="question">
+            <label for="q2">2. A signalman giving hand signals to a crane operator</label>
+            <input type="checkbox" name="q2" value="Teamwork"> Teamwork
+            <input type="checkbox" name="q2" value="NoTeamwork"> No Teamwork
+        </div>
+
+        <div class="question">
+            <label for="q3">3. Five workers responding to instructions from their supervisor</label>
+            <input type="checkbox" name="q3" value="Teamwork"> Teamwork
+            <input type="checkbox" name="q3" value="NoTeamwork"> No Teamwork
+        </div>
+
+        <div class="question">
+            <label for="q4">4. A trainee playing games on a mobile phone while the trainer is teaching</label>
+            <input type="checkbox" name="q4" value="Teamwork"> Teamwork
+            <input type="checkbox" name="q4" value="NoTeamwork"> No Teamwork
+        </div>
+
+        <div class="question">
+            <label for="q5">5. A plumber, a glazier, a roofer, and a painter working on a building</label>
+            <input type="checkbox" name="q5" value="Teamwork"> Teamwork
+            <input type="checkbox" name="q5" value="NoTeamwork"> No Teamwork
+        </div>
+
+        <br>
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function checkAnswers() {
+            let resultText = "Results: <br>";
+            const answers = {
+                q1: "No Teamwork",
+                q2: "Teamwork",
+                q3: "Teamwork",
+                q4: "No Teamwork",
+                q5: "Teamwork"
+            };
+
+            const formElements = document.querySelectorAll('input[type="checkbox"]');
+            let correctCount = 0;
+
+            formElements.forEach((checkbox) => {
+                if (checkbox.checked) {
+                    const question = checkbox.name;
+                    const value = checkbox.value;
+                    if (answers[question] === value) {
+                        correctCount++;
+                    }
+                }
+            });
+
+            resultText += "You got " + correctCount + " out of 5 correct.";
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+
+</body>
+</html>
+# Define the quiz questions and answers
+quiz = [
+    ("A foreman works under a construction worker", "F"),
+    ("The manager gives instructions to the worker", "T"),
+    ("A worker should not care for the team.", "F"),
+    ("The worker tells the Foreman to clean the site", "F")
+]
+
+# Function to run the quiz
+def run_quiz(quiz):
+    score = 0
+    print("Answer the following questions with T (True) or F (False):\n")
+    
+    for index, (question, correct_answer) in enumerate(quiz, 1):
+        print(f"{index}. {question}")
+        user_answer = input("T or F: ").strip().upper()
+        
+        if user_answer == correct_answer:
+            score += 1
+            print("Correct!\n")
+        else:
+            print(f"Incorrect! The correct answer is: {correct_answer}\n")
+    
+    print(f"Your score: {score}/{len(quiz)}")
+
+# Run the quiz
+run_quiz(quiz)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welder Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .answer {
+            margin-left: 20px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #result {
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welder Knowledge Quiz</h1>
+
+    <div class="question">
+        <p>1- A welder works with .........., copper and other metals.</p>
+        <div class="answer">
+            <input type="radio" name="q1" value="a"> a- wood
+        </div>
+        <div class="answer">
+            <input type="radio" name="q1" value="b"> b- plastic
+        </div>
+        <div class="answer">
+            <input type="radio" name="q1" value="c"> c- steel
+        </div>
+    </div>
+
+    <div class="question">
+        <p>2- A welder should study..........before working.</p>
+        <div class="answer">
+            <input type="radio" name="q2" value="a"> a- books
+        </div>
+        <div class="answer">
+            <input type="radio" name="q2" value="b"> b- blueprints
+        </div>
+        <div class="answer">
+            <input type="radio" name="q2" value="c"> c- maps
+        </div>
+    </div>
+
+    <div class="question">
+        <p>3- High temperature is ........... for a welder.</p>
+        <div class="answer">
+            <input type="radio" name="q3" value="a"> a- dangerous
+        </div>
+        <div class="answer">
+            <input type="radio" name="q3" value="b"> b- safe
+        </div>
+        <div class="answer">
+            <input type="radio" name="q3" value="c"> c- nice
+        </div>
+    </div>
+
+    <div class="question">
+        <p>4- Buildings and bridges need ........ .</p>
+        <div class="answer">
+            <input type="radio" name="q4" value="a"> a- pipelines
+        </div>
+        <div class="answer">
+            <input type="radio" name="q4" value="b"> b- beams
+        </div>
+        <div class="answer">
+            <input type="radio" name="q4" value="c"> c- power plants
+        </div>
+    </div>
+
+    <button onclick="checkAnswers()">Submit</button>
+
+    <div id="result"></div>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+
+            // Question 1
+            if (document.querySelector('input[name="q1"]:checked')?.value === 'c') {
+                score++;
+            }
+
+            // Question 2
+            if (document.querySelector('input[name="q2"]:checked')?.value === 'b') {
+                score++;
+            }
+
+            // Question 3
+            if (document.querySelector('input[name="q3"]:checked')?.value === 'a') {
+                score++;
+            }
+
+            // Question 4
+            if (document.querySelector('input[name="q4"]:checked')?.value === 'b') {
+                score++;
+            }
+
+            // Display the result
+            document.getElementById("result").textContent = "You scored " + score + " out of 4.";
+        }
+    </script>
+
+</body>
+</html>
+# Define the job-task pairs
+jobs = {
+    1: "A trainer",
+    2: "A signalman",
+    3: "A painter",
+    4: "A trainee",
+    5: "A crane operator",
+    6: "A driver"
+}
+
+tasks = {
+    'a': "paints",
+    'b': "drives a vehicle",
+    'c': "operates a crane",
+    'd': "trains people and teaches job skills",
+    'e': "gives hand signals to crane operator",
+    'f': "gets training for a job"
+}
+
+# Display instructions
+print("Match the jobs with the tasks. Enter the number corresponding to the job and the letter corresponding to the task.\n")
+
+# Initialize an empty dictionary to store user answers
+user_answers = {}
+
+# Ask the user to match jobs with tasks
+for job_num, job in jobs.items():
+    print(f"{job_num}. {job}")
+    task = input(f"Choose the correct task for '{job}': ").lower().strip()
+    
+    # Validate the user's input
+    while task not in tasks:
+        print("Invalid choice. Please enter a letter from 'a' to 'f'.")
+        task = input(f"Choose the correct task for '{job}': ").lower().strip()
+    
+    user_answers[job_num] = task
+
+# Display the correct answers
+print("\nCorrect answers:")
+correct_answers = {
+    1: 'd',  # A trainer -> trains people and teaches job skills
+    2: 'e',  # A signalman -> gives hand signals to crane operator
+    3: 'a',  # A painter -> paints
+    4: 'f',  # A trainee -> gets training for a job
+    5: 'c',  # A crane operator -> operates a crane
+    6: 'b'   # A driver -> drives a vehicle
+}
+
+# Calculate the score and provide feedback
+score = 0
+for job_num, correct_task in correct_answers.items():
+    if user_answers[job_num] == correct_task:
+        score += 1
+
+# Display the results
+print("\nYour Results:")
+for job_num, task in user_answers.items():
+    job = jobs[job_num]
+    task_desc = tasks[task]
+    print(f"{job} -> {task_desc}")
+    
+print(f"\nYou matched {score}/{len(jobs)} jobs correctly!")
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verb Separation Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        .question {
+            margin: 10px 0;
+        }
+        input[type="text"] {
+            width: 200px;
+            padding: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verb Separation Quiz</h1>
+    <p>Separate the verbs in the following sentences:</p>
+
+    <div class="question">
+        <label>1. Plug in the cables. </label>
+        <input type="text" id="answer1" placeholder="Type your answer here">
+    </div>
+
+    <div class="question">
+        <label>2. Lift up the load. </label>
+        <input type="text" id="answer2" placeholder="Type your answer here">
+    </div>
+
+    <div class="question">
+        <label>3. Shut down your computer. </label>
+        <input type="text" id="answer3" placeholder="Type your answer here">
+    </div>
+
+    <div class="question">
+        <label>4. Pick up the screwdriver. </label>
+        <input type="text" id="answer4" placeholder="Type your answer here">
+    </div>
+
+    <div class="question">
+        <label>5. Don’t take off your safety glasses. </label>
+        <input type="text" id="answer5" placeholder="Type your answer here">
+    </div>
+
+    <button onclick="checkAnswers()">Submit Answers</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function checkAnswers() {
+            // Define the correct answers
+            const correctAnswers = [
+                ['Plug', 'in'],
+                ['Lift', 'up'],
+                ['Shut', 'down'],
+                ['Pick', 'up'],
+                ['take', 'off']
+            ];
+
+            // Get the user's answers
+            const userAnswers = [
+                document.getElementById('answer1').value.split(' '),
+                document.getElementById('answer2').value.split(' '),
+                document.getElementById('answer3').value.split(' '),
+                document.getElementById('answer4').value.split(' '),
+                document.getElementById('answer5').value.split(' ')
+            ];
+
+            let score = 0;
+
+            // Check each answer
+            userAnswers.forEach((userAnswer, index) => {
+                if (userAnswer.length === correctAnswers[index].length &&
+                    userAnswer.every((word, i) => word.trim().toLowerCase() === correctAnswers[index][i].toLowerCase())) {
+                    score++;
+                }
+            });
+
+            // Display result
+            document.getElementById('result').textContent = `You got ${score} out of 5 correct!`;
+        }
+    </script>
+</body>
+</html>
