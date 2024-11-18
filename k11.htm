@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary and Polite Requests Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .question {
+            margin: 10px 0;
+        }
+        .answer-options {
+            margin-left: 20px;
+        }
+        .quiz-section {
+            margin-bottom: 30px;
+        }
+        .submit-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Vocabulary and Polite Requests Quiz</h1>
+
+    <form id="quiz-form">
+
+        <!-- Section A: Matching Words -->
+        <div class="quiz-section">
+            <h2>A. Match words from 1 to 5 with the meaning from a to e</h2>
+            <div class="question">
+                1. Broken: 
+                <select id="q1">
+                    <option value="0">Choose</option>
+                    <option value="c">c) no longer in one piece or functioning</option>
+                    <option value="e">e) destroy or damage slowly by chemical action</option>
+                    <option value="d">d) break without a separation of the parts</option>
+                    <option value="b">b) A slight hollow on a hard surface</option>
+                    <option value="a">a) on fire</option>
+                </select>
+            </div>
+            <div class="question">
+                2. Corroded: 
+                <select id="q2">
+                    <option value="0">Choose</option>
+                    <option value="c">c) no longer in one piece or functioning</option>
+                    <option value="e">e) destroy or damage slowly by chemical action</option>
+                    <option value="d">d) break without a separation of the parts</option>
+                    <option value="b">b) A slight hollow on a hard surface</option>
+                    <option value="a">a) on fire</option>
+                </select>
+            </div>
+            <div class="question">
+                3. Cracked: 
+                <select id="q3">
+                    <option value="0">Choose</option>
+                    <option value="c">c) no longer in one piece or functioning</option>
+                    <option value="e">e) destroy or damage slowly by chemical action</option>
+                    <option value="d">d) break without a separation of the parts</option>
+                    <option value="b">b) A slight hollow on a hard surface</option>
+                    <option value="a">a) on fire</option>
+                </select>
+            </div>
+            <div class="question">
+                4. Dented: 
+                <select id="q4">
+                    <option value="0">Choose</option>
+                    <option value="c">c) no longer in one piece or functioning</option>
+                    <option value="e">e) destroy or damage slowly by chemical action</option>
+                    <option value="d">d) break without a separation of the parts</option>
+                    <option value="b">b) A slight hollow on a hard surface</option>
+                    <option value="a">a) on fire</option>
+                </select>
+            </div>
+            <div class="question">
+                5. Burned: 
+                <select id="q5">
+                    <option value="0">Choose</option>
+                    <option value="c">c) no longer in one piece or functioning</option>
+                    <option value="e">e) destroy or damage slowly by chemical action</option>
+                    <option value="d">d) break without a separation of the parts</option>
+                    <option value="b">b) A slight hollow on a hard surface</option>
+                    <option value="a">a) on fire</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Section B: Polite Requests -->
+        <div class="quiz-section">
+            <h2>B. How would you say in a polite request? Use "can," "could," "possibly," "will," "would," "would you mind."</h2>
+            <div class="question">
+                6. You want to make a private phone call: 
+                <input type="text" id="q6" placeholder="Your answer">
+            </div>
+            <div class="question">
+                7. You’re feeling very hot: 
+                <input type="text" id="q7" placeholder="Your answer">
+            </div>
+            <div class="question">
+                8. You are feeling unwell. Maybe you should go home: 
+                <input type="text" id="q8" placeholder="Your answer">
+            </div>
+            <div class="question">
+                9. You want to use your colleague’s computer. Ask for permission: 
+                <input type="text" id="q9" placeholder="Your answer">
+            </div>
+            <div class="question">
+                10. You’re in need of a hammer. Your partner has one: 
+                <input type="text" id="q10" placeholder="Your answer">
+            </div>
+            <div class="question">
+                11. You’ve lost your overall. You need one for work: 
+                <input type="text" id="q11" placeholder="Your answer">
+            </div>
+        </div>
+
+        <!-- Section C: Multiple-Choice Questions -->
+        <div class="quiz-section">
+            <h2>C. Multiple-Choice Quiz</h2>
+            <div class="question">
+                12. What should you do when a customer has a problem? 
+                <div class="answer-options">
+                    <input type="radio" name="q12" value="b"> b) Listen and offer attention
+                    <input type="radio" name="q12" value="a"> a) Argue with them
+                    <input type="radio" name="q12" value="c"> c) Ignore their concerns
+                </div>
+            </div>
+            <div class="question">
+                13. What is the best way to handle a complaint? 
+                <div class="answer-options">
+                    <input type="radio" name="q13" value="b"> b) Handle the complaint yourself with authority
+                    <input type="radio" name="q13" value="a"> a) Pass the customer to another staff member
+                    <input type="radio" name="q13" value="c"> c) Get the manager to deal with the problem
+                </div>
+            </div>
+            <div class="question">
+                14. What should you do when you feel angry or frustrated with a customer? 
+                <div class="answer-options">
+                    <input type="radio" name="q14" value="a"> a) Stay calm
+                    <input type="radio" name="q14" value="b"> b) Argue back
+                    <input type="radio" name="q14" value="c"> c) Ignore the customer
+                </div>
+            </div>
+            <div class="question">
+                15. What can sometimes help calm an angry customer? 
+                <div class="answer-options">
+                    <input type="radio" name="q15" value="b"> b) An apology
+                    <input type="radio" name="q15" value="a"> a) A refund
+                    <input type="radio" name="q15" value="c"> c) A voucher
+                </div>
+            </div>
+            <div class="question">
+                16. Why is it important to ask the customer for their desired outcome? 
+                <div class="answer-options">
+                    <input type="radio" name="q16" value="a"> a) To make them feel involved and valued
+                    <input type="radio" name="q16" value="b"> b) To delay the resolution
+                    <input type="radio" name="q16" value="c"> c) To avoid compensating them
+                </div>
+            </div>
+        </div>
+
+        <!-- Section D: How much/How many -->
+        <div class="quiz-section">
+            <h2>D. Choose "How much" or "How many"</h2>
+            <div class="question">
+                17. __ paint do you need? 
+                <input type="text" id="q17" placeholder="Your answer">
+            </div>
+            <div class="question">
+                18. __ spanners are there? 
+                <input type="text" id="q18" placeholder="Your answer">
+            </div>
+            <div class="question">
+                19. __ information do you have about Welding? 
+                <input type="text" id="q19" placeholder="Your answer">
+            </div>
+            <div class="question">
+                20. __ e-mails do you receive every day? 
+                <input type="text" id="q20" placeholder="Your answer">
+            </div>
+            <div class="question">
+                21. __ trainees do we have here? 
+                <input type="text" id="q21" placeholder="Your answer">
+            </div>
+        </div>
+
+        <!-- Section E: Match the items with their containers -->
+        <div class="quiz-section">
+            <h2>E. Match the items with their containers</h2>
+            <div class="question">
+                22. A can of 
+                <select id="q22">
+                    <option value="0">Choose</option>
+                    <option value="c">c) paint</option>
+                    <option value="b">b) tea</option>
+                    <option value="f">f) water</option>
+                    <option value="d">d) pie</option>
+                    <option value="e">e) soup</option>
+                </select>
+            </div>
+            <div class="question">
+                23. A bag of 
+                <select id="q23">
+                    <option value="0">Choose</option>
+                    <option value="c">c) paint</option>
+                    <option value="b">b) tea</option>
+                    <option value="f">f) water</option>
+                    <option value="d">d) pie</option>
+                    <option value="e">e) soup</option>
+                </select>
+            </div>
+            <div class="question">
+                24. A glass of 
+                <select id="q24">
+                    <option value="0">Choose</option>
+                    <option value="c">c) paint</option>
+                    <option value="b">b) tea</option>
+                    <option value="f">f) water</option>
+                    <option value="d">d) pie</option>
+                    <option value="e">e) soup</option>
+                </select>
+            </div>
+            <div class="question">
+                25. A cup of 
+                <select id="q25">
+                    <option value="0">Choose</option>
+                    <option value="c">c) paint</option>
+                    <option value="b">b) tea</option>
+                    <option value="f">f) water</option>
+                    <option value="d">d) pie</option>
+                    <option value="e">e) soup</option>
+                </select>
+            </div>
+            <div class="question">
+                26. A piece of 
+                <select id="q26">
+                    <option value="0">Choose</option>
+                    <option value="c">c) paint</option>
+                    <option value="b">b) tea</option>
+                    <option value="f">f) water</option>
+                    <option value="d">d) pie</option>
+                    <option value="e">e) soup</option>
+                </select>
+            </div>
+            <div class="question">
+                27. A bowl of 
+                <select id="q27">
+                    <option value="0">Choose</option>
+                    <option value="c">c) paint</option>
+                    <option value="b">b) tea</option>
+                    <option value="f">f) water</option>
+                    <option value="d">d) pie</option>
+                    <option value="e">e) soup</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="button" class="submit-btn" onclick="submitQuiz()">Submit</button>
+    </form>
+
+    <div id="result" class="result"></div>
+
+    <script>
+        function submitQuiz() {
+            var score = 0;
+
+            // Section A - Matching Words
+            if (document.getElementById('q1').value === 'c') score++;
+            if (document.getElementById('q2').value === 'e') score++;
+            if (document.getElementById('q3').value === 'd') score++;
+            if (document.getElementById('q4').value === 'b') score++;
+            if (document.getElementById('q5').value === 'a') score++;
+
+            // Section B - Polite Requests
+            var politeAnswers = [
+                "Could I make a private phone call, please?",
+                "Would you mind if I turn on the air conditioning?",
+                "You seem unwell. Would you like to go home?",
+                "Would you mind if I use your computer for a moment?",
+                "Could I borrow your hammer, please?",
+                "I’ve lost my overall. Could I borrow one for work?"
+            ];
+            for (var i = 6; i <= 11; i++) {
+                var userAnswer = document.getElementById('q' + i).value.trim();
+                if (userAnswer.toLowerCase() === politeAnswers[i - 6].toLowerCase()) score++;
+            }
+
+            // Section C - Multiple-Choice Questions
+            if (document.querySelector('input[name="q12"]:checked')?.value === 'b') score++;
+            if (document.querySelector('input[name="q13"]:checked')?.value === 'b') score++;
+            if (document.querySelector('input[name="q14"]:checked')?.value === 'a') score++;
+            if (document.querySelector('input[name="q15"]:checked')?.value === 'b') score++;
+            if (document.querySelector('input[name="q16"]:checked')?.value === 'a') score++;
+
+            // Section D - How much/How many
+            if (document.getElementById('q17').value.toLowerCase() === 'how much') score++;
+            if (document.getElementById('q18').value.toLowerCase() === 'how many') score++;
+            if (document.getElementById('q19').value.toLowerCase() === 'how much') score++;
+            if (document.getElementById('q20').value.toLowerCase() === 'how many') score++;
+            if (document.getElementById('q21').value.toLowerCase() === 'how many') score++;
+
+            // Section E - Match containers
+            if (document.getElementById('q22').value === 'c') score++;
+            if (document.getElementById('q23').value === 'b') score++;
+            if (document.getElementById('q24').value === 'f') score++;
+            if (document.getElementById('q25').value === 'b') score++;
+            if (document.getElementById('q26').value === 'd') score++;
+            if (document.getElementById('q27').value === 'e') score++;
+
+            // Show score
+            document.getElementById('result').innerHTML = 'Your score: ' + score + '/27';
+        }
+    </script>
+
+</body>
+</html>
