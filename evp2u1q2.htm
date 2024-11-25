@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete the Conversation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .options {
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Complete the following conversation</h1>
+    <p>Fill in the blanks using the words below:</p>
+    
+    <div class="options">
+        <label for="word1">1. Choose the correct word for the first blank:</label><br>
+        <select id="word1">
+            <option value="">Select...</option>
+            <option value="Morning">Morning</option>
+            <option value="Work plan">Work plan</option>
+            <option value="Electrician">Electrician</option>
+            <option value="Safety officer">Safety officer</option>
+        </select><br><br>
+        
+        <label for="word2">2. Choose the correct word for the second blank:</label><br>
+        <select id="word2">
+            <option value="">Select...</option>
+            <option value="Work plan">Work plan</option>
+            <option value="Morning">Morning</option>
+            <option value="Electrician">Electrician</option>
+            <option value="Safety officer">Safety officer</option>
+        </select><br><br>
+        
+        <label for="word3">3. Choose the correct word for the third blank:</label><br>
+        <select id="word3">
+            <option value="">Select...</option>
+            <option value="Morning">Morning</option>
+            <option value="Work plan">Work plan</option>
+            <option value="Electrician">Electrician</option>
+            <option value="Safety officer">Safety officer</option>
+        </select><br><br>
+        
+        <label for="word4">4. Choose the correct word for the fourth blank:</label><br>
+        <select id="word4">
+            <option value="">Select...</option>
+            <option value="Morning">Morning</option>
+            <option value="Work plan">Work plan</option>
+            <option value="Electrician">Electrician</option>
+            <option value="Safety officer">Safety officer</option>
+        </select><br><br>
+        
+        <label for="word5">5. Choose the correct word for the fifth blank:</label><br>
+        <select id="word5">
+            <option value="">Select...</option>
+            <option value="Morning">Morning</option>
+            <option value="Work plan">Work plan</option>
+            <option value="Electrician">Electrician</option>
+            <option value="Safety officer">Safety officer</option>
+        </select><br><br>
+        
+        <label for="word6">6. Choose the correct word for the sixth blank:</label><br>
+        <select id="word6">
+            <option value="">Select...</option>
+            <option value="Morning">Morning</option>
+            <option value="Work plan">Work plan</option>
+            <option value="Electrician">Electrician</option>
+            <option value="Safety officer">Safety officer</option>
+        </select><br><br>
+        
+        <label for="word7">7. Choose the correct word for the seventh blank:</label><br>
+        <select id="word7">
+            <option value="">Select...</option>
+            <option value="Morning">Morning</option>
+            <option value="Work plan">Work plan</option>
+            <option value="Electrician">Electrician</option>
+            <option value="Safety officer">Safety officer</option>
+        </select><br><br>
+        
+        <label for="word8">8. Choose the correct word for the eighth blank:</label><br>
+        <select id="word8">
+            <option value="">Select...</option>
+            <option value="Morning">Morning</option>
+            <option value="Work plan">Work plan</option>
+            <option value="Electrician">Electrician</option>
+            <option value="Safety officer">Safety officer</option>
+        </select><br><br>
+    </div>
+
+    <button class="button" onclick="checkAnswers()">Submit</button>
+    
+    <p class="result" id="result"></p>
+
+    <script>
+        function checkAnswers() {
+            var score = 0;
+            var correctAnswers = ["Morning", "Work plan", "Safety officer", "Safety officer", "Electrician", "Electrician", "Work plan", "Morning"];
+            
+            for (var i = 1; i <= 8; i++) {
+                var selectedOption = document.getElementById("word" + i).value;
+                if (selectedOption === correctAnswers[i - 1]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").textContent = "Your score is: " + score + "/8";
+        }
+    </script>
+</body>
+</html>
