@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Fill in the Blanks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .options {
+            margin-bottom: 20px;
+        }
+        .options label {
+            margin-right: 15px;
+            font-size: 16px;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .question p {
+            font-size: 16px;
+        }
+        select {
+            padding: 5px;
+            margin-top: 5px;
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Fill in the Blanks Quiz</h1>
+
+    <div class="options">
+        <label for="word1">1. Repair</label>
+        <label for="word2">2. Install</label>
+        <label for="word3">3. Maintain</label>
+        <label for="word4">4. Assemble</label>
+        <label for="word5">5. Monitor</label>
+    </div>
+
+    <div class="question">
+        <p>1- Can anyone <select id="q1">
+            <option value="">Select an option</option>
+            <option value="repair">Repair</option>
+            <option value="install">Install</option>
+            <option value="maintain">Maintain</option>
+            <option value="assemble">Assemble</option>
+            <option value="monitor">Monitor</option>
+        </select> the fan? It stopped completely.</p>
+    </div>
+
+    <div class="question">
+        <p>2- My mobile phone was made in China, but <select id="q2">
+            <option value="">Select an option</option>
+            <option value="repair">Repair</option>
+            <option value="install">Install</option>
+            <option value="maintain">Maintain</option>
+            <option value="assemble">Assemble</option>
+            <option value="monitor">Monitor</option>
+        </select> in KSA.</p>
+    </div>
+
+    <div class="question">
+        <p>3- Please call the technician to <select id="q3">
+            <option value="">Select an option</option>
+            <option value="repair">Repair</option>
+            <option value="install">Install</option>
+            <option value="maintain">Maintain</option>
+            <option value="assemble">Assemble</option>
+            <option value="monitor">Monitor</option>
+        </select> the company ACs. They do this every year.</p>
+    </div>
+
+    <div class="question">
+        <p>4- The manager can <select id="q4">
+            <option value="">Select an option</option>
+            <option value="repair">Repair</option>
+            <option value="install">Install</option>
+            <option value="maintain">Maintain</option>
+            <option value="assemble">Assemble</option>
+            <option value="monitor">Monitor</option>
+        </select> the workplace from his high office.</p>
+    </div>
+
+    <div class="question">
+        <p>5- We need to <select id="q5">
+            <option value="">Select an option</option>
+            <option value="repair">Repair</option>
+            <option value="install">Install</option>
+            <option value="maintain">Maintain</option>
+            <option value="assemble">Assemble</option>
+            <option value="monitor">Monitor</option>
+        </select> another TV in the living room.</p>
+    </div>
+
+    <button class="submit-btn" onclick="checkAnswers()">Submit</button>
+
+    <div id="result"></div>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            let answers = {
+                q1: "repair",
+                q2: "assemble",
+                q3: "maintain",
+                q4: "monitor",
+                q5: "install"
+            };
+            
+            for (let question in answers) {
+                let userAnswer = document.getElementById(question).value.toLowerCase().trim();
+                if (userAnswer === answers[question]) {
+                    score++;
+                }
+            }
+
+            let result = document.getElementById("result");
+            result.innerHTML = "You got " + score + " out of 5 correct.";
+        }
+    </script>
+
+</body>
+</html>
