@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Does What?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .question label {
+            font-weight: bold;
+        }
+        .options {
+            display: block;
+            margin: 5px 0;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Who Does What?</h1>
+
+<form id="quizForm">
+    <div class="question">
+        <label for="q1">1. ________ is a tradesman who assembles, installs and repairs electric wires.</label>
+        <select id="q1" class="options">
+            <option value="">Select</option>
+            <option value="A electrician">A electrician</option>
+            <option value="A pipefitter">A pipefitter</option>
+            <option value="An engineer">An engineer</option>
+            <option value="An instrumentation technician">An instrumentation technician</option>
+            <option value="A welder">A welder</option>
+            <option value="A safety officer">A safety officer</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <label for="q2">2. ________ makes the workplace safer for tradespeople.</label>
+        <select id="q2" class="options">
+            <option value="">Select</option>
+            <option value="A electrician">A electrician</option>
+            <option value="A pipefitter">A pipefitter</option>
+            <option value="An engineer">An engineer</option>
+            <option value="An instrumentation technician">An instrumentation technician</option>
+            <option value="A welder">A welder</option>
+            <option value="A safety officer">A safety officer</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <label for="q3">3. ________ works on land, and underwater, too.</label>
+        <select id="q3" class="options">
+            <option value="">Select</option>
+            <option value="A electrician">A electrician</option>
+            <option value="A pipefitter">A pipefitter</option>
+            <option value="An engineer">An engineer</option>
+            <option value="An instrumentation technician">An instrumentation technician</option>
+            <option value="A welder">A welder</option>
+            <option value="A safety officer">A safety officer</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <label for="q4">4. ________ installs equipment that shows and controls the workplace.</label>
+        <select id="q4" class="options">
+            <option value="">Select</option>
+            <option value="A electrician">A electrician</option>
+            <option value="A pipefitter">A pipefitter</option>
+            <option value="An engineer">An engineer</option>
+            <option value="An instrumentation technician">An instrumentation technician</option>
+            <option value="A welder">A welder</option>
+            <option value="A safety officer">A safety officer</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <label for="q5">5. ________ installs and repairs pipes on buildings, ships, planes, etc.</label>
+        <select id="q5" class="options">
+            <option value="">Select</option>
+            <option value="A electrician">A electrician</option>
+            <option value="A pipefitter">A pipefitter</option>
+            <option value="An engineer">An engineer</option>
+            <option value="An instrumentation technician">An instrumentation technician</option>
+            <option value="A welder">A welder</option>
+            <option value="A safety officer">A safety officer</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <label for="q6">6. ________ can design and read blueprints.</label>
+        <select id="q6" class="options">
+            <option value="">Select</option>
+            <option value="A electrician">A electrician</option>
+            <option value="A pipefitter">A pipefitter</option>
+            <option value="An engineer">An engineer</option>
+            <option value="An instrumentation technician">An instrumentation technician</option>
+            <option value="A welder">A welder</option>
+            <option value="A safety officer">A safety officer</option>
+        </select>
+    </div>
+
+    <button type="button" onclick="checkAnswers()">Submit</button>
+
+    <div class="result" id="result"></div>
+</form>
+
+<script>
+    function checkAnswers() {
+        var correctAnswers = {
+            q1: "A electrician",
+            q2: "A safety officer",
+            q3: "A welder",
+            q4: "An instrumentation technician",
+            q5: "A pipefitter",
+            q6: "An engineer"
+        };
+        
+        var score = 0;
+        for (var key in correctAnswers) {
+            var userAnswer = document.getElementById(key).value;
+            if (userAnswer === correctAnswers[key]) {
+                score++;
+            }
+        }
+
+        var result = document.getElementById("result");
+        result.innerHTML = "You scored " + score + " out of 6.";
+    }
+</script>
+
+</body>
+</html>
