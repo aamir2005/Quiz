@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verb Forms Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question label {
+            font-weight: bold;
+        }
+        .options {
+            display: block;
+            margin: 5px 0;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Fill in the Correct Verb Forms</h1>
+
+<form id="quizForm">
+    <!-- Question 1 -->
+    <div class="question">
+        <label for="q1">1. My friend ______ on Tuesday. (works / work / worked)</label>
+        <select id="q1" class="options">
+            <option value="">Select</option>
+            <option value="works">works</option>
+            <option value="work">work</option>
+            <option value="worked">worked</option>
+        </select>
+
+        <p>Question: Does he ______ on Friday? (works / work / worked)</p>
+        <select id="q2" class="options">
+            <option value="">Select</option>
+            <option value="works">works</option>
+            <option value="work">work</option>
+            <option value="worked">worked</option>
+        </select>
+
+        <p>Negative form: No, he ______ work on Friday. He ______ on Tuesday. (doesn’t / don’t / worked)</p>
+        <select id="q3" class="options">
+            <option value="">Select</option>
+            <option value="doesn’t">doesn’t</option>
+            <option value="don’t">don’t</option>
+            <option value="worked">worked</option>
+        </select>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+        <label for="q4">2. The electrician ______ the wires. (fixes / fix / fixed)</label>
+        <select id="q4" class="options">
+            <option value="">Select</option>
+            <option value="fixes">fixes</option>
+            <option value="fix">fix</option>
+            <option value="fixed">fixed</option>
+        </select>
+
+        <p>Question: Does the electrician ______ the fridge? (fixes / fix / fixed)</p>
+        <select id="q5" class="options">
+            <option value="">Select</option>
+            <option value="fixes">fixes</option>
+            <option value="fix">fix</option>
+            <option value="fixed">fixed</option>
+        </select>
+
+        <p>Negative form: No, the electrician ______ fix the fridge. (doesn’t / don’t / fixes)</p>
+        <select id="q6" class="options">
+            <option value="">Select</option>
+            <option value="doesn’t">doesn’t</option>
+            <option value="don’t">don’t</option>
+            <option value="fixes">fixes</option>
+        </select>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+        <label for="q7">3. The engineers ______ the machine parts. (assemble / assembles / assembled)</label>
+        <select id="q7" class="options">
+            <option value="">Select</option>
+            <option value="assemble">assemble</option>
+            <option value="assembles">assembles</option>
+            <option value="assembled">assembled</option>
+        </select>
+
+        <p>Question: Do the engineers ______ a map? (assemble / assembles / assembled)</p>
+        <select id="q8" class="options">
+            <option value="">Select</option>
+            <option value="assemble">assemble</option>
+            <option value="assembles">assembles</option>
+            <option value="assembled">assembled</option>
+        </select>
+
+        <p>Negative form: No, the engineers ______ assemble a map. They ______ machine parts. (don’t / doesn’t / assemble)</p>
+        <select id="q9" class="options">
+            <option value="">Select</option>
+            <option value="don’t">don’t</option>
+            <option value="doesn’t">doesn’t</option>
+            <option value="assemble">assemble</option>
+        </select>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+        <label for="q10">4. A punctual workman ______ at work on time. (arrives / arrive / arrived)</label>
+        <select id="q10" class="options">
+            <option value="">Select</option>
+            <option value="arrives">arrives</option>
+            <option value="arrive">arrive</option>
+            <option value="arrived">arrived</option>
+        </select>
+
+        <p>Question: Does a punctual workman ______ late? (arrives / arrive / arrived)</p>
+        <select id="q11" class="options">
+            <option value="">Select</option>
+            <option value="arrives">arrives</option>
+            <option value="arrive">arrive</option>
+            <option value="arrived">arrived</option>
+        </select>
+
+        <p>Negative form: No, a punctual workman ______ arrive late. He ______ on time. (doesn’t / didn’t / arrives)</p>
+        <select id="q12" class="options">
+            <option value="">Select</option>
+            <option value="doesn’t">doesn’t</option>
+            <option value="didn’t">didn’t</option>
+            <option value="arrives">arrives</option>
+        </select>
+    </div>
+
+    <button type="button" onclick="checkAnswers()">Submit</button>
+
+    <div class="result" id="result"></div>
+</form>
+
+<script>
+    function checkAnswers() {
+        var correctAnswers = {
+            q1: "works",
+            q2: "work",
+            q3: "doesn’t",
+            q4: "fixes",
+            q5: "fix",
+            q6: "doesn’t",
+            q7: "assemble",
+            q8: "assemble",
+            q9: "don’t",
+            q10: "arrives",
+            q11: "arrive",
+            q12: "doesn’t"
+        };
+
+        var score = 0;
+        for (var key in correctAnswers) {
+            var userAnswer = document.getElementById(key).value;
+            if (userAnswer === correctAnswers[key]) {
+                score++;
+            }
+        }
+
+        var result = document.getElementById("result");
+        result.innerHTML = "You scored " + score + " out of 12.";
+    }
+</script>
+
+</body>
+</html>
