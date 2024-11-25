@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Safety Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .quiz-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 10px;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .question input {
+            margin-right: 10px;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h2>Fire Safety Quiz</h2>
+        <form id="quizForm">
+            <div class="question">
+                <label>1. What is a fire alarm?</label>
+                <input type="radio" name="q1" value="a"> The amount of work to be done<br>
+                <input type="radio" name="q1" value="b"> A device making a loud sound that gives warning of a fire.<br>
+                <input type="radio" name="q1" value="c"> The state of the atmosphere at a particular place and time<br>
+                <input type="radio" name="q1" value="d"> A portable device to extinguish a fire.<br>
+                <input type="radio" name="q1" value="e"> An injury caused by exposure to heat or flame.<br>
+            </div>
+
+            <div class="question">
+                <label>2. What is weather?</label>
+                <input type="radio" name="q2" value="a"> The amount of work to be done<br>
+                <input type="radio" name="q2" value="b"> A device making a loud sound that gives warning of a fire.<br>
+                <input type="radio" name="q2" value="c"> The state of the atmosphere at a particular place and time<br>
+                <input type="radio" name="q2" value="d"> A portable device to extinguish a fire.<br>
+                <input type="radio" name="q2" value="e"> An injury caused by exposure to heat or flame.<br>
+            </div>
+
+            <div class="question">
+                <label>3. What is workload?</label>
+                <input type="radio" name="q3" value="a"> The amount of work to be done<br>
+                <input type="radio" name="q3" value="b"> A device making a loud sound that gives warning of a fire.<br>
+                <input type="radio" name="q3" value="c"> The state of the atmosphere at a particular place and time<br>
+                <input type="radio" name="q3" value="d"> A portable device to extinguish a fire.<br>
+                <input type="radio" name="q3" value="e"> An injury caused by exposure to heat or flame.<br>
+            </div>
+
+            <div class="question">
+                <label>4. What is burn?</label>
+                <input type="radio" name="q4" value="a"> The amount of work to be done<br>
+                <input type="radio" name="q4" value="b"> A device making a loud sound that gives warning of a fire.<br>
+                <input type="radio" name="q4" value="c"> The state of the atmosphere at a particular place and time<br>
+                <input type="radio" name="q4" value="d"> A portable device to extinguish a fire.<br>
+                <input type="radio" name="q4" value="e"> An injury caused by exposure to heat or flame.<br>
+            </div>
+
+            <div class="question">
+                <label>5. What is a fire extinguisher?</label>
+                <input type="radio" name="q5" value="a"> The amount of work to be done<br>
+                <input type="radio" name="q5" value="b"> A device making a loud sound that gives warning of a fire.<br>
+                <input type="radio" name="q5" value="c"> The state of the atmosphere at a particular place and time<br>
+                <input type="radio" name="q5" value="d"> A portable device to extinguish a fire.<br>
+                <input type="radio" name="q5" value="e"> An injury caused by exposure to heat or flame.<br>
+            </div>
+
+            <div class="result" id="result"></div>
+
+            <button type="button" onclick="submitQuiz()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            var score = 0;
+            var totalQuestions = 5;
+            var correctAnswers = {
+                q1: "b",
+                q2: "c",
+                q3: "a",
+                q4: "e",
+                q5: "d"
+            };
+
+            // Check answers
+            for (var i = 1; i <= totalQuestions; i++) {
+                var q = document.querySelector(`input[name="q${i}"]:checked`);
+                if (q && q.value === correctAnswers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            // Show result
+            var result = document.getElementById("result");
+            result.innerHTML = `Your score: ${score} out of ${totalQuestions}`;
+        }
+    </script>
+
+</body>
+</html>
