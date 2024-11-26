@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerunds Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .score {
+            font-size: 20px;
+            color: blue;
+        }
+        .options {
+            margin-top: 10px;
+        }
+        select {
+            padding: 8px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Complete the Sentences with the Correct Gerunds</h2>
+
+<div class="question">
+    <p>1. Complete the sentence: "I like _______ vocational books. I don’t like _______ comic books."</p>
+    <div class="options">
+        <select id="answer1a">
+            <option value="">Select</option>
+            <option value="Reading">Reading</option>
+            <option value="Eating">Eating</option>
+            <option value="Watching">Watching</option>
+            <option value="Working">Working</option>
+        </select>
+        <select id="answer1b">
+            <option value="">Select</option>
+            <option value="Reading">Reading</option>
+            <option value="Eating">Eating</option>
+            <option value="Watching">Watching</option>
+            <option value="Working">Working</option>
+        </select>
+    </div>
+</div>
+
+<div class="question">
+    <p>2. Complete the sentence: "I like _______ out, but I don’t like _______ to the seaside."</p>
+    <div class="options">
+        <select id="answer2a">
+            <option value="">Select</option>
+            <option value="Eating">Eating</option>
+            <option value="Going">Going</option>
+            <option value="Watching">Watching</option>
+            <option value="Drinking">Drinking</option>
+        </select>
+        <select id="answer2b">
+            <option value="">Select</option>
+            <option value="Eating">Eating</option>
+            <option value="Going">Going</option>
+            <option value="Watching">Watching</option>
+            <option value="Drinking">Drinking</option>
+        </select>
+    </div>
+</div>
+
+<div class="question">
+    <p>3. Complete the sentence: "I like _______ TV, but I don’t like _______ drink too much."</p>
+    <div class="options">
+        <select id="answer3a">
+            <option value="">Select</option>
+            <option value="Eating">Eating</option>
+            <option value="Watching">Watching</option>
+            <option value="Drinking">Drinking</option>
+            <option value="Working">Working</option>
+        </select>
+        <select id="answer3b">
+            <option value="">Select</option>
+            <option value="Eating">Eating</option>
+            <option value="Watching">Watching</option>
+            <option value="Drinking">Drinking</option>
+            <option value="Working">Working</option>
+        </select>
+    </div>
+</div>
+
+<div class="question">
+    <p>4. Complete the sentence: "I like _______ , but I don’t like _______ in bed all day."</p>
+    <div class="options">
+        <select id="answer4a">
+            <option value="">Select</option>
+            <option value="Eating">Eating</option>
+            <option value="Working">Working</option>
+            <option value="Going">Going</option>
+            <option value="Staying">Staying</option>
+        </select>
+        <select id="answer4b">
+            <option value="">Select</option>
+            <option value="Eating">Eating</option>
+            <option value="Working">Working</option>
+            <option value="Going">Going</option>
+            <option value="Staying">Staying</option>
+        </select>
+    </div>
+</div>
+
+<button onclick="checkAnswers()">Check Answers</button>
+
+<p id="score" class="score"></p>
+
+<script>
+    function checkAnswers() {
+        var score = 0;
+
+        // Correct answers
+        var correctAnswers = [
+            ["Reading", "Reading"], // Answer for Q1
+            ["Eating", "Going"],    // Answer for Q2
+            ["Watching", "Drinking"], // Answer for Q3
+            ["Working", "Staying"]   // Answer for Q4
+        ];
+
+        // Get the user's answers
+        var userAnswers = [
+            [document.getElementById('answer1a').value, document.getElementById('answer1b').value],
+            [document.getElementById('answer2a').value, document.getElementById('answer2b').value],
+            [document.getElementById('answer3a').value, document.getElementById('answer3b').value],
+            [document.getElementById('answer4a').value, document.getElementById('answer4b').value]
+        ];
+
+        // Check answers and update score
+        for (var i = 0; i < correctAnswers.length; i++) {
+            if (userAnswers[i][0] === correctAnswers[i][0] && userAnswers[i][1] === correctAnswers[i][1]) {
+                score++;
+            }
+        }
+
+        // Display the score
+        document.getElementById('score').textContent = "Your score: " + score + " out of 4.";
+    }
+</script>
+
+</body>
+</html>
