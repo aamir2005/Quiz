@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Routine Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .options {
+            margin-top: 10px;
+        }
+        select {
+            padding: 8px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .score {
+            font-size: 20px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Complete the Sentences with the Correct Time and Verbs</h2>
+
+<p>Choose from the following options:</p>
+<ul>
+    <li><strong>Times:</strong> 5:00 a.m., 5:30 a.m., 7:00 a.m., 9:30 a.m., 12:00 p.m., 2:00 p.m., 3:30 p.m.</li>
+    <li><strong>Verbs:</strong> wake up, pray, go, drink, eat, end, drive</li>
+</ul>
+
+<div class="question">
+    <p>1. At _________, I ________ up.</p>
+    <div class="options">
+        <select id="time1">
+            <option value="">Select Time</option>
+            <option value="5:00 a.m.">5:00 a.m.</option>
+            <option value="5:30 a.m.">5:30 a.m.</option>
+            <option value="7:00 a.m.">7:00 a.m.</option>
+            <option value="9:30 a.m.">9:30 a.m.</option>
+            <option value="12:00 p.m.">12:00 p.m.</option>
+            <option value="2:00 p.m.">2:00 p.m.</option>
+            <option value="3:30 p.m.">3:30 p.m.</option>
+        </select>
+        <select id="verb1">
+            <option value="">Select Verb</option>
+            <option value="wake up">wake up</option>
+            <option value="pray">pray</option>
+            <option value="go">go</option>
+            <option value="drink">drink</option>
+            <option value="eat">eat</option>
+            <option value="end">end</option>
+            <option value="drive">drive</option>
+        </select>
+    </div>
+</div>
+
+<div class="question">
+    <p>2. At _________, I ________ Fajar Salat.</p>
+    <div class="options">
+        <select id="time2">
+            <option value="">Select Time</option>
+            <option value="5:00 a.m.">5:00 a.m.</option>
+            <option value="5:30 a.m.">5:30 a.m.</option>
+            <option value="7:00 a.m.">7:00 a.m.</option>
+            <option value="9:30 a.m.">9:30 a.m.</option>
+            <option value="12:00 p.m.">12:00 p.m.</option>
+            <option value="2:00 p.m.">2:00 p.m.</option>
+            <option value="3:30 p.m.">3:30 p.m.</option>
+        </select>
+        <select id="verb2">
+            <option value="">Select Verb</option>
+            <option value="wake up">wake up</option>
+            <option value="pray">pray</option>
+            <option value="go">go</option>
+            <option value="drink">drink</option>
+            <option value="eat">eat</option>
+            <option value="end">end</option>
+            <option value="drive">drive</option>
+        </select>
+    </div>
+</div>
+
+<div class="question">
+    <p>3. Then, I ________ to work at ________.</p>
+    <div class="options">
+        <select id="verb3">
+            <option value="">Select Verb</option>
+            <option value="wake up">wake up</option>
+            <option value="pray">pray</option>
+            <option value="go">go</option>
+            <option value="drink">drink</option>
+            <option value="eat">eat</option>
+            <option value="end">end</option>
+            <option value="drive">drive</option>
+        </select>
+        <select id="time3">
+            <option value="">Select Time</option>
+            <option value="5:00 a.m.">5:00 a.m.</option>
+            <option value="5:30 a.m.">5:30 a.m.</option>
+            <option value="7:00 a.m.">7:00 a.m.</option>
+            <option value="9:30 a.m.">9:30 a.m.</option>
+            <option value="12:00 p.m.">12:00 p.m.</option>
+            <option value="2:00 p.m.">2:00 p.m.</option>
+            <option value="3:30 p.m.">3:30 p.m.</option>
+        </select>
+    </div>
+</div>
+
+<div class="question">
+    <p>4. At _________, my colleagues and I ________ coffee together.</p>
+    <div class="options">
+        <select id="time4">
+            <option value="">Select Time</option>
+            <option value="5:00 a.m.">5:00 a.m.</option>
+            <option value="5:30 a.m.">5:30 a.m.</option>
+            <option value="7:00 a.m.">7:00 a.m.</option>
+            <option value="9:30 a.m.">9:30 a.m.</option>
+            <option value="12:00 p.m.">12:00 p.m.</option>
+            <option value="2:00 p.m.">2:00 p.m.</option>
+            <option value="3:30 p.m.">3:30 p.m.</option>
+        </select>
+        <select id="verb4">
+            <option value="">Select Verb</option>
+            <option value="wake up">wake up</option>
+            <option value="pray">pray</option>
+            <option value="go">go</option>
+            <option value="drink">drink</option>
+            <option value="eat">eat</option>
+            <option value="end">end</option>
+            <option value="drive">drive</option>
+        </select>
+    </div>
+</div>
+
+<div class="question">
+    <p>5. At noon, _________, we all ________ lunch together.</p>
+    <div class="options">
+        <select id="time5">
+            <option value="">Select Time</option>
+            <option value="5:00 a.m.">5:00 a.m.</option>
+            <option value="5:30 a.m.">5:30 a.m.</option>
+            <option value="7:00 a.m.">7:00 a.m.</option>
+            <option value="9:30 a.m.">9:30 a.m.</option>
+            <option value="12:00 p.m.">12:00 p.m.</option>
+            <option value="2:00 p.m.">2:00 p.m.</option>
+            <option value="3:30 p.m.">3:30 p.m.</option>
+        </select>
+        <select id="verb5">
+            <option value="">Select Verb</option>
+            <option value="wake up">wake up</option>
+            <option value="pray">pray</option>
+            <option value="go">go</option>
+            <option value="drink">drink</option>
+            <option value="eat">eat</option>
+            <option value="end">end</option>
+            <option value="drive">drive</option>
+        </select>
+    </div>
+</div>
+
+<div class="question">
+    <p>6. The lunch break ________ at _________, so we go back to work.</p>
+    <div class="options">
+        <select id="verb6">
+            <option value="">Select Verb</option>
+            <option value="wake up">wake up</option>
+            <option value="pray">pray</option>
+            <option value="go">go</option>
+            <option value="drink">drink</option>
+            <option value="eat">eat</option>
+            <option value="end">end</option>
+            <option value="drive">drive</option>
+        </select>
+        <select id="time6">
+            <option value="">Select Time</option>
+            <option value="5:00 a.m.">5:00 a.m.</option>
+            <option value="5:30 a.m.">5:30 a.m.</option>
+            <option value="7:00 a.m.">7:00 a.m.</option>
+            <option value="9:30 a.m.">9:30 a.m.</option>
+            <option value="12:00 p.m.">12:00 p.m.</option>
+            <option value="2:00 p.m.">2:00 p.m.</option>
+            <option value="3:30 p.m.">3:30 p.m.</option>
+        </select>
+    </div>
+</div>
+
+<div class="question">
+    <p>7. At _________, we all ________ back home.</p>
+    <div class="options">
+        <select id="time7">
+            <option value="">Select Time</option>
+            <option value="5:00 a.m.">5:00 a.m.</option>
+            <option value="5:30 a.m.">5:30 a.m.</option>
+            <option value="7:00 a.m.">7:00 a.m.</option>
+            <option value="9:30 a.m.">9:30 a.m.</option>
+            <option value="12:00 p.m.">12:00 p.m.</option>
+            <option value="2:00 p.m.">2:00 p.m.</option>
+            <option value="3:30 p.m.">3:30 p.m.</option>
+        </select>
+        <select id="verb7">
+            <option value="">Select Verb</option>
+            <option value="wake up">wake up</option>
+            <option value="pray">pray</option>
+            <option value="go">go</option>
+            <option value="drink">drink</option>
+            <option value="eat">eat</option>
+            <option value="end">end</option>
+            <option value="drive">drive</option>
+        </select>
+    </div>
+</div>
+
+<button onclick="checkAnswers()">Check Answers</button>
+
+<p id="score" class="score"></p>
+
+<script>
+    function checkAnswers() {
+        var score = 0;
+
+        // Correct answers
+        var correctAnswers = [
+            ["5:00 a.m.", "wake up"],            // Q1
+            ["5:30 a.m.", "pray"],              // Q2
+            ["7:00 a.m.", "drive"],             // Q3
+            ["9:30 a.m.", "drink"],             // Q4
+            ["12:00 p.m.", "eat"],              // Q5
+            ["2:00 p.m.", "end"],              // Q6
+            ["3:30 p.m.", "go"]                // Q7
+        ];
+
+        // Get the user's answers
+        var userAnswers = [
+            [document.getElementById('time1').value, document.getElementById('verb1').value],
+            [document.getElementById('time2').value, document.getElementById('verb2').value],
+            [document.getElementById('time3').value, document.getElementById('verb3').value],
+            [document.getElementById('time4').value, document.getElementById('verb4').value],
+            [document.getElementById('time5').value, document.getElementById('verb5').value],
+            [document.getElementById('time6').value, document.getElementById('verb6').value],
+            [document.getElementById('time7').value, document.getElementById('verb7').value]
+        ];
+
+        // Compare the answers
+        for (var i = 0; i < correctAnswers.length; i++) {
+            if (userAnswers[i][0] === correctAnswers[i][0] && userAnswers[i][1] === correctAnswers[i][1]) {
+                score++;
+            }
+        }
+
+        // Display the score
+        document.getElementById("score").innerText = "Your score is: " + score + " out of " + correctAnswers.length;
+    }
+</script>
+
+</body>
+</html>
