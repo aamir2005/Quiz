@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rearrange the Sentences</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .score {
+            font-size: 20px;
+            color: blue;
+        }
+        input[type="text"] {
+            width: 50%;
+            padding: 8px;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Rearrange the Sentences</h2>
+
+<div class="question">
+    <p>1. Rearrange the following words into a meaningful sentence:</p>
+    <p>book - interesting - still - an - reading - we - are</p>
+    <input type="text" id="answer1" placeholder="Your answer here">
+</div>
+
+<div class="question">
+    <p>2. Rearrange the following words into a meaningful sentence:</p>
+    <p>engineer - repairing - machine - ? - the - is - the</p>
+    <input type="text" id="answer2" placeholder="Your answer here">
+</div>
+
+<div class="question">
+    <p>3. Rearrange the following words into a meaningful sentence:</p>
+    <p>playing - are - football - workers - the</p>
+    <input type="text" id="answer3" placeholder="Your answer here">
+</div>
+
+<div class="question">
+    <p>4. Rearrange the following words into a meaningful sentence:</p>
+    <p>is - a - father - meal - still - cooking</p>
+    <input type="text" id="answer4" placeholder="Your answer here">
+</div>
+
+<button onclick="checkAnswers()">Check Answers</button>
+
+<p id="score" class="score"></p>
+
+<script>
+    function checkAnswers() {
+        var score = 0;
+
+        // Correct answers
+        var correctAnswers = [
+            "We are still reading an interesting book.",
+            "Is the engineer repairing the machine?",
+            "The workers are playing football.",
+            "Father is still cooking a meal."
+        ];
+
+        // Get the user's answers
+        var userAnswers = [
+            document.getElementById('answer1').value.trim(),
+            document.getElementById('answer2').value.trim(),
+            document.getElementById('answer3').value.trim(),
+            document.getElementById('answer4').value.trim()
+        ];
+
+        // Check answers and update score
+        for (var i = 0; i < correctAnswers.length; i++) {
+            if (userAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+                score++;
+            }
+        }
+
+        // Display the score
+        document.getElementById('score').textContent = "Your score: " + score + " out of 4.";
+    }
+</script>
+
+</body>
+</html>
