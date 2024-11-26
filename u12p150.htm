@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz with Score</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .quiz-container {
+            margin-bottom: 30px;
+        }
+        .quiz-container h2 {
+            margin-bottom: 15px;
+        }
+        .question {
+            margin-bottom: 10px;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        #score {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Emergency Response Quiz</h1>
+
+    <form id="quizForm">
+
+        <!-- Call 1 -->
+        <div class="quiz-container">
+            <h2>Call 1</h2>
+
+            <!-- Question 1 -->
+            <div class="question">
+                <label>Q1: What is the accident?</label>
+                <input type="radio" name="call1_q1" value="A"> A) A painter fell off a ladder.<br>
+                <input type="radio" name="call1_q1" value="B"> B) A carpenter fell off scaffolding<br>
+                <input type="radio" name="call1_q1" value="C"> C) An electrician cut his hand.<br>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <label>Q2: What’s the injury?</label>
+                <input type="radio" name="call1_q2" value="A"> A) He injured his arm<br>
+                <input type="radio" name="call1_q2" value="B"> B) He injured his back.<br>
+                <input type="radio" name="call1_q2" value="C"> C) He injured his head<br>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <label>Q3: Emergency services will send __________</label>
+                <input type="radio" name="call1_q3" value="A"> A) A police car<br>
+                <input type="radio" name="call1_q3" value="B"> B) An ambulance.<br>
+                <input type="radio" name="call1_q3" value="C"> C) An ambulance AND a police car<br>
+            </div>
+        </div>
+
+        <!-- Call 2 -->
+        <div class="quiz-container">
+            <h2>Call 2</h2>
+
+            <!-- Question 1 -->
+            <div class="question">
+                <label>Q1: What happened?</label>
+                <input type="radio" name="call2_q1" value="A"> A) A truck is on fire<br>
+                <input type="radio" name="call2_q1" value="B"> B) Two cars had an accident.<br>
+                <input type="radio" name="call2_q1" value="C"> C) One car crashed into a wall.<br>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <label>Q2: How many people are injured in the accident?</label>
+                <input type="radio" name="call2_q2" value="A"> A) Only one person is injured<br>
+                <input type="radio" name="call2_q2" value="B"> B) Three people are injured.<br>
+                <input type="radio" name="call2_q2" value="C"> C) Two people are injured<br>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <label>Q3: Emergency services will send __________</label>
+                <input type="radio" name="call2_q3" value="A"> A) An ambulance<br>
+                <input type="radio" name="call2_q3" value="B"> B) A police car<br>
+                <input type="radio" name="call2_q3" value="C"> C) An ambulance AND a police car<br>
+            </div>
+        </div>
+
+        <button type="button" class="submit-btn" onclick="calculateScore()">Submit Quiz</button>
+    </form>
+
+    <div id="score"></div>
+
+    <script>
+        function calculateScore() {
+            let score = 0;
+
+            // Call 1 answers (based on the provided key)
+            if (document.querySelector('input[name="call1_q1"]:checked')?.value === 'A') score++;
+            if (document.querySelector('input[name="call1_q2"]:checked')?.value === 'B') score++;
+            if (document.querySelector('input[name="call1_q3"]:checked')?.value === 'B') score++;
+
+            // Call 2 answers (based on the provided key)
+            if (document.querySelector('input[name="call2_q1"]:checked')?.value === 'B') score++;
+            if (document.querySelector('input[name="call2_q2"]:checked')?.value === 'B') score++;
+            if (document.querySelector('input[name="call2_q3"]:checked')?.value === 'C') score++;
+
+            // Display score
+            document.getElementById('score').innerText = `Your score: ${score}/6`;
+        }
+    </script>
+
+</body>
+</html>
