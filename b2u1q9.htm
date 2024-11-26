@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tradespeople Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .options {
+            margin-top: 10px;
+        }
+        select {
+            padding: 8px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .score {
+            font-size: 20px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<h2>What Do These Tradespeople Do? Choose the Correct Job Title for Each Speaker</h2>
+
+<p>Read the descriptions and choose the correct profession for each speaker.</p>
+
+<div class="question">
+    <p>A. My job is important. I work with wires. They conduct electricity to all lamps in the house. You cannot have cool air in the summer, see at night, or keep food for long without my efforts.</p>
+    <div class="options">
+        <select id="answerA">
+            <option value="">Select Job Title</option>
+            <option value="electrician">Electrician</option>
+            <option value="plumber">Plumber</option>
+            <option value="pipefitter">Pipefitter</option>
+            <option value="safety officer">Safety Officer</option>
+        </select>
+    </div>
+</div>
+
+<div class="question">
+    <p>B. I install things that supply water, oxygen, and different gases in homes, hospitals, etc. The pipes I install are sometimes very small and very big at other times. I can read blueprints and work with engineers.</p>
+    <div class="options">
+        <select id="answerB">
+            <option value="">Select Job Title</option>
+            <option value="electrician">Electrician</option>
+            <option value="plumber">Plumber</option>
+            <option value="pipefitter">Pipefitter</option>
+            <option value="safety officer">Safety Officer</option>
+        </select>
+    </div>
+</div>
+
+<div class="question">
+    <p>C. I work both on land and underwater. My job is important and dangerous. You cannot get your water or gas or bring pieces together without my service.</p>
+    <div class="options">
+        <select id="answerC">
+            <option value="">Select Job Title</option>
+            <option value="electrician">Electrician</option>
+            <option value="plumber">Plumber</option>
+            <option value="pipefitter">Pipefitter</option>
+            <option value="safety officer">Safety Officer</option>
+        </select>
+    </div>
+</div>
+
+<div class="question">
+    <p>D. Everyone on a worksite should be careful when they see me coming. I make sure everything is in its proper place. Everyone must be wearing their Personal Protective Equipment. When I see a worker, I ask for his work permit, first.</p>
+    <div class="options">
+        <select id="answerD">
+            <option value="">Select Job Title</option>
+            <option value="electrician">Electrician</option>
+            <option value="plumber">Plumber</option>
+            <option value="pipefitter">Pipefitter</option>
+            <option value="safety officer">Safety Officer</option>
+        </select>
+    </div>
+</div>
+
+<button onclick="checkAnswers()">Check Answers</button>
+
+<p id="score" class="score"></p>
+
+<script>
+    function checkAnswers() {
+        var score = 0;
+
+        // Correct answers
+        var correctAnswers = {
+            answerA: "electrician",
+            answerB: "plumber",
+            answerC: "pipefitter",
+            answerD: "safety officer"
+        };
+
+        // Check the user's answers
+        for (var key in correctAnswers) {
+            var userAnswer = document.getElementById(key).value;
+            if (userAnswer === correctAnswers[key]) {
+                score++;
+            }
+        }
+
+        // Display the score
+        document.getElementById("score").innerText = "Your score is: " + score + " out of 4";
+    }
+</script>
+
+</body>
+</html>
