@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill in the Blanks Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .answers input {
+            padding: 5px;
+            width: 100%;
+            margin: 5px 0;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .feedback {
+            font-size: 18px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Fill in the Blanks Quiz</h1>
+
+    <div class="quiz-container">
+        <form id="quizForm">
+            <div class="question">
+                <p>1. Alaa .................... for Aramco at the moment. (work)</p>
+                <input type="text" id="q1" name="q1" placeholder="Enter the correct form of 'work'">
+            </div>
+
+            <div class="question">
+                <p>2. Hurry up! The bus.............................. (wait).</p>
+                <input type="text" id="q2" name="q2" placeholder="Enter the correct form of 'wait'">
+            </div>
+
+            <div class="question">
+                <p>3. ............. you.............. or.....................? (work) (eat)</p>
+                <input type="text" id="q3" name="q3" placeholder="Enter the correct form of 'work' and 'eat'">
+            </div>
+
+            <div class="question">
+                <p>4. The class.......................through the workshop. (walk)</p>
+                <input type="text" id="q4" name="q4" placeholder="Enter the correct form of 'walk'">
+            </div>
+
+            <div class="question">
+                <p>5. Look! The manager.........................his office himself. (clean)</p>
+                <input type="text" id="q5" name="q5" placeholder="Enter the correct form of 'clean'">
+            </div>
+
+            <div class="question">
+                <p>6. Everyone.........................their PPE today. (wear)</p>
+                <input type="text" id="q6" name="q6" placeholder="Enter the correct form of 'wear'">
+            </div>
+
+            <button type="button" class="btn" onclick="checkAnswers()">Submit</button>
+            <div id="score" class="feedback"></div>
+        </form>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            var correctAnswers = {
+                q1: "is working",
+                q2: "is waiting",
+                q3: "Are, working, eating",
+                q4: "is walking",
+                q5: "is cleaning",
+                q6: "is wearing"
+            };
+
+            var score = 0;
+            var form = document.forms['quizForm'];
+            var feedback = '';
+
+            // Check answers
+            for (var q in correctAnswers) {
+                var userAnswer = form[q].value.trim().toLowerCase();
+                if (userAnswer === correctAnswers[q].toLowerCase()) {
+                    score++;
+                }
+            }
+
+            // Provide feedback based on score
+            if (score === 6) {
+                feedback = "Excellent! You got all the answers correct.";
+            } else if (score >= 4) {
+                feedback = "Good job! You got " + score + " out of 6 correct.";
+            } else {
+                feedback = "You scored " + score + " out of 6. Try again!";
+            }
+
+            // Display score and feedback
+            document.getElementById("score").innerText = "You scored " + score + " out of 6. " + feedback;
+        }
+    </script>
+
+</body>
+</html>
