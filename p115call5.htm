@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Services Quiz - Call 5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Emergency Services Quiz - Call 5</h1>
+    <form id="quizForm">
+        <h2>Call 5</h2>
+        <div class="question">
+            <p>Q1: What is the emergency?</p>
+            <input type="radio" name="call5_q1" value="A"> A) A trainee at college hit his hand with a hammer<br>
+            <input type="radio" name="call5_q1" value="B"> B) A trainee at college sawed his hand off<br>
+            <input type="radio" name="call5_q1" value="C"> C) A trainee at college cut his hand with a saw<br>
+        </div>
+        
+        <div class="question">
+            <p>Q2: Is there much blood?</p>
+            <input type="radio" name="call5_q2" value="A"> A) No. There is no blood<br>
+            <input type="radio" name="call5_q2" value="B"> B) Yes, there is a lot of blood<br>
+            <input type="radio" name="call5_q2" value="C"> C) Yes, but just a little blood<br>
+        </div>
+
+        <div class="question">
+            <p>Q3: Is there a first aid kit there?</p>
+            <input type="radio" name="call5_q3" value="A"> A) No. There is no first aid kit<br>
+            <input type="radio" name="call5_q3" value="B"> B) Yes! There’s a first aid kit on the wall<br>
+            <input type="radio" name="call5_q3" value="C"> C) Yes! There’s a first aid kit, but it’s empty<br>
+        </div>
+
+        <div class="question">
+            <p>Q4: Emergency services said __________</p>
+            <input type="radio" name="call5_q4" value="A"> A) A first aid person can help and they will send an Ambulance.<br>
+            <input type="radio" name="call5_q4" value="B"> B) They will send an ambulance<br>
+            <input type="radio" name="call5_q4" value="C"> C) They will send an ambulance and a first aid person in the hospital can help<br>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+
+    <div id="result" class="result"></div>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            let feedback = '';
+
+            // Call 5 answers
+            if (document.querySelector('input[name="call5_q1"]:checked')?.value === 'C') score++;
+            else feedback += 'Q1 (Call 5) is incorrect.<br>';
+
+            if (document.querySelector('input[name="call5_q2"]:checked')?.value === 'B') score++;
+            else feedback += 'Q2 (Call 5) is incorrect.<br>';
+
+            if (document.querySelector('input[name="call5_q3"]:checked')?.value === 'B') score++;
+            else feedback += 'Q3 (Call 5) is incorrect.<br>';
+
+            if (document.querySelector('input[name="call5_q4"]:checked')?.value === 'A') score++;
+            else feedback += 'Q4 (Call 5) is incorrect.<br>';
+
+            const totalQuestions = 4; // Total number of questions
+            const resultText = `You scored ${score} out of ${totalQuestions}.<br>${feedback || 'All answers are correct!'}<br>`;
+            document.getElementById('result').innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>
