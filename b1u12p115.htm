@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Services Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Emergency Services Quiz</h1>
+    <form id="quizForm">
+        <h2>Call 3</h2>
+        <div class="question">
+            <p>Q1: What is the emergency?</p>
+            <input type="radio" name="call3_q1" value="A"> A) A fire truck hit apartments<br>
+            <input type="radio" name="call3_q1" value="B"> B) Apartments are on fire<br>
+            <input type="radio" name="call3_q1" value="C"> C) Apartments have leaking pipes<br>
+        </div>
+        
+        <div class="question">
+            <p>Q2: Does the caller think that there are any people in the Apartment block now?</p>
+            <input type="radio" name="call3_q2" value="A"> A) No. All the people are outside now<br>
+            <input type="radio" name="call3_q2" value="B"> B) Yes! His family are inside the apartment now!<br>
+            <input type="radio" name="call3_q2" value="C"> C) Yes, he thinks that there are some people inside the apartments.<br>
+        </div>
+
+        <div class="question">
+            <p>Q3: Emergency services will send __________</p>
+            <input type="radio" name="call3_q3" value="A"> A) A fire truck and an ambulance<br>
+            <input type="radio" name="call3_q3" value="B"> B) An ambulance<br>
+            <input type="radio" name="call3_q3" value="C"> C) A fire truck<br>
+        </div>
+
+        <h2>Call 4</h2>
+        <div class="question">
+            <p>Q1: What is the emergency?</p>
+            <input type="radio" name="call4_q1" value="A"> A) A worker has bad chemical burns.<br>
+            <input type="radio" name="call4_q1" value="B"> B) A worker ate bad cinnamon buns.<br>
+            <input type="radio" name="call4_q1" value="C"> C) A worker has bad cigarette burns<br>
+        </div>
+
+        <div class="question">
+            <p>Q2: When did this happen?</p>
+            <input type="radio" name="call4_q2" value="A"> A) 15 minutes ago<br>
+            <input type="radio" name="call4_q2" value="B"> B) 5 minutes ago<br>
+            <input type="radio" name="call4_q2" value="C"> C) 5 hours ago<br>
+        </div>
+
+        <div class="question">
+            <p>Q3: What injuries has he got?</p>
+            <input type="radio" name="call4_q3" value="A"> A) He burned his arms and legs.<br>
+            <input type="radio" name="call4_q3" value="B"> B) He burned his face and hands.<br>
+            <input type="radio" name="call4_q3" value="C"> C) He burned his feet and legs.<br>
+        </div>
+
+        <div class="question">
+            <p>Q4: Emergency services said __________</p>
+            <input type="radio" name="call4_q4" value="A"> A) They will send an Ambulance<br>
+            <input type="radio" name="call4_q4" value="B"> B) They will send a police car to take him to hospital<br>
+            <input type="radio" name="call4_q4" value="C"> C) They will send a fire truck and an ambulance<br>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+
+    <div id="result" class="result"></div>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            let feedback = '';
+
+            // Call 3 answers
+            if (document.querySelector('input[name="call3_q1"]:checked')?.value === 'B') score++;
+            else feedback += 'Q1 (Call 3) is incorrect.<br>';
+            
+            if (document.querySelector('input[name="call3_q2"]:checked')?.value === 'C') score++;
+            else feedback += 'Q2 (Call 3) is incorrect.<br>';
+            
+            if (document.querySelector('input[name="call3_q3"]:checked')?.value === 'A') score++;
+            else feedback += 'Q3 (Call 3) is incorrect.<br>';
+            
+            // Call 4 answers
+            if (document.querySelector('input[name="call4_q1"]:checked')?.value === 'A') score++;
+            else feedback += 'Q1 (Call 4) is incorrect.<br>';
+
+            if (document.querySelector('input[name="call4_q2"]:checked')?.value === 'B') score++;
+            else feedback += 'Q2 (Call 4) is incorrect.<br>';
+
+            if (document.querySelector('input[name="call4_q3"]:checked')?.value === 'B') score++;
+            else feedback += 'Q3 (Call 4) is incorrect.<br>';
+            
+            if (document.querySelector('input[name="call4_q4"]:checked')?.value === 'A') score++;
+            else feedback += 'Q4 (Call 4) is incorrect.<br>';
+
+            const totalQuestions = 7; // Total number of questions
+            const resultText = `You scored ${score} out of ${totalQuestions}.<br>${feedback || 'All answers are correct!'}<br>`;
+            document.getElementById('result').innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>
