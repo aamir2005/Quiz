@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Listening Quiz</h1>
+    <form id="quizForm">
+        <h2>Dialogue 1</h2>
+        <div class="question">
+            <p>1. The boss is using effective communication with the new worker.</p>
+            <input type="radio" name="dialogue1_q1" value="A"> A) True<br>
+            <input type="radio" name="dialogue1_q1" value="B"> B) False<br>
+        </div>
+
+        <div class="question">
+            <p>2. The boss is using effective communication with Ahmed the new employee. Ahmed can now get the machine to work.</p>
+            <input type="radio" name="dialogue1_q2" value="A"> A) True<br>
+            <input type="radio" name="dialogue1_q2" value="B"> B) False<br>
+        </div>
+
+        <h2>Dialogue 2</h2>
+        <div class="question">
+            <p>1. The storeroom manager understood the message from the workshop.</p>
+            <input type="radio" name="dialogue2_q1" value="A"> A) True<br>
+            <input type="radio" name="dialogue2_q1" value="B"> B) False<br>
+        </div>
+
+        <div class="question">
+            <p>2. Fahad brought the right tools to the workshop.</p>
+            <input type="radio" name="dialogue2_q2" value="A"> A) True<br>
+            <input type="radio" name="dialogue2_q2" value="B"> B) False<br>
+        </div>
+
+        <div class="question">
+            <p>3. The phone call shows effective communication.</p>
+            <input type="radio" name="dialogue2_q3" value="A"> A) True<br>
+            <input type="radio" name="dialogue2_q3" value="B"> B) False<br>
+        </div>
+
+        <h2>Dialogue 3</h2>
+        <div class="question">
+            <p>1. Which worker at the meeting gives positive feedback?</p>
+            <input type="radio" name="dialogue3_q1" value="A"> A) Worker 1<br>
+            <input type="radio" name="dialogue3_q1" value="B"> B) Worker 2<br>
+            <input type="radio" name="dialogue3_q1" value="C"> C) Worker 3<br>
+        </div>
+
+        <div class="question">
+            <p>2. Which worker was making a phone call in the meeting?</p>
+            <input type="radio" name="dialogue3_q2" value="A"> A) Worker 1<br>
+            <input type="radio" name="dialogue3_q2" value="B"> B) Worker 2<br>
+            <input type="radio" name="dialogue3_q2" value="C"> C) Worker 3<br>
+        </div>
+
+        <div class="question">
+            <p>3. Which worker is too busy to give the manager feedback?</p>
+            <input type="radio" name="dialogue3_q3" value="A"> A) Worker 1<br>
+            <input type="radio" name="dialogue3_q3" value="B"> B) Worker 2<br>
+            <input type="radio" name="dialogue3_q3" value="C"> C) Worker 3<br>
+        </div>
+
+        <h2>Dialogue 4</h2>
+        <div class="question">
+            <p>1. Why is the manager’s communication ineffective?</p>
+            <input type="radio" name="dialogue4_q1" value="A"> A) Language barrier<br>
+            <input type="radio" name="dialogue4_q1" value="B"> B) Noise<br>
+            <input type="radio" name="dialogue4_q1" value="C"> C) Poor body language and gestures<br>
+        </div>
+
+        <div class="question">
+            <p>2. What is the problem with the manager’s message?</p>
+            <input type="radio" name="dialogue4_q2" value="A"> A) The workers are not listening<br>
+            <input type="radio" name="dialogue4_q2" value="B"> B) The workers are inattentive<br>
+            <input type="radio" name="dialogue4_q2" value="C"> C) The workers cannot hear the message<br>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+
+    <div id="result" class="result"></div>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            let feedback = '';
+
+            // Correct answers based on the answer key
+            const correctAnswers = {
+                dialogue1_q1: 'B', dialogue1_q2: 'B',
+                dialogue2_q1: 'B', dialogue2_q2: 'A', dialogue2_q3: 'B',
+                dialogue3_q1: 'B', dialogue3_q2: 'C', dialogue3_q3: 'A',
+                dialogue4_q1: 'B', dialogue4_q2: 'C'
+            };
+
+            // Check the user's answers
+            for (let i = 1; i <= 2; i++) {
+                let selectedAnswer = document.querySelector(`input[name="dialogue1_q${i}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[`dialogue1_q${i}`]) {
+                    score++;
+                } else {
+                    feedback += `Dialogue 1, Question ${i} is incorrect.<br>`;
+                }
+            }
+
+            for (let i = 1; i <= 3; i++) {
+                let selectedAnswer = document.querySelector(`input[name="dialogue2_q${i}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[`dialogue2_q${i}`]) {
+                    score++;
+                } else {
+                    feedback += `Dialogue 2, Question ${i} is incorrect.<br>`;
+                }
+            }
+
+            for (let i = 1; i <= 3; i++) {
+                let selectedAnswer = document.querySelector(`input[name="dialogue3_q${i}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[`dialogue3_q${i}`]) {
+                    score++;
+                } else {
+                    feedback += `Dialogue 3, Question ${i} is incorrect.<br>`;
+                }
+            }
+
+            for (let i = 1; i <= 2; i++) {
+                let selectedAnswer = document.querySelector(`input[name="dialogue4_q${i}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[`dialogue4_q${i}`]) {
+                    score++;
+                } else {
+                    feedback += `Dialogue 4, Question ${i} is incorrect.<br>`;
+                }
+            }
+
+            const totalQuestions = 13; // Total number of questions
+            const resultText = `You scored ${score} out of ${totalQuestions}.<br>${feedback || 'All answers are correct!'}<br>`;
+            document.getElementById('result').innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>
