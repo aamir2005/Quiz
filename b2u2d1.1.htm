@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Comprehension Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+        .option {
+            margin-left: 20px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reading Comprehension Quiz</h1>
+    <div class="quiz-container">
+        <p><strong>Read the passage below and answer the following questions:</strong></p>
+
+        <p>The Jeddah Tower is known as Kingdom Tower and Mile-High Tower. The Kingdom of Saudi Arabia intends it to be the highest construction building in the world. Not only that; the Kingdom Tower will be the center of a $75 billion Economic City in Jeddah. It will be on the Red Sea. The tower will encourage tourism from all over the world.</p>
+
+        <p>The city will be built in three phases. First, it proposes to develop a large area of 5.2 km². The second phase will be the infrastructure development needed to support the city. Electricity, water supplies, roads, telephone networks, etc., will be installed. The third phase has not yet been revealed.</p>
+
+        <h3>Answer the following questions:</h3>
+
+        <div class="question">
+            <label for="q1">1. Where will the Jeddah Tower be built?</label><br>
+            <input type="text" id="q1" name="q1">
+        </div>
+
+        <div class="question">
+            <label for="q2">2. How high will it eventually be? Why?</label><br>
+            <input type="text" id="q2" name="q2">
+        </div>
+
+        <div class="question">
+            <label for="q3">3. How much will the Jeddah Economic City cost?</label><br>
+            <input type="text" id="q3" name="q3">
+        </div>
+
+        <div class="question">
+            <label for="q4">4. What does infrastructure mean?</label><br>
+            <input type="text" id="q4" name="q4">
+        </div>
+
+        <h3>Multiple-Choice Questions:</h3>
+
+        <div class="question">
+            <label>5. What is the purpose of the Jeddah Tower?</label><br>
+            <input type="radio" id="q5a" name="q5" value="Encourage tourism">
+            <label for="q5a" class="option">Encourage tourism</label><br>
+            <input type="radio" id="q5b" name="q5" value="Develop new roads">
+            <label for="q5b" class="option">Develop new roads</label><br>
+            <input type="radio" id="q5c" name="q5" value="Generate electricity">
+            <label for="q5c" class="option">Generate electricity</label><br>
+        </div>
+
+        <div class="question">
+            <label>6. How many phases will the Jeddah Economic City development have?</label><br>
+            <input type="radio" id="q6a" name="q6" value="1">
+            <label for="q6a" class="option">1</label><br>
+            <input type="radio" id="q6b" name="q6" value="2">
+            <label for="q6b" class="option">2</label><br>
+            <input type="radio" id="q6c" name="q6" value="3">
+            <label for="q6c" class="option">3</label><br>
+        </div>
+
+        <div class="question">
+            <label>7. What is the first phase of the Jeddah Economic City development?</label><br>
+            <input type="radio" id="q7a" name="q7" value="Infrastructure development">
+            <label for="q7a" class="option">Infrastructure development</label><br>
+            <input type="radio" id="q7b" name="q7" value="Area development">
+            <label for="q7b" class="option">Area development</label><br>
+            <input type="radio" id="q7c" name="q7" value="City design">
+            <label for="q7c" class="option">City design</label><br>
+        </div>
+
+        <div class="question">
+            <label>8. What is the cost of the Jeddah Economic City?</label><br>
+            <input type="radio" id="q8a" name="q8" value="$100 billion">
+            <label for="q8a" class="option">$100 billion</label><br>
+            <input type="radio" id="q8b" name="q8" value="$75 billion">
+            <label for="q8b" class="option">$75 billion</label><br>
+            <input type="radio" id="q8c" name="q8" value="$50 billion">
+            <label for="q8c" class="option">$50 billion</label><br>
+        </div>
+
+        <button onclick="alert('Quiz completed!')">Submit</button>
+    </div>
+</body>
+</html>
