@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill-in-the-Blank Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+        input[type="text"] {
+            width: 50px;
+            padding: 5px;
+            margin-top: 5px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fill-in-the-Blank Quiz</h1>
+    <div class="quiz-container">
+        <p><strong>Fill in the blanks with "is" or "are".</strong></p>
+
+        <div class="question">
+            <label for="q1">1. Nails _____ enough to build a wall.</label><br>
+            <input type="text" id="q1" name="q1" placeholder="is/are">
+        </div>
+
+        <div class="question">
+            <label for="q2">2. Cement _____ enough to build a wall.</label><br>
+            <input type="text" id="q2" name="q2" placeholder="is/are">
+        </div>
+
+        <div class="question">
+            <label for="q3">3. 3 bags of cement _____ enough to build a wall.</label><br>
+            <input type="text" id="q3" name="q3" placeholder="is/are">
+        </div>
+
+        <div class="question">
+            <label for="q4">4. Face masks _____ here for you all.</label><br>
+            <input type="text" id="q4" name="q4" placeholder="is/are">
+        </div>
+
+        <div class="question">
+            <label for="q5">5. Personal equipment _____ here for you all.</label><br>
+            <input type="text" id="q5" name="q5" placeholder="is/are">
+        </div>
+
+        <div class="question">
+            <label for="q6">6. Vests _____ here for you all.</label><br>
+            <input type="text" id="q6" name="q6" placeholder="is/are">
+        </div>
+
+        <div class="question">
+            <label for="q7">7. I used 3 meters of fabric. Fabric _____ enough to make the item.</label><br>
+            <input type="text" id="q7" name="q7" placeholder="is/are">
+        </div>
+
+        <div class="question">
+            <label for="q8">8. Spanners _____ in the toolbox.</label><br>
+            <input type="text" id="q8" name="q8" placeholder="is/are">
+        </div>
+
+        <div class="question">
+            <label for="q9">9. I buy 3 bags of rice every month. Rice _____ something I always have at home.</label><br>
+            <input type="text" id="q9" name="q9" placeholder="is/are">
+        </div>
+
+        <button onclick="alert('Quiz completed!')">Submit</button>
+    </div>
+</body>
+</html>
