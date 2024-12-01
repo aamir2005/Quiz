@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .quiz-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin: auto;
+        }
+        .question {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        .options {
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+            margin: 8px 0;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h2>Quiz</h2>
+
+        <form id="quizForm">
+            <div class="question">
+                <p>1. The pencil is ____.</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"> a) broken</label>
+                    <label><input type="radio" name="q1" value="b"> b) cracked</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>2. The windshield is _______.</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="a"> a) broken</label>
+                    <label><input type="radio" name="q2" value="b"> b) cracked</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>3. The chicken is ____.</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a"> a) burned</label>
+                    <label><input type="radio" name="q3" value="b"> b) dented</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>4. The pipes are ____.</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a"> a) corroded</label>
+                    <label><input type="radio" name="q4" value="b"> b) dented</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>5. The back bumper is ____.</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a"> a) broken</label>
+                    <label><input type="radio" name="q5" value="b"> b) dented</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>6. These are cans of ______.</p>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="a"> a) sand</label>
+                    <label><input type="radio" name="q6" value="b"> b) paint</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>7. This is a ________ of sand.</p>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="a"> a) can</label>
+                    <label><input type="radio" name="q7" value="b"> b) bag</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>8. This is a _____ of water.</p>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="a"> a) glass</label>
+                    <label><input type="radio" name="q8" value="b"> b) bag</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>9. This is a cup of ____.</p>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="a"> a) pie</label>
+                    <label><input type="radio" name="q9" value="b"> b) tea</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>10. This is a piece of ____.</p>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="a"> a) pie</label>
+                    <label><input type="radio" name="q10" value="b"> b) water</label>
+                </div>
+            </div>
+
+            <button type="button" class="btn" onclick="calculateScore()">Submit</button>
+        </form>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateScore() {
+            var score = 0;
+            var totalQuestions = 10;
+            var correctAnswers = {
+                q1: 'a', q2: 'b', q3: 'a', q4: 'a', q5: 'b',
+                q6: 'b', q7: 'b', q8: 'a', q9: 'b', q10: 'a'
+            };
+
+            // Check answers
+            for (var i = 1; i <= totalQuestions; i++) {
+                var selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            // Display result
+            var resultText = `Your score is ${score} out of ${totalQuestions}.`;
+            document.getElementById('result').innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>
