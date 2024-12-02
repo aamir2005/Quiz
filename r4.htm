@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .answer {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Quiz</h1>
+
+    <form id="quizForm">
+        <div class="question">
+            <p>31. A ____ is used to sit on.</p>
+            <label class="answer"><input type="radio" name="q1" value="a"> a) book</label><br>
+            <label class="answer"><input type="radio" name="q1" value="b"> b) chair</label>
+        </div>
+
+        <div class="question">
+            <p>32. He is cutting a pipe. This man is a ______.</p>
+            <label class="answer"><input type="radio" name="q2" value="a"> a) pipefitter</label><br>
+            <label class="answer"><input type="radio" name="q2" value="b"> b) painter</label>
+        </div>
+
+        <div class="question">
+            <p>33. They are _____ at MCTC.</p>
+            <label class="answer"><input type="radio" name="q3" value="a"> a) trainees</label><br>
+            <label class="answer"><input type="radio" name="q3" value="b"> b) doctors</label>
+        </div>
+
+        <div class="question">
+            <p>34. I am writing. There is a ____ in my hand.</p>
+            <label class="answer"><input type="radio" name="q4" value="a"> a) mobile</label><br>
+            <label class="answer"><input type="radio" name="q4" value="b"> b) pen</label>
+        </div>
+
+        <div class="question">
+            <p>35. Plumbers use ____ to install pipes.</p>
+            <label class="answer"><input type="radio" name="q5" value="a"> a) spanners</label><br>
+            <label class="answer"><input type="radio" name="q5" value="b"> b) hand saws</label>
+        </div>
+
+        <div class="question">
+            <p>36. Carpenters use ______ to drive nails.</p>
+            <label class="answer"><input type="radio" name="q6" value="a"> a) hammers</label><br>
+            <label class="answer"><input type="radio" name="q6" value="b"> b) chisels</label>
+        </div>
+
+        <div class="question">
+            <p>37. We use ____ to move heavy items up and down.</p>
+            <label class="answer"><input type="radio" name="q7" value="a"> a) safety gloves</label><br>
+            <label class="answer"><input type="radio" name="q7" value="b"> b) forklifts</label>
+        </div>
+
+        <div class="question">
+            <p>38. They are on a wall. They are cleaning ____.</p>
+            <label class="answer"><input type="radio" name="q8" value="a"> a) windows</label><br>
+            <label class="answer"><input type="radio" name="q8" value="b"> b) cars</label>
+        </div>
+
+        <div class="question">
+            <p>39. ______ monitor the workplace.</p>
+            <label class="answer"><input type="radio" name="q9" value="a"> a) Safety officers</label><br>
+            <label class="answer"><input type="radio" name="q9" value="b"> b) Architects</label>
+        </div>
+
+        <div class="question">
+            <p>40. We use ______ to treat a minor cut.</p>
+            <label class="answer"><input type="radio" name="q10" value="a"> a) plasters</label><br>
+            <label class="answer"><input type="radio" name="q10" value="b"> b) paints</label>
+        </div>
+
+        <button type="button" onclick="calculateScore()">Submit</button>
+    </form>
+
+    <div id="scoreResult" style="margin-top: 20px;"></div>
+
+    <script>
+        function calculateScore() {
+            var score = 0;
+            var correctAnswers = {
+                q1: 'b',
+                q2: 'a',
+                q3: 'a',
+                q4: 'b',
+                q5: 'a',
+                q6: 'a',
+                q7: 'b',
+                q8: 'a',
+                q9: 'a',
+                q10: 'a'
+            };
+
+            for (var i = 1; i <= 10; i++) {
+                var answer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (answer && answer.value === correctAnswers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            document.getElementById('scoreResult').innerHTML = `Your score is: ${score} out of 10`;
+        }
+    </script>
+
+</body>
+</html>
