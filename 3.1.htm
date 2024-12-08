@@ -41,6 +41,11 @@
             color: green;
             display: none;
         }
+        .score {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -102,6 +107,7 @@
             <p id="result8" class="answer"></p>
             <p id="result9" class="answer"></p>
             <p id="result10" class="answer"></p>
+            <p id="score" class="score"></p>
         </div>
     </div>
 
@@ -124,6 +130,8 @@
             var resultDiv = document.getElementById("results");
             resultDiv.style.display = "block";
 
+            var score = 0;
+
             for (var i = 1; i <= 10; i++) {
                 var userAnswer = form["q" + i].value.trim().toLowerCase();
                 var correctAnswer = answers["q" + i].toLowerCase();
@@ -132,11 +140,14 @@
                 if (userAnswer === correctAnswer) {
                     resultElement.textContent = "Question " + i + ": Correct!";
                     resultElement.style.color = "green";
+                    score++;
                 } else {
                     resultElement.textContent = "Question " + i + ": Incorrect. The correct answer is '" + answers["q" + i] + "'.";
                     resultElement.style.color = "red";
                 }
             }
+
+            document.getElementById("score").textContent = "Your score: " + score + "/10";
         }
     </script>
 </body>
