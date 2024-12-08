@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill in the Blanks Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .question {
+            margin: 15px 0;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"] {
+            padding: 5px;
+            margin-top: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .submit-button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+        .answer {
+            font-weight: bold;
+            color: green;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Fill in the Blanks Quiz</h1>
+        <form id="quizForm">
+            <div class="question">
+                <label for="q1">1. Al-Baik restaurants are a _______ chain in many cities including Mecca.</label>
+                <input type="text" id="q1" name="q1">
+            </div>
+            <div class="question">
+                <label for="q2">2. It is a successful Saudi example of _______.</label>
+                <input type="text" id="q2" name="q2">
+            </div>
+            <div class="question">
+                <label for="q3">3. Al-Baik sells roasted _______ and shrimp with sauces.</label>
+                <input type="text" id="q3" name="q3">
+            </div>
+            <div class="question">
+                <label for="q4">4. The chain has more than 40 branches in _______.</label>
+                <input type="text" id="q4" name="q4">
+            </div>
+            <div class="question">
+                <label for="q5">5. There are eight branches in _______.</label>
+                <input type="text" id="q5" name="q5">
+            </div>
+            <div class="question">
+                <label for="q6">6. There are six branches in _______.</label>
+                <input type="text" id="q6" name="q6">
+            </div>
+            <div class="question">
+                <label for="q7">7. One branch is located in _______.</label>
+                <input type="text" id="q7" name="q7">
+            </div>
+            <div class="question">
+                <label for="q8">8. One branch is located in _______.</label>
+                <input type="text" id="q8" name="q8">
+            </div>
+            <div class="question">
+                <label for="q9">9. The restaurant is always _______ and tidy.</label>
+                <input type="text" id="q9" name="q9">
+            </div>
+            <div class="question">
+                <label for="q10">10. Workers at Al-Baik are very _______ dressed.</label>
+                <input type="text" id="q10" name="q10">
+            </div>
+            <button type="button" class="submit-button" onclick="checkAnswers()">Submit</button>
+        </form>
+
+        <div id="results" style="display:none;">
+            <h2>Results</h2>
+            <p id="result1" class="answer"></p>
+            <p id="result2" class="answer"></p>
+            <p id="result3" class="answer"></p>
+            <p id="result4" class="answer"></p>
+            <p id="result5" class="answer"></p>
+            <p id="result6" class="answer"></p>
+            <p id="result7" class="answer"></p>
+            <p id="result8" class="answer"></p>
+            <p id="result9" class="answer"></p>
+            <p id="result10" class="answer"></p>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            var answers = {
+                q1: "Saudi",
+                q2: "business",
+                q3: "chicken",
+                q4: "Jeddah",
+                q5: "Mecca",
+                q6: "Medina",
+                q7: "Taif",
+                q8: "Yanbu",
+                q9: "clean",
+                q10: "neatly"
+            };
+
+            var form = document.getElementById("quizForm");
+            var resultDiv = document.getElementById("results");
+            resultDiv.style.display = "block";
+
+            for (var i = 1; i <= 10; i++) {
+                var userAnswer = form["q" + i].value.trim().toLowerCase();
+                var correctAnswer = answers["q" + i].toLowerCase();
+                var resultElement = document.getElementById("result" + i);
+
+                if (userAnswer === correctAnswer) {
+                    resultElement.textContent = "Question " + i + ": Correct!";
+                    resultElement.style.color = "green";
+                } else {
+                    resultElement.textContent = "Question " + i + ": Incorrect. The correct answer is '" + answers["q" + i] + "'.";
+                    resultElement.style.color = "red";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
