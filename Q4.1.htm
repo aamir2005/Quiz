@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floorman Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .answer {
+            padding: 5px;
+            width: 200px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .score {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Floorman Quiz</h1>
+    
+    <div class="question">
+        <label for="q1">1. A floorman works with drills to help ____ oil and gas.</label><br>
+        <select id="q1" class="answer">
+            <option value="">Select an answer</option>
+            <option value="extract">Extract</option>
+            <option value="energy">Energy</option>
+            <option value="pay">Pay</option>
+            <option value="employment">Employment</option>
+        </select>
+    </div>
+    
+    <div class="question">
+        <label for="q2">2. The job is important because it supports the _____ industry.</label><br>
+        <select id="q2" class="answer">
+            <option value="">Select an answer</option>
+            <option value="energy">Energy</option>
+            <option value="extract">Extract</option>
+            <option value="safety">Safety</option>
+            <option value="pay">Pay</option>
+        </select>
+    </div>
+    
+    <div class="question">
+        <label for="q3">3. As a floorman, you have responsibility for _____ and equipment.</label><br>
+        <select id="q3" class="answer">
+            <option value="">Select an answer</option>
+            <option value="safety">Safety</option>
+            <option value="pay">Pay</option>
+            <option value="energy">Energy</option>
+            <option value="employment">Employment</option>
+        </select>
+    </div>
+    
+    <div class="question">
+        <label for="q4">4. You can earn good _____ while working in this field.</label><br>
+        <select id="q4" class="answer">
+            <option value="">Select an answer</option>
+            <option value="pay">Pay</option>
+            <option value="extract">Extract</option>
+            <option value="safety">Safety</option>
+            <option value="energy">Energy</option>
+        </select>
+    </div>
+    
+    <div class="question">
+        <label for="q5">5. Becoming a floorman can lead to steady, long-term _____.</label><br>
+        <select id="q5" class="answer">
+            <option value="">Select an answer</option>
+            <option value="employment">Employment</option>
+            <option value="pay">Pay</option>
+            <option value="extract">Extract</option>
+            <option value="energy">Energy</option>
+        </select>
+    </div>
+    
+    <button class="button" onclick="checkAnswers()">Submit</button>
+    
+    <p id="result" class="score"></p>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            const answers = ["extract", "energy", "safety", "pay", "employment"];
+            
+            // Get the user input
+            const userAnswers = [
+                document.getElementById("q1").value.toLowerCase(),
+                document.getElementById("q2").value.toLowerCase(),
+                document.getElementById("q3").value.toLowerCase(),
+                document.getElementById("q4").value.toLowerCase(),
+                document.getElementById("q5").value.toLowerCase()
+            ];
+            
+            // Check the answers
+            for (let i = 0; i < answers.length; i++) {
+                if (userAnswers[i] === answers[i]) {
+                    score++;
+                }
+            }
+            
+            // Display the score
+            document.getElementById("result").textContent = "Your score: " + score + " out of 5";
+        }
+    </script>
+</body>
+</html>
