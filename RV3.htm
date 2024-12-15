@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill-in-the-Blanks Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .answers {
+            list-style-type: none;
+            padding: 0;
+        }
+        .answers li {
+            margin-bottom: 10px;
+        }
+        select {
+            padding: 5px;
+            margin-top: 5px;
+        }
+        #result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fill-in-the-Blanks Quiz</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. _______________ the basic structures (e.g. buildings, roads, power supplies) needed for the operation of a city.</p>
+            <select name="q1">
+                <option value="a">Infrastructure</option>
+                <option value="b">Private Sector</option>
+                <option value="c">Residential</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <p>2. _______________ the action of building something, typically a large structure.</p>
+            <select name="q2">
+                <option value="a">Commercial</option>
+                <option value="b">Infrastructure</option>
+                <option value="c">Value</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p>3. _______________ The importance, worth, or usefulness of something.</p>
+            <select name="q3">
+                <option value="a">Residential</option>
+                <option value="b">Commercial</option>
+                <option value="c">Value</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p>4. _______________ Where houses are more than other types of building.</p>
+            <select name="q4">
+                <option value="a">Commercial</option>
+                <option value="b">Residential</option>
+                <option value="c">Private Sector</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p>5. _______________ Built to make a profit.</p>
+            <select name="q5">
+                <option value="a">Commercial</option>
+                <option value="b">Private Sector</option>
+                <option value="c">Infrastructure</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p>6. _______________ Economy of individuals, not the government.</p>
+            <select name="q6">
+                <option value="a">Private Sector</option>
+                <option value="b">Commercial</option>
+                <option value="c">Residential</option>
+            </select>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function checkAnswers() {
+            var score = 0;
+            var correctAnswers = {
+                q1: 'a',  // Infrastructure
+                q2: 'b',  // Infrastructure
+                q3: 'c',  // Value
+                q4: 'b',  // Residential
+                q5: 'a',  // Commercial
+                q6: 'a'   // Private Sector
+            };
+
+            for (var question in correctAnswers) {
+                var selectedAnswer = document.querySelector(`select[name="${question}"]`).value;
+                if (selectedAnswer === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            var resultText = `Your score: ${score} out of 6.`;
+            document.getElementById('result').innerText = resultText;
+        }
+    </script>
+</body>
+</html>
