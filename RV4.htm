@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .answers {
+            list-style-type: none;
+            padding: 0;
+        }
+        .answers li {
+            margin-bottom: 10px;
+        }
+        select {
+            padding: 5px;
+            margin-top: 5px;
+        }
+        #result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vocabulary Quiz</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. To take apart or remove something is to ________.</p>
+            <select name="q1">
+                <option value="a">Erect</option>
+                <option value="b">Dismantle</option>
+                <option value="c">Measure</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <p>2. To construct or put up something is to ________.</p>
+            <select name="q2">
+                <option value="a">Trades</option>
+                <option value="b">Dismantle</option>
+                <option value="c">Erect/Build</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p>3. The act of keeping something in good working condition is called ________.</p>
+            <select name="q3">
+                <option value="a">Maintenance</option>
+                <option value="b">Trades</option>
+                <option value="c">Dismantle</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p>4. Skilled jobs, often involving manual work, are called ________.</p>
+            <select name="q4">
+                <option value="a">Maintenance</option>
+                <option value="b">Trades</option>
+                <option value="c">Measure</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p>5. To find the size, amount, or distance of something is to ________.</p>
+            <select name="q5">
+                <option value="a">Erect/Build</option>
+                <option value="b">Dismantle</option>
+                <option value="c">Measure</option>
+            </select>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function checkAnswers() {
+            var score = 0;
+            var correctAnswers = {
+                q1: 'b',  // Dismantle
+                q2: 'c',  // Erect/Build
+                q3: 'a',  // Maintenance
+                q4: 'b',  // Trades
+                q5: 'c'   // Measure
+            };
+
+            for (var question in correctAnswers) {
+                var selectedAnswer = document.querySelector(`select[name="${question}"]`).value;
+                if (selectedAnswer === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            var resultText = `Your score: ${score} out of 5.`;
+            document.getElementById('result').innerText = resultText;
+        }
+    </script>
+</body>
+</html>
