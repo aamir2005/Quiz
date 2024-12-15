@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Role Matching Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .answers {
+            list-style-type: none;
+            padding: 0;
+        }
+        .answers li {
+            margin-bottom: 10px;
+        }
+        #result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Job Role Matching Quiz</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. Installs electrical machines and equipment.</p>
+            <ul class="answers">
+                <li><input type="radio" name="q1" value="a"> Electrician</li>
+                <li><input type="radio" name="q1" value="b"> Instrumentation Technician</li>
+                <li><input type="radio" name="q1" value="c"> Pipefitter</li>
+            </ul>
+        </div>
+        
+        <div class="question">
+            <p>2. Tests, installs, maintains, and inspects monitoring devices.</p>
+            <ul class="answers">
+                <li><input type="radio" name="q2" value="a"> Electrician</li>
+                <li><input type="radio" name="q2" value="b"> Instrumentation Technician</li>
+                <li><input type="radio" name="q2" value="c"> Welder</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p>3. Installs, assembles, fabricates, maintains, and repairs mechanical piping systems.</p>
+            <ul class="answers">
+                <li><input type="radio" name="q3" value="a"> Welder</li>
+                <li><input type="radio" name="q3" value="b"> Pipefitter</li>
+                <li><input type="radio" name="q3" value="c"> Instrumentation Technician</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p>4. Works on buildings, oil rigs, ships, airplanes, and underwater structures.</p>
+            <ul class="answers">
+                <li><input type="radio" name="q4" value="a"> Pipefitter</li>
+                <li><input type="radio" name="q4" value="b"> Safety Officer</li>
+                <li><input type="radio" name="q4" value="c"> Electrician</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p>5. Writes and gets reports on work incidents and personnel and equipment.</p>
+            <ul class="answers">
+                <li><input type="radio" name="q5" value="a"> Safety Officer</li>
+                <li><input type="radio" name="q5" value="b"> Pipefitter</li>
+                <li><input type="radio" name="q5" value="c"> Welder</li>
+            </ul>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function checkAnswers() {
+            var score = 0;
+            var correctAnswers = {
+                q1: 'a',  // Electrician
+                q2: 'b',  // Instrumentation Technician
+                q3: 'a',  // welder
+                q4: 'a',  // Pipefitter
+                q5: 'a'   // Safety Officer
+            };
+
+            for (var question in correctAnswers) {
+                var selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            var resultText = `Your score: ${score} out of 5.`;
+            document.getElementById('result').innerText = resultText;
+        }
+    </script>
+</body>
+</html>
