@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill-in-the-Blanks Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .answers {
+            list-style-type: none;
+            padding: 0;
+        }
+        .answers li {
+            margin-bottom: 10px;
+        }
+        select {
+            padding: 5px;
+            margin-top: 5px;
+        }
+        #result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fill-in-the-Blanks Quiz</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. Can anyone ______________ the fan? It stopped completely.</p>
+            <select name="q1">
+                <option value="a">monitor</option>
+                <option value="b">install</option>
+                <option value="c">repair</option>
+                <option value="d">maintain</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <p>2. My mobile phone was made in China, but ______________ in KSA.</p>
+            <select name="q2">
+                <option value="a">monitor</option>
+                <option value="b">install</option>
+                <option value="c">repair</option>
+                <option value="d">assembled</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p>3. Please call the technician to ______________ the company ACs. They do this every year.</p>
+            <select name="q3">
+                <option value="a">monitor</option>
+                <option value="b">install</option>
+                <option value="c">repair</option>
+                <option value="d">maintain</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p>4. The manager can ______________ the workplace from his high office.</p>
+            <select name="q4">
+                <option value="a">monitor</option>
+                <option value="b">install</option>
+                <option value="c">repair</option>
+                <option value="d">maintain</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p>5. We need to ______________ another TV in the living room.</p>
+            <select name="q5">
+                <option value="a">monitor</option>
+                <option value="b">install</option>
+                <option value="c">repair</option>
+                <option value="d">maintain</option>
+            </select>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function checkAnswers() {
+            var score = 0;
+            var correctAnswers = {
+                q1: 'c',  // repair
+                q2: 'd',  // assembled
+                q3: 'd',  // maintain
+                q4: 'a',  // monitor
+                q5: 'b'   // install
+            };
+
+            for (var question in correctAnswers) {
+                var selectedAnswer = document.querySelector(`select[name="${question}"]`).value;
+                if (selectedAnswer === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            var resultText = `Your score: ${score} out of 5.`;
+            document.getElementById('result').innerText = resultText;
+        }
+    </script>
+</body>
+</html>
