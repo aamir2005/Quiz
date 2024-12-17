@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Grammar Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+        .question p {
+            font-size: 18px;
+        }
+        .answer {
+            margin: 10px 0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>English Grammar Quiz</h1>
+
+<form id="quizForm">
+
+    <!-- Question 1 -->
+    <div class="question">
+        <p>1. He ____ on Tuesday.</p>
+        <div class="answer">
+            <input type="radio" name="q1" value="works"> works
+            <input type="radio" name="q1" value="work"> work
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+        <p>2. ____ he work on Friday?</p>
+        <div class="answer">
+            <input type="radio" name="q2" value="Do"> Do
+            <input type="radio" name="q2" value="Does"> Does
+        </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+        <p>3. No, he ____ work on Friday.</p>
+        <div class="answer">
+            <input type="radio" name="q3" value="don’t"> don’t
+            <input type="radio" name="q3" value="doesn’t"> doesn’t
+        </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+        <p>4. The engineers ____ the machine parts.</p>
+        <div class="answer">
+            <input type="radio" name="q4" value="assembles"> assembles
+            <input type="radio" name="q4" value="assemble"> assemble
+        </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+        <p>5. ____ the engineer assemble a map?</p>
+        <div class="answer">
+            <input type="radio" name="q5" value="Does"> Does
+            <input type="radio" name="q5" value="Do"> Do
+        </div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+        <p>6. No, he ____ assemble a map.</p>
+        <div class="answer">
+            <input type="radio" name="q6" value="does not"> does not
+            <input type="radio" name="q6" value="do not"> do not
+        </div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question">
+        <p>7. An electrician ____ the wires.</p>
+        <div class="answer">
+            <input type="radio" name="q7" value="fixes"> fixes
+            <input type="radio" name="q7" value="fix"> fix
+        </div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question">
+        <p>8. ____ the electrician fix a fridge?</p>
+        <div class="answer">
+            <input type="radio" name="q8" value="Does"> Does
+            <input type="radio" name="q8" value="Do"> Do
+        </div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question">
+        <p>9. No, he ____ fix the fridge.</p>
+        <div class="answer">
+            <input type="radio" name="q9" value="don’t"> don’t
+            <input type="radio" name="q9" value="doesn't"> doesn't
+        </div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question">
+        <p>10. A punctual workman ____ the work on time.</p>
+        <div class="answer">
+            <input type="radio" name="q10" value="arrives"> arrives
+            <input type="radio" name="q10" value="arrive"> arrive
+        </div>
+    </div>
+
+    <!-- Question 11 -->
+    <div class="question">
+        <p>11. ____ a punctual workman arrive at work late?</p>
+        <div class="answer">
+            <input type="radio" name="q11" value="Does"> Does
+            <input type="radio" name="q11" value="Do"> Do
+        </div>
+    </div>
+
+    <!-- Question 12 -->
+    <div class="question">
+        <p>12. No, he ____ arrive at work late.</p>
+        <div class="answer">
+            <input type="radio" name="q12" value="doesn't"> doesn't
+            <input type="radio" name="q12" value="don't"> don't
+        </div>
+    </div>
+
+    <button type="button" onclick="submitQuiz()">Submit</button>
+
+</form>
+
+<div id="score" class="result"></div>
+
+<script>
+    function submitQuiz() {
+        let score = 0;
+        const totalQuestions = 12;
+
+        // Correct answers
+        const correctAnswers = {
+            q1: "works",
+            q2: "Does",
+            q3: "doesn't",
+            q4: "assemble",
+            q5: "Does",
+            q6: "does not",
+            q7: "fixes",
+            q8: "Does",
+            q9: "doesn't",
+            q10: "arrives",
+            q11: "Does",
+            q12: "doesn't"
+        };
+
+        // Loop through each question and check the selected answer
+        for (let i = 1; i <= totalQuestions; i++) {
+            const question = document.querySelector(`input[name="q${i}"]:checked`);
+            if (question && question.value === correctAnswers[`q${i}`]) {
+                score++;
+            }
+        }
+
+        // Display the score
+        document.getElementById("score").innerHTML = `You scored ${score} out of ${totalQuestions}.`;
+    }
+</script>
+
+</body>
+</html>
