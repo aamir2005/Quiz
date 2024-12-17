@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Professions Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .question {
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .answer {
+            margin-left: 20px;
+        }
+        .mcq {
+            margin-bottom: 10px;
+        }
+        .score {
+            color: #555;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Trade Professions Quiz</h1>
+
+<form id="quiz-form">
+    <div class="mcq">
+        <p class="question">1. What does a pipefitter do?</p>
+        <label>
+            <input type="radio" name="q1" value="A"> A) Installs electrical equipment in buildings.
+        </label><br>
+        <label>
+            <input type="radio" name="q1" value="B"> B) Installs and repairs mechanical piping systems.
+        </label><br>
+        <label>
+            <input type="radio" name="q1" value="C"> C) Tests and installs monitoring devices.
+        </label><br>
+        <label>
+            <input type="radio" name="q1" value="D"> D) Fuses metals together.
+        </label>
+    </div>
+
+    <div class="mcq">
+        <p class="question">2. What is the main role of an instrumentation technician?</p>
+        <label>
+            <input type="radio" name="q2" value="A"> A) Fuses metals using heat and gas.
+        </label><br>
+        <label>
+            <input type="radio" name="q2" value="B"> B) Installs and maintains electrical machines.
+        </label><br>
+        <label>
+            <input type="radio" name="q2" value="C"> C) Installs, tests, and maintains monitoring devices.
+        </label><br>
+        <label>
+            <input type="radio" name="q2" value="D"> D) Inspects mechanical piping systems.
+        </label>
+    </div>
+
+    <div class="mcq">
+        <p class="question">3. What is a blueprint used for?</p>
+        <label>
+            <input type="radio" name="q3" value="A"> A) To create designs for electrical machines.
+        </label><br>
+        <label>
+            <input type="radio" name="q3" value="B"> B) To show where something should be installed.
+        </label><br>
+        <label>
+            <input type="radio" name="q3" value="C"> C) To repair mechanical piping systems.
+        </label><br>
+        <label>
+            <input type="radio" name="q3" value="D"> D) To fuse metals together.
+        </label>
+    </div>
+
+    <div class="mcq">
+        <p class="question">4. What is the primary responsibility of a welder?</p>
+        <label>
+            <input type="radio" name="q4" value="A"> A) Install and repair electrical systems.
+        </label><br>
+        <label>
+            <input type="radio" name="q4" value="B"> B) Install and maintain mechanical piping systems.
+        </label><br>
+        <label>
+            <input type="radio" name="q4" value="C"> C) Fuse metals together using heat and gas.
+        </label><br>
+        <label>
+            <input type="radio" name="q4" value="D"> D) Test and maintain monitoring devices.
+        </label>
+    </div>
+
+    <div class="mcq">
+        <p class="question">5. What does a safety officer do?</p>
+        <label>
+            <input type="radio" name="q5" value="A"> A) Installs and repairs electrical machines.
+        </label><br>
+        <label>
+            <input type="radio" name="q5" value="B"> B) Checks the work of tradespeople and ensures safety.
+        </label><br>
+        <label>
+            <input type="radio" name="q5" value="C"> C) Repairs mechanical piping systems.
+        </label><br>
+        <label>
+            <input type="radio" name="q5" value="D"> D) Designs new monitoring equipment.
+        </label>
+    </div>
+
+    <button type="button" class="submit-btn" onclick="calculateScore()">Submit Quiz</button>
+
+    <p id="result" class="score"></p>
+</form>
+
+<script>
+    function calculateScore() {
+        var score = 0;
+        
+        // Answers key
+        var correctAnswers = {
+            q1: 'B',
+            q2: 'C',
+            q3: 'B',
+            q4: 'C',
+            q5: 'B'
+        };
+        
+        // Check answers
+        for (var i = 1; i <= 5; i++) {
+            var selectedAnswer = document.querySelector('input[name="q' + i + '"]:checked');
+            if (selectedAnswer && selectedAnswer.value === correctAnswers['q' + i]) {
+                score++;
+            }
+        }
+
+        // Display result
+        document.getElementById('result').textContent = "Your score: " + score + " out of 5";
+    }
+</script>
+
+</body>
+</html>
