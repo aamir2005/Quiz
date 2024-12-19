@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will vs Going To Quiz</title>
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            const answers = {
+                1: 'will',
+                2: 'is going to',
+                3: 'will',
+                4: 'is going to',
+                5: 'will'
+            };
+
+            for (let i = 1; i <= 5; i++) {
+                const userAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (userAnswer && userAnswer.value === answers[i]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("score").textContent = `Your score is: ${score} out of 5`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Will vs Going To Quiz</h2>
+    <form id="quizForm">
+        <p>1. I ______ write a report on yesterday’s accident. (prompt decision)</p>
+        <input type="radio" name="q1" value="will"> Will<br>
+        <input type="radio" name="q1" value="is going to"> Is going to<br>
+
+        <p>2. He ______ fly to the USA next week. (intention and planning)</p>
+        <input type="radio" name="q2" value="will"> Will<br>
+        <input type="radio" name="q2" value="is going to"> Is going to<br>
+
+        <p>3. I _____ call you when I return home. (prompt decision)</p>
+        <input type="radio" name="q3" value="will"> Will<br>
+        <input type="radio" name="q3" value="is going to"> Is going to<br>
+
+        <p>4. The mechanic ______ fix the car this afternoon. (intention and planning)</p>
+        <input type="radio" name="q4" value="will"> Will<br>
+        <input type="radio" name="q4" value="is going to"> Is going to<br>
+
+        <p>5. I .................................... write an e-mail to the manager as he requested. (prompt decision)</p>
+        <input type="radio" name="q5" value="will"> Will<br>
+        <input type="radio" name="q5" value="is going to"> Is going to<br><br>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+
+    <p id="score"></p>
+</body>
+</html>
