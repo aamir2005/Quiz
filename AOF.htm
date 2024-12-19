@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adverbs of Frequency Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        .question {
+            margin: 15px 0;
+        }
+        .question p {
+            font-weight: bold;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        #score {
+            display: none;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h2>Adverbs of Frequency Quiz</h2>
+    
+    <div class="question">
+        <p>1. How often does the speaker wake up early?</p>
+        <div class="options">
+            <input type="radio" name="q1" value="a"> a) Never<br>
+            <input type="radio" name="q1" value="b"> b) Always<br>
+            <input type="radio" name="q1" value="c"> c) Sometimes<br>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>2. What time do the shops close?</p>
+        <div class="options">
+            <input type="radio" name="q2" value="a"> a) Midnight<br>
+            <input type="radio" name="q2" value="b"> b) Morning<br>
+            <input type="radio" name="q2" value="c"> c) Evening<br>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>3. What is the weather usually like in KSA?</p>
+        <div class="options">
+            <input type="radio" name="q3" value="a"> a) Cold<br>
+            <input type="radio" name="q3" value="b"> b) Hot<br>
+            <input type="radio" name="q3" value="c"> c) Rainy<br>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>4. How often does the speaker go camping in Spring?</p>
+        <div class="options">
+            <input type="radio" name="q4" value="a"> a) Never<br>
+            <input type="radio" name="q4" value="b"> b) Sometimes<br>
+            <input type="radio" name="q4" value="c"> c) Often<br>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>5. When does it rain?</p>
+        <div class="options">
+            <input type="radio" name="q5" value="a"> a) In winter<br>
+            <input type="radio" name="q5" value="b"> b) In summer<br>
+            <input type="radio" name="q5" value="c"> c) All year round<br>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>6. How often does the chairman visit the branch?</p>
+        <div class="options">
+            <input type="radio" name="q6" value="a"> a) Always<br>
+            <input type="radio" name="q6" value="b"> b) Sometimes<br>
+            <input type="radio" name="q6" value="c"> c) Never<br>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>7. How often is there a power cut at work?</p>
+        <div class="options">
+            <input type="radio" name="q7" value="a"> a) Always<br>
+            <input type="radio" name="q7" value="b"> b) Seldom<br>
+            <input type="radio" name="q7" value="c"> c) Never<br>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>8. How often does it rain in Summer?</p>
+        <div class="options">
+            <input type="radio" name="q8" value="a"> a) Often<br>
+            <input type="radio" name="q8" value="b"> b) Sometimes<br>
+            <input type="radio" name="q8" value="c"> c) Hardly ever<br>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>9. How often does the speaker work on Fridays?</p>
+        <div class="options">
+            <input type="radio" name="q9" value="a"> a) Always<br>
+            <input type="radio" name="q9" value="b"> b) Sometimes<br>
+            <input type="radio" name="q9" value="c"> c) Never<br>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>10. How often does the speaker go to the gym?</p>
+        <div class="options">
+            <input type="radio" name="q10" value="a"> a) Once a week<br>
+            <input type="radio" name="q10" value="b"> b) Never<br>
+            <input type="radio" name="q10" value="c"> c) Always<br>
+        </div>
+    </div>
+
+    <button class="btn" onclick="calculateScore()">Submit Quiz</button>
+    <div id="score"></div>
+</div>
+
+<script>
+    function calculateScore() {
+        var score = 0;
+
+        // Correct answers
+        var answers = {
+            q1: 'b',
+            q2: 'a',
+            q3: 'b',
+            q4: 'c',
+            q5: 'a',
+            q6: 'b',
+            q7: 'b',
+            q8: 'c',
+            q9: 'c',
+            q10: 'a'
+        };
+
+        // Check answers
+        for (var i = 1; i <= 10; i++) {
+            var userAnswer = document.querySelector('input[name="q' + i + '"]:checked');
+            if (userAnswer && userAnswer.value === answers['q' + i]) {
+                score++;
+            }
+        }
+
+        // Show score
+        var scoreMessage = "You scored " + score + " out of 10.";
+        document.getElementById("score").style.display = "block";
+        document.getElementById("score").innerHTML = scoreMessage;
+    }
+</script>
+
+</body>
+</html>
