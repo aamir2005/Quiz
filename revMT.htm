@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+    <title>Quiz on English and Safety</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
             background-color: #f4f4f9;
+        }
+        h1 {
+            text-align: center;
         }
         .question {
             margin-bottom: 20px;
@@ -26,6 +29,8 @@
             color: white;
             border: none;
             cursor: pointer;
+            display: block;
+            margin: 20px auto;
         }
         .btn:hover {
             background-color: #45a049;
@@ -33,137 +38,181 @@
         #result {
             font-size: 20px;
             margin-top: 20px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
-    <h1>Quiz on Safety and Equipment</h1>
+    <h1>Quiz on English and Safety</h1>
     <form id="quizForm">
 
-        <!-- Question 17 -->
+        <!-- Question 1 -->
         <div class="question">
-            <h3>17. What is the result of harming someone's body?</h3>
+            <h3>1. "I ___ wake up early, even on Fridays, no matter what."</h3>
             <div class="answers">
-                <input type="radio" id="q17a" name="q17" value="a">
-                <label for="q17a">a) Injury</label>
-                <input type="radio" id="q17b" name="q17" value="b">
-                <label for="q17b">b) Litter</label>
-                <input type="radio" id="q17c" name="q17" value="c">
-                <label for="q17c">c) Trip</label>
+                <input type="radio" id="q1a" name="q1" value="a">
+                <label for="q1a">a) Must</label>
+                <input type="radio" id="q1b" name="q1" value="b">
+                <label for="q1b">b) Can</label>
+                <input type="radio" id="q1c" name="q1" value="c">
+                <label for="q1c">c) Should</label>
             </div>
         </div>
 
-        <!-- Question 18 -->
+        <!-- Question 2 -->
         <div class="question">
-            <h3>18. What should everyone do during an emergency evacuation?</h3>
+            <h3>2. "I ___ finish my project by tomorrow, or I will be late."</h3>
             <div class="answers">
-                <input type="radio" id="q18a" name="q18" value="a">
-                <label for="q18a">a) Leave the building</label>
-                <input type="radio" id="q18b" name="q18" value="b">
-                <label for="q18b">b) Use the fire extinguisher</label>
-                <input type="radio" id="q18c" name="q18" value="c">
-                <label for="q18c">c) Stay in place</label>
+                <input type="radio" id="q2a" name="q2" value="a">
+                <label for="q2a">a) Must</label>
+                <input type="radio" id="q2b" name="q2" value="b">
+                <label for="q2b">b) Can</label>
+                <input type="radio" id="q2c" name="q2" value="c">
+                <label for="q2c">c) Should</label>
             </div>
         </div>
 
-        <!-- Question 19 -->
+        <!-- Question 6 -->
         <div class="question">
-            <h3>19. What does a machine guard do?</h3>
+            <h3>6. "Next month, I ___ start a new job."</h3>
             <div class="answers">
-                <input type="radio" id="q19a" name="q19" value="a">
-                <label for="q19a">a) Cover hazardous areas</label>
-                <input type="radio" id="q19b" name="q19" value="b">
-                <label for="q19b">b) Start a fire</label>
-                <input type="radio" id="q19c" name="q19" value="c">
-                <label for="q19c">c) Cause a trip</label>
+                <input type="radio" id="q6a" name="q6" value="a">
+                <label for="q6a">a) Might</label>
+                <input type="radio" id="q6b" name="q6" value="b">
+                <label for="q6b">b) Should</label>
+                <input type="radio" id="q6c" name="q6" value="c">
+                <label for="q6c">c) Must</label>
             </div>
         </div>
 
-        <!-- Question 20 -->
+        <!-- Question 7 -->
         <div class="question">
-            <h3>20. Throw ________________ into the basket.</h3>
+            <h3>7. "What do we call the place where fire alarms are located?"</h3>
             <div class="answers">
-                <input type="radio" id="q20a" name="q20" value="a">
-                <label for="q20a">a) Floor</label>
-                <input type="radio" id="q20b" name="q20" value="b">
-                <label for="q20b">b) Litter</label>
-                <input type="radio" id="q20c" name="q20" value="c">
-                <label for="q20c">c) Fire</label>
+                <input type="radio" id="q7a" name="q7" value="a">
+                <label for="q7a">a) Fire station</label>
+                <input type="radio" id="q7b" name="q7" value="b">
+                <label for="q7b">b) Alarm panel</label>
+                <input type="radio" id="q7c" name="q7" value="c">
+                <label for="q7c">c) Control room</label>
             </div>
         </div>
 
-        <!-- Question 21 -->
+        <!-- Question 8 -->
         <div class="question">
-            <h3>21. The basic structures (e.g., buildings, roads, power supplies) needed for the operation of a city are __________.</h3>
+            <h3>8. What does evacuate mean?</h3>
             <div class="answers">
-                <input type="radio" id="q21a" name="q21" value="a">
-                <label for="q21a">a) Infrastructure</label>
-                <input type="radio" id="q21b" name="q21" value="b">
-                <label for="q21b">b) Private sector</label>
-                <input type="radio" id="q21c" name="q21" value="c">
-                <label for="q21c">c) Commercial</label>
+                <input type="radio" id="q8a" name="q8" value="a">
+                <label for="q8a">a) Cry for help</label>
+                <input type="radio" id="q8b" name="q8" value="b">
+                <label for="q8b">b) Leave the place</label>
+                <input type="radio" id="q8c" name="q8" value="c">
+                <label for="q8c">c) Ring the fire alarm</label>
             </div>
         </div>
 
-        <!-- Question 26 -->
+        <!-- Question 9 -->
         <div class="question">
-            <h3>26. The engineers assemble the machine parts, they _________ assemble a map.</h3>
+            <h3>9. "During a fire drill, everyone should ___ the building calmly."</h3>
             <div class="answers">
-                <input type="radio" id="q26a" name="q26" value="a">
-                <label for="q26a">a) Not</label>
-                <input type="radio" id="q26b" name="q26" value="b">
-                <label for="q26b">b) Does not</label>
-                <input type="radio" id="q26c" name="q26" value="c">
-                <label for="q26c">c) Do not</label>
+                <input type="radio" id="q9a" name="q9" value="a">
+                <label for="q9a">a) Leave</label>
+                <input type="radio" id="q9b" name="q9" value="b">
+                <label for="q9b">b) Hide</label>
+                <input type="radio" id="q9c" name="q9" value="c">
+                <label for="q9c">c) Stay</label>
             </div>
         </div>
 
-        <!-- Question 27 -->
+        <!-- Question 10 -->
         <div class="question">
-            <h3>27. ______ an electrician fix the wires?</h3>
+            <h3>10. "What is the purpose of a safety helmet?"</h3>
             <div class="answers">
-                <input type="radio" id="q27a" name="q27" value="a">
-                <label for="q27a">a) Does</label>
-                <input type="radio" id="q27b" name="q27" value="b">
-                <label for="q27b">b) Is</label>
+                <input type="radio" id="q10a" name="q10" value="a">
+                <label for="q10a">a) Decoration</label>
+                <input type="radio" id="q10b" name="q10" value="b">
+                <label for="q10b">b) Protection</label>
+                <input type="radio" id="q10c" name="q10" value="c">
+                <label for="q10c">c) Communication</label>
             </div>
         </div>
 
-        <!-- Question 28 -->
+        <!-- Question 11 -->
         <div class="question">
-            <h3>28. I like ________ vocational books.</h3>
+            <h3>11. "Please put the tools back in the ___."</h3>
             <div class="answers">
-                <input type="radio" id="q28a" name="q28" value="a">
-                <label for="q28a">a) Read</label>
-                <input type="radio" id="q28b" name="q28" value="b">
-                <label for="q28b">b) Am reading</label>
-                <input type="radio" id="q28c" name="q28" value="c">
-                <label for="q28c">c) Reading</label>
+                <input type="radio" id="q11a" name="q11" value="a">
+                <label for="q11a">a) Box</label>
+                <input type="radio" id="q11b" name="q11" value="b">
+                <label for="q11b">b) Shelf</label>
+                <input type="radio" id="q11c" name="q11" value="c">
+                <label for="q11c">c) Floor</label>
             </div>
         </div>
 
-        <!-- Question 29 -->
+        <!-- Question 12 -->
         <div class="question">
-            <h3>29. I want _____ water.</h3>
+            <h3>12. "Don't forget to put the tools _____ in their place."</h3>
             <div class="answers">
-                <input type="radio" id="q29a" name="q29" value="a">
-                <label for="q29a">a) A few</label>
-                <input type="radio" id="q29b" name="q29" value="b">
-                <label for="q29b">b) A little</label>
+                <input type="radio" id="q12a" name="q12" value="a">
+                <label for="q12a">a) Back</label>
+                <input type="radio" id="q12b" name="q12" value="b">
+                <label for="q12b">b) Front</label>
+                <input type="radio" id="q12c" name="q12" value="c">
+                <label for="q12c">c) Beside</label>
             </div>
         </div>
 
-        <!-- Question 30 -->
+        <!-- Question 13 -->
         <div class="question">
-            <h3>30. I do breakfast at 7 am and ________ I go to work.</h3>
+            <h3>13. What can happen if someone doesn't use the PPE?</h3>
             <div class="answers">
-                <input type="radio" id="q30a" name="q30" value="a">
-                <label for="q30a">a) Firstly</label>
-                <input type="radio" id="q30b" name="q30" value="b">
-                <label for="q30b">b) Finally</label>
-                <input type="radio" id="q30c" name="q30" value="c">
-                <label for="q30c">c) Then</label>
+                <input type="radio" id="q13a" name="q13" value="a">
+                <label for="q13a">a) He will be punished.</label>
+                <input type="radio" id="q13b" name="q13" value="b">
+                <label for="q13b">b) He can be injured.</label>
+                <input type="radio" id="q13c" name="q13" value="c">
+                <label for="q13c">c) He will be fired.</label>
+            </div>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="question">
+            <h3>14. "You ___ forget to submit your work on time!"</h3>
+            <div class="answers">
+                <input type="radio" id="q14a" name="q14" value="a">
+                <label for="q14a">a) Should</label>
+                <input type="radio" id="q14b" name="q14" value="b">
+                <label for="q14b">b) Must not</label>
+                <input type="radio" id="q14c" name="q14" value="c">
+                <label for="q14c">c) May</label>
+            </div>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="question">
+            <h3>15. Next week, I …….. going to travel to Spain.</h3>
+            <div class="answers">
+                <input type="radio" id="q15a" name="q15" value="a">
+                <label for="q15a">a) Am</label>
+                <input type="radio" id="q15b" name="q15" value="b">
+                <label for="q15b">b) Is</label>
+                <input type="radio" id="q15c" name="q15" value="c">
+                <label for="q15c">c) Are</label>
+            </div>
+        </div>
+
+        <!-- Question 16 -->
+        <div class="question">
+            <h3>16. What do we call a place where everyone gathers during an emergency?</h3>
+            <div class="answers">
+                <input type="radio" id="q16a" name="q16" value="a">
+                <label for="q16a">a) Assembly point</label>
+                <input type="radio" id="q16b" name="q16" value="b">
+                <label for="q16b">b) Fire extinguisher</label>
+                <input type="radio" id="q16c" name="q16" value="c">
+                <label for="q16c">c) Filters</label>
             </div>
         </div>
 
@@ -177,21 +226,24 @@
         function calculateScore() {
             var score = 0;
 
-            // Answer keys (correct answers for each question)
+            // Correct answers for each question
             var answers = {
-                q17: 'a',
-                q18: 'a',
-                q19: 'a',
-                q20: 'b',
-                q21: 'a',
-                q26: 'c',
-                q27: 'a',
-                q28: 'c',
-                q29: 'b',
-                q30: 'c'
+                q1: 'a',
+                q2: 'a',
+                q6: 'a',
+                q7: 'b',
+                q8: 'b',
+                q9: 'a',
+                q10: 'b',
+                q11: 'a',
+                q12: 'a',
+                q13: 'b',
+                q14: 'b',
+                q15: 'a',
+                q16: 'a'
             };
 
-            // Loop through each question to check if the answer is correct
+            // Check each question
             for (var q in answers) {
                 var selected = document.querySelector('input[name="' + q + '"]:checked');
                 if (selected && selected.value === answers[q]) {
@@ -199,8 +251,8 @@
                 }
             }
 
-            // Display the score
-            document.getElementById('result').innerText = 'Your score: ' + score + ' out of 10';
+            // Display score
+            document.getElementById('result').innerText = 'Your score: ' + score + ' out of 16';
         }
     </script>
 
