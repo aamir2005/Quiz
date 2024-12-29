@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Officer Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .quiz-container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question label {
+            font-weight: bold;
+        }
+        .answers input[type="text"], .answers input[type="radio"] {
+            margin-right: 10px;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .result {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>Safety Officer Quiz</h1>
+    
+    <!-- Question 1 -->
+    <div class="question">
+        <label>Fill in the gaps with the correct words from the list (monitors – report – prevent – important – assess hazards):</label>
+        <p>A safety officer’s job is <input type="text" id="q1">.</p>
+        <p>A safety officer <input type="text" id="q2"> the workplace all the time.</p>
+        <p>When something is wrong, a safety officer’s job is to <input type="text" id="q3"> it.</p>
+        <p>A safety officer has to do his/her best to <input type="text" id="q4"> accidents.</p>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+        <label>Fill in the gaps with the correct form of “be” or “have to”: </label>
+        <p>He broke his equipment. He <input type="text" id="q5"> repair it.</p>
+        <p>There is an accident. I <input type="text" id="q6"> report it.</p>
+        <p>The new pipefitters <input type="text" id="q7"> very attentive.</p>
+        <p>Our safety officer <input type="text" id="q8"> not present today.</p>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+        <label>Choose the correct answer:</label>
+        <p>1- If there is something on the floor, you may ………………over it.</p>
+        <label><input type="radio" name="q9" value="a"> a- slip</label>
+        <label><input type="radio" name="q9" value="b"> b- trip</label>
+        <label><input type="radio" name="q9" value="c"> c- leave</label>
+    </div>
+
+    <div class="question">
+        <p>2- Throw ………………………into the basket.</p>
+        <label><input type="radio" name="q10" value="a"> a- floor</label>
+        <label><input type="radio" name="q10" value="b"> b- litter</label>
+        <label><input type="radio" name="q10" value="c"> c- tools</label>
+    </div>
+
+    <!-- Submit Button -->
+    <button class="submit-btn" onclick="checkAnswers()">Submit</button>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function checkAnswers() {
+        let score = 0;
+
+        // Check Fill-in-the-gaps questions
+        if (document.getElementById("q1").value.toLowerCase() === "important") score++;
+        if (document.getElementById("q2").value.toLowerCase() === "monitors") score++;
+        if (document.getElementById("q3").value.toLowerCase() === "assess hazards") score++;
+        if (document.getElementById("q4").value.toLowerCase() === "prevent") score++;
+
+        if (document.getElementById("q5").value.toLowerCase() === "have to") score++;
+        if (document.getElementById("q6").value.toLowerCase() === "have to") score++;
+        if (document.getElementById("q7").value.toLowerCase() === "have to") score++;
+        if (document.getElementById("q8").value.toLowerCase() === "is") score++;
+
+        // Check multiple choice questions
+        if (document.querySelector('input[name="q9"]:checked') && document.querySelector('input[name="q9"]:checked').value === "b") score++;
+        if (document.querySelector('input[name="q10"]:checked') && document.querySelector('input[name="q10"]:checked').value === "b") score++;
+
+        // Display score
+        document.getElementById("result").innerHTML = "Your score is: " + score + " / 8";
+    }
+</script>
+
+</body>
+</html>
