@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar Practice Questions</title>
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            
+            // Get answers from the input fields and check them
+            if (document.getElementById("q1").value.toLowerCase() == "am reading") score++;
+            if (document.getElementById("q2").value.toLowerCase() == "are not listening" || document.getElementById("q2").value.toLowerCase() == "aren't listening") score++;
+            if (document.getElementById("q3").value.toLowerCase() == "are you playing") score++;
+            if (document.getElementById("q4").value.toLowerCase() == "is watching") score++;
+            if (document.getElementById("q5").value.toLowerCase() == "are not working" || document.getElementById("q5").value.toLowerCase() == "aren't working") score++;
+
+            // Multiple choice questions
+            if (document.querySelector('input[name="q6"]:checked').value == "studies") score++;
+            if (document.querySelector('input[name="q7"]:checked').value == "She is running now.") score++;
+            if (document.querySelector('input[name="q8"]:checked').value == "True") score++;
+            if (document.querySelector('select:nth-child(1)').value == "am eating") score++;
+            if (document.querySelector('select:nth-child(2)').value == "is playing") score++;
+            if (document.querySelector('input[name="q12"]:checked').value == "aren't going") score++;
+            if (document.getElementById("q13").value.toLowerCase() == "is writing") score++;
+            if (document.querySelector('input[name="q14"]:checked').value == "True") score++;
+            if (document.querySelector('select:nth-child(3)').value == "am watching") score++;
+            if (document.querySelector('select:nth-child(4)').value == "are studying") score++;
+            if (document.querySelector('input[name="q16"]:checked').value == "I am reading a book.") score++;
+            if (document.getElementById("q17").value.toLowerCase() == "is driving") score++;
+            if (document.querySelector('input[name="q18"]:checked').value == "False") score++;
+            if (document.querySelector('input[name="q19"]:checked').value == "They are playing soccer right now.") score++;
+            if (document.getElementById("q20").value.toLowerCase() == "are not having" || document.getElementById("q20").value.toLowerCase() == "aren't having") score++;
+
+            // Display the score
+            document.getElementById("result").innerHTML = "Your score is: " + score + " out of 20";
+        }
+    </script>
+</head>
+<body>
+    <h1>Grammar Practice Questions</h1>
+
+    <h2>1. Fill in the blank:</h2>
+    <p>1. I __________ (read) a book right now.</p>
+    <input type="text" id="q1" placeholder="Write your answer">
+
+    <h2>2. Fill in the blank:</h2>
+    <p>2. They __________ (not listen) to the teacher at the moment.</p>
+    <input type="text" id="q2" placeholder="Write your answer">
+
+    <h2>3. Fill in the blank:</h2>
+    <p>3. __________ (you / play) football now?</p>
+    <input type="text" id="q3" placeholder="Write your answer">
+
+    <h2>4. Fill in the blank:</h2>
+    <p>4. She __________ (watch) a movie at the moment.</p>
+    <input type="text" id="q4" placeholder="Write your answer">
+
+    <h2>5. Fill in the blank:</h2>
+    <p>5. We __________ (not work) today.</p>
+    <input type="text" id="q5" placeholder="Write your answer">
+
+    <h2>6. Multiple Choice Question:</h2>
+    <p>6. What is the correct form of the verb in the following sentence: "She __________ (study) every day."</p>
+    <input type="radio" name="q6" value="studied"> Studied<br>
+    <input type="radio" name="q6" value="studying"> Studying<br>
+    <input type="radio" name="q6" value="studies"> Studies<br>
+
+    <h2>7. Multiple Choice Question:</h2>
+    <p>7. Choose the correct sentence:</p>
+    <input type="radio" name="q7" value="She is running now."> She is running now.<br>
+    <input type="radio" name="q7" value="She run now."> She run now.<br>
+    <input type="radio" name="q7" value="She runs now."> She runs now.<br>
+
+    <h2>8. True/False:</h2>
+    <p>8. "They are studying right now" is in the present continuous tense.</p>
+    <input type="radio" name="q8" value="True"> True<br>
+    <input type="radio" name="q8" value="False"> False<br>
+
+    <h2>9. Match the following:</h2>
+    <p>9. Match the sentences with the correct form of the verb:</p>
+    <ul>
+        <li>1. I __________ (eat) lunch right now.</li>
+        <select>
+            <option value="am eating">am eating</option>
+            <option value="ate">ate</option>
+            <option value="eats">eats</option>
+        </select>
+    </ul>
+
+    <ul>
+        <li>2. He __________ (play) football at this moment.</li>
+        <select>
+            <option value="is playing">is playing</option>
+            <option value="played">played</option>
+            <option value="plays">plays</option>
+        </select>
+    </ul>
+
+    <h2>10. Fill in the blank:</h2>
+    <p>10. I __________ (not like) to swim.</p>
+    <input type="text" id="q10" placeholder="Write your answer">
+
+    <h2>11. True/False:</h2>
+    <p>11. "I am studying English" is in the present simple tense.</p>
+    <input type="radio" name="q11" value="True"> True<br>
+    <input type="radio" name="q11" value="False"> False<br>
+
+    <h2>12. Multiple Choice Question:</h2>
+    <p>12. Choose the correct form of the verb: "We __________ (not go) to the party tomorrow."</p>
+    <input type="radio" name="q12" value="aren't going"> aren't going<br>
+    <input type="radio" name="q12" value="didn't go"> didn't go<br>
+    <input type="radio" name="q12" value="don't go"> don't go<br>
+
+    <h2>13. Fill in the blank:</h2>
+    <p>13. She __________ (write) an email right now.</p>
+    <input type="text" id="q13" placeholder="Write your answer">
+
+    <h2>14. True/False:</h2>
+    <p>14. "They are working on the project" is an example of present continuous tense.</p>
+    <input type="radio" name="q14" value="True"> True<br>
+    <input type="radio" name="q14" value="False"> False<br>
+
+    <h2>15. Match the following:</h2>
+    <p>15. Match the sentence with its tense:</p>
+    <ul>
+        <li>1. I __________ (watch) a TV show.</li>
+        <select>
+            <option value="am watching">am watching</option>
+            <option value="watched">watched</option>
+            <option value="watch">watch</option>
+        </select>
+    </ul>
+
+    <ul>
+        <li>2. They __________ (study) right now.</li>
+        <select>
+            <option value="are studying">are studying</option>
+            <option value="studied">studied</option>
+            <option value="study">study</option>
+        </select>
+    </ul>
+
+    <h2>16. Multiple Choice Question:</h2>
+    <p>16. Which sentence is in the correct present continuous form?</p>
+    <input type="radio" name="q16" value="I am reading a book."> I am reading a book.<br>
+    <input type="radio" name="q16" value="I reading a book."> I reading a book.<br>
+    <input type="radio" name="q16" value="I am read a book."> I am read a book.<br>
+
+    <h2>17. Fill in the blank:</h2>
+    <p>17. He __________ (drive) to work now.</p>
+    <input type="text" id="q17" placeholder="Write your answer">
+
+    <h2>18. True/False:</h2>
+    <p>18. "She is not cooking at the moment" is in the present simple tense.</p>
+    <input type="radio" name="q18" value="True"> True<br>
+    <input type="radio" name="q18" value="False"> False<br>
+
+    <h2>19. Multiple Choice Question:</h2>
+    <p>19. Choose the correct sentence:</p>
+    <input type="radio" name="q19" value="They are playing soccer right now."> They are playing soccer right now.<br>
+    <input type="radio" name="q19" value="They play soccer right now."> They play soccer right now.<br>
+    <input type="radio" name="q19" value="They played soccer right now."> They played soccer right now.<br>
+
+    <h2>20. Fill in the blank:</h2>
+    <p>20. We __________ (not have) dinner at the moment.</p>
+    <input type="text" id="q20" placeholder="Write your answer">
+
+    <h2><button onclick="checkAnswers()">Submit Answers</button></h2>
+    <p id="result"></p>
+</body>
+</html>
