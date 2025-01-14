@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Present Continuous Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .submit-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Present Continuous Quiz</h1>
+
+    <div class="question">
+        <label for="q1">1. Alaa _______________ for Aramco at the moment. (work)</label><br>
+        <input type="text" id="q1" placeholder="Enter your answer">
+    </div>
+
+    <div class="question">
+        <label for="q2">2. Hurry up! The bus _______________ (wait).</label><br>
+        <input type="text" id="q2" placeholder="Enter your answer">
+    </div>
+
+    <div class="question">
+        <label for="q3">3. _______________ you _______________ or _______________? (work) (eat)</label><br>
+        <input type="text" id="q3" placeholder="Enter your answer">
+    </div>
+
+    <div class="question">
+        <label for="q4">4. The class _______________ through the workshop. (walk)</label><br>
+        <input type="text" id="q4" placeholder="Enter your answer">
+    </div>
+
+    <div class="question">
+        <label for="q5">5. Look! The manager _______________ his office himself. (clean)</label><br>
+        <input type="text" id="q5" placeholder="Enter your answer">
+    </div>
+
+    <div class="question">
+        <label for="q6">6. Everyone _______________ their PPE today. (wear)</label><br>
+        <input type="text" id="q6" placeholder="Enter your answer">
+    </div>
+
+    <button class="submit-btn" onclick="checkAnswers()">Submit Answers</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function checkAnswers() {
+            var correctAnswers = 0;
+
+            var q1 = document.getElementById('q1').value.trim().toLowerCase();
+            var q2 = document.getElementById('q2').value.trim().toLowerCase();
+            var q3 = document.getElementById('q3').value.trim().toLowerCase();
+            var q4 = document.getElementById('q4').value.trim().toLowerCase();
+            var q5 = document.getElementById('q5').value.trim().toLowerCase();
+            var q6 = document.getElementById('q6').value.trim().toLowerCase();
+
+            if (q1 === 'is working') correctAnswers++;
+            if (q2 === 'is waiting') correctAnswers++;
+            if (q3 === 'Are working eating') correctAnswers++;
+            if (q4 === 'is walking') correctAnswers++;
+            if (q5 === 'is cleaning') correctAnswers++;
+            if (q6 === 'is wearing') correctAnswers++;
+
+            var resultText = 'You got ' + correctAnswers + ' out of 6 correct.';
+            document.getElementById('result').innerText = resultText;
+        }
+    </script>
+
+</body>
+</html>
