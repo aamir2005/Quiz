@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rearrange the Words to Make a Meaningful Sentence</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .answer-input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Rearrange the Words to Make a Meaningful Sentence</h1>
+    
+    <div class="quiz-container">
+        <div class="question">
+            <p>1. are - still - we - reading - an - interesting - book</p>
+            <input type="text" id="q1" class="answer-input" placeholder="Your answer">
+        </div>
+        <div class="question">
+            <p>2. is - the - engineer - repairing - machine - the ?</p>
+            <input type="text" id="q2" class="answer-input" placeholder="Your answer">
+        </div>
+        <div class="question">
+            <p>3. are - workers - playing - football - the</p>
+            <input type="text" id="q3" class="answer-input" placeholder="Your answer">
+        </div>
+        <div class="question">
+            <p>4. father - cooking - a - still - meal - is</p>
+            <input type="text" id="q4" class="answer-input" placeholder="Your answer">
+        </div>
+        
+        <div class="button-container">
+            <button class="btn" onclick="checkAnswers()">Check Answers</button>
+        </div>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            let totalQuestions = 4;
+            
+            // Correct answers
+            const correctAnswers = [
+                "We are still reading an interesting book.",
+                "Is the engineer repairing the machine?",
+                "The workers are playing football.",
+                "Father is still cooking a meal."
+            ];
+            
+            // User answers
+            const userAnswers = [
+                document.getElementById("q1").value.trim(),
+                document.getElementById("q2").value.trim(),
+                document.getElementById("q3").value.trim(),
+                document.getElementById("q4").value.trim()
+            ];
+            
+            // Check answers
+            for (let i = 0; i < totalQuestions; i++) {
+                if (userAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+                    score++;
+                }
+            }
+            
+            // Display result
+            document.getElementById("result").innerHTML = `You scored ${score} out of ${totalQuestions}`;
+        }
+    </script>
+
+</body>
+</html>
