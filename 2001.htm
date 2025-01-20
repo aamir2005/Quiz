@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabic to English Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .question {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .options {
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Arabic to English Quiz</h1>
+    <form id="quizForm">
+        <!-- Question 1 -->
+        <div class="question">
+            <p>1. What does "نار" mean?</p>
+            <div class="options">
+                <input type="radio" id="q1a" name="q1" value="A"> A) Fire<br>
+                <input type="radio" id="q1b" name="q1" value="B"> B) Water<br>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>2. What does "طفايات الحرائق" mean?</p>
+            <div class="options">
+                <input type="radio" id="q2a" name="q2" value="A"> A) Extinguishers<br>
+                <input type="radio" id="q2b" name="q2" value="B"> B) Buckets<br>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>3. What does "غاز ثاني أكسيد الكربون" mean?</p>
+            <div class="options">
+                <input type="radio" id="q3a" name="q3" value="A"> A) CO2 gas<br>
+                <input type="radio" id="q3b" name="q3" value="B"> B) Oxygen<br>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>4. What does "بيكربونات الصوديوم" mean?</p>
+            <div class="options">
+                <input type="radio" id="q4a" name="q4" value="A"> A) Soda bicarbonate<br>
+                <input type="radio" id="q4b" name="q4" value="B"> B) Sand bags<br>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>5. What does "دورة" mean?</p>
+            <div class="options">
+                <input type="radio" id="q5a" name="q5" value="A"> A) Cycle<br>
+                <input type="radio" id="q5b" name="q5" value="B"> B) Heat<br>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <p>6. What does "حرارة" mean?</p>
+            <div class="options">
+                <input type="radio" id="q6a" name="q6" value="A"> A) Heat<br>
+                <input type="radio" id="q6b" name="q6" value="B"> B) Pictures<br>
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <p>7. What does "أكسجين" mean?</p>
+            <div class="options">
+                <input type="radio" id="q7a" name="q7" value="A"> A) Oxygen<br>
+                <input type="radio" id="q7b" name="q7" value="B"> B) Pins<br>
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <p>8. What does "نوع" mean?</p>
+            <div class="options">
+                <input type="radio" id="q8a" name="q8" value="A"> A) Type<br>
+                <input type="radio" id="q8b" name="q8" value="B"> B) Shovel<br>
+            </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>9. What does "ماء" mean?</p>
+            <div class="options">
+                <input type="radio" id="q9a" name="q9" value="A"> A) Water<br>
+                <input type="radio" id="q9b" name="q9" value="B"> B) Fire point<br>
+            </div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>10. What does "دبابيس" mean?</p>
+            <div class="options">
+                <input type="radio" id="q10a" name="q10" value="A"> A) Pins<br>
+                <input type="radio" id="q10b" name="q10" value="B"> B) Nozzle<br>
+            </div>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="question">
+            <p>11. What does "فوهة" mean?</p>
+            <div class="options">
+                <input type="radio" id="q11a" name="q11" value="A"> A) Nozzle<br>
+                <input type="radio" id="q11b" name="q11" value="B"> B) Holder<br>
+            </div>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="question">
+            <p>12. What does "حامل" mean?</p>
+            <div class="options">
+                <input type="radio" id="q12a" name="q12" value="A"> A) Holder<br>
+                <input type="radio" id="q12b" name="q12" value="B"> B) Side<br>
+            </div>
+        </div>
+
+        <!-- Question 13 -->
+        <div class="question">
+            <p>13. What does "جانب" mean?</p>
+            <div class="options">
+                <input type="radio" id="q13a" name="q13" value="A"> A) Side<br>
+                <input type="radio" id="q13b" name="q13" value="B"> B) Shovel<br>
+            </div>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="question">
+            <p>14. What does "صور" mean?</p>
+            <div class="options">
+                <input type="radio" id="q14a" name="q14" value="A"> A) Pictures<br>
+                <input type="radio" id="q14b" name="q14" value="B"> B) Trainee<br>
+            </div>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="question">
+            <p>15. What does "ضابط السلامة" mean?</p>
+            <div class="options">
+                <input type="radio" id="q15a" name="q15" value="A"> A) Safety officer<br>
+                <input type="radio" id="q15b" name="q15" value="B"> B) Fire point<br>
+            </div>
+        </div>
+
+        <!-- Question 16 -->
+        <div class="question">
+            <p>16. What does "متدرب" mean?</p>
+            <div class="options">
+                <input type="radio" id="q16a" name="q16" value="A"> A) Trainee<br>
+                <input type="radio" id="q16b" name="q16" value="B"> B) Sand bags<br>
+            </div>
+        </div>
+
+        <!-- Question 17 -->
+        <div class="question">
+            <p>17. What does "نقطة الحريق" mean?</p>
+            <div class="options">
+                <input type="radio" id="q17a" name="q17" value="A"> A) Fire point<br>
+                <input type="radio" id="q17b" name="q17" value="B"> B) Water<br>
+            </div>
+        </div>
+
+        <!-- Question 18 -->
+        <div class="question">
+            <p>18. What does "أكياس الرمل" mean?</p>
+            <div class="options">
+                <input type="radio" id="q18a" name="q18" value="A"> A) Shovel<br>
+                <input type="radio" id="q18b" name="q18" value="B"> B) Sand bags<br>
+            </div>
+        </div>
+
+        <!-- Question 19 -->
+        <div class="question">
+            <p>19. What does "مجرفة" mean?</p>
+            <div class="options">
+                <input type="radio" id="q19a" name="q19" value="A"> A) Bucket<br>
+                <input type="radio" id="q19b" name="q19" value="B"> B) Shovel<br>
+            </div>
+        </div>
+
+        <!-- Question 20 -->
+        <div class="question">
+            <p>20. What does "دلاء" mean?</p>
+            <div class="options">
+                <input type="radio" id="q20a" name="q20" value="A"> A) Buckets<br>
+                <input type="radio" id="q20b" name="q20" value="B"> B) Cycle<br>
+            </div>
+        </div>
+
+        <!-- Add more questions similarly -->
+
+        <button type="button" class="button" onclick="calculateScore()">Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateScore() {
+            var score = 0;
+            
+            // Check each question
+            if (document.getElementById('q1a').checked) score++;
+            if (document.getElementById('q2a').checked) score++;
+            if (document.getElementById('q3a').checked) score++;
+            if (document.getElementById('q4a').checked) score++;
+            if (document.getElementById('q5a').checked) score++;
+            if (document.getElementById('q6a').checked) score++;
+            if (document.getElementById('q7a').checked) score++;
+            if (document.getElementById('q8a').checked) score++;
+            if (document.getElementById('q9a').checked) score++;
+            if (document.getElementById('q10a').checked) score++;
+            if (document.getElementById('q11a').checked) score++;
+            if (document.getElementById('q12a').checked) score++;
+            if (document.getElementById('q13a').checked) score++;
+            if (document.getElementById('q14a').checked) score++;
+            if (document.getElementById('q15a').checked) score++;
+            if (document.getElementById('q16a').checked) score++;
+            if (document.getElementById('q17a').checked) score++;
+            if (document.getElementById('q18b').checked) score++; // Correct for this one
+            if (document.getElementById('q19b').checked) score++; // Correct for this one
+            if (document.getElementById('q20a').checked) score++; // Correct for this one
+
+            // Display the score
+            document.getElementById('result').innerHTML = "Your score is: " + score + "/20";
+        }
+    </script>
+
+</body>
+</html>
