@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabic to English Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .quiz-container {
+            width: 60%;
+            margin: 0 auto;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question label {
+            margin-right: 10px;
+        }
+        .submit-btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h2>Arabic to English Quiz</h2>
+
+        <form id="quiz-form">
+            <!-- Question 1 -->
+            <div class="question">
+                <label>1. Correct</label>
+                <input type="radio" name="q1" value="a"> صحيح
+                <input type="radio" name="q1" value="b"> أفضل
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <label>2. Best</label>
+                <input type="radio" name="q2" value="a"> أدنى
+                <input type="radio" name="q2" value="b"> أفضل
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <label>3. Bottom</label>
+                <input type="radio" name="q3" value="a"> أدنى
+                <input type="radio" name="q3" value="b"> صحيح
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <label>4. Have</label>
+                <input type="radio" name="q4" value="a"> يمتلك
+                <input type="radio" name="q4" value="b"> يقطع
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <label>5. Cut</label>
+                <input type="radio" name="q5" value="a"> يقطع
+                <input type="radio" name="q5" value="b"> يعتمد
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <label>6. Reducing</label>
+                <input type="radio" name="q6" value="a"> تقليل
+                <input type="radio" name="q6" value="b"> سحب
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <label>7. Stopping</label>
+                <input type="radio" name="q7" value="a"> إيقاف
+                <input type="radio" name="q7" value="b"> يمسح
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <label>8. Depends</label>
+                <input type="radio" name="q8" value="a"> يعتمد
+                <input type="radio" name="q8" value="b"> ينبغي
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <label>9. Pulled</label>
+                <input type="radio" name="q9" value="a"> سحب (ماضي)
+                <input type="radio" name="q9" value="b"> صوب (ماضي)
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <label>10. Aimed</label>
+                <input type="radio" name="q10" value="a"> صوب (ماضي)
+                <input type="radio" name="q10" value="b"> يمسح
+            </div>
+
+            <!-- Question 11 -->
+            <div class="question">
+                <label>11. Should</label>
+                <input type="radio" name="q11" value="a"> ينبغي
+                <input type="radio" name="q11" value="b"> يقف
+            </div>
+
+            <!-- Question 12 -->
+            <div class="question">
+                <label>12. Sweep</label>
+                <input type="radio" name="q12" value="a"> يمسح
+                <input type="radio" name="q12" value="b"> يعتمد
+            </div>
+
+            <!-- Question 13 -->
+            <div class="question">
+                <label>13. First</label>
+                <input type="radio" name="q13" value="a"> أولاً
+                <input type="radio" name="q13" value="b"> في
+            </div>
+
+            <!-- Question 14 -->
+            <div class="question">
+                <label>14. In</label>
+                <input type="radio" name="q14" value="a"> في
+                <input type="radio" name="q14" value="b"> على
+            </div>
+
+            <!-- Question 15 -->
+            <div class="question">
+                <label>15. On</label>
+                <input type="radio" name="q15" value="a"> على
+                <input type="radio" name="q15" value="b"> عند
+            </div>
+
+            <!-- Question 16 -->
+            <div class="question">
+                <label>16. At</label>
+                <input type="radio" name="q16" value="a"> عند
+                <input type="radio" name="q16" value="b"> من
+            </div>
+
+            <!-- Question 17 -->
+            <div class="question">
+                <label>17. From</label>
+                <input type="radio" name="q17" value="a"> من
+                <input type="radio" name="q17" value="b"> في
+            </div>
+
+            <!-- Question 18 -->
+            <div class="question">
+                <label>18. That</label>
+                <input type="radio" name="q18" value="a"> أن
+                <input type="radio" name="q18" value="b"> و
+            </div>
+
+            <!-- Question 19 -->
+            <div class="question">
+                <label>19. And</label>
+                <input type="radio" name="q19" value="a"> أن
+                <input type="radio" name="q19" value="b"> و
+            </div>
+
+            <!-- Question 20 -->
+            <div class="question">
+                <label>20. By</label>
+                <input type="radio" name="q20" value="a"> بواسطة
+                <input type="radio" name="q20" value="b"> أن
+            </div>
+
+            <button type="button" class="submit-btn" onclick="calculateScore()">Submit</button>
+        </form>
+
+        <div id="score"></div>
+    </div>
+
+    <script>
+        function calculateScore() {
+            let score = 0;
+            const correctAnswers = {
+                q1: 'a',
+                q2: 'b',
+                q3: 'a',
+                q4: 'a',
+                q5: 'a',
+                q6: 'a',
+                q7: 'a',
+                q8: 'a',
+                q9: 'a',
+                q10: 'a',
+                q11: 'a',
+                q12: 'a',
+                q13: 'a',
+                q14: 'a',
+                q15: 'a',
+                q16: 'a',
+                q17: 'a',
+                q18: 'a',
+                q19: 'b',
+                q20: 'a'
+            };
+
+            for (let i = 1; i <= 20; i++) {
+                const userAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (userAnswer && userAnswer.value === correctAnswers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            document.getElementById('score').innerHTML = `Your score: ${score} / 20`;
+        }
+    </script>
+
+</body>
+</html>
